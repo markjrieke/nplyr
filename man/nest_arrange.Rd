@@ -12,8 +12,8 @@ lazy data frame (e.g. from dbplyr or dtplyr).}
 
 \item{.nest_data}{A list-col containing a data frames (or tibbles).}
 
-\item{...}{<\code{\link[=dplyr_data_masking]{data-masking}}> Variables, or functions of
-variables. Use \code{\link[=desc]{desc()}} to sort a variable in descending order.}
+\item{...}{data masking variables, or functions of
+variables. Use \code{dplyr::desc()} to sort a variable in descending order.}
 
 \item{.by_group}{If \code{TRUE}, will sort first by grouping variable. Applies to
 grouped data frames only.}

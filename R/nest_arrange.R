@@ -14,8 +14,8 @@
 #' @param .data A data frame, data frame extension (e.g. a tibble), or a lazy 
 #'   lazy data frame (e.g. from dbplyr or dtplyr).
 #' @param .nest_data A list-col containing a data frames (or tibbles).
-#' @param ... <[`data-masking`][dplyr_data_masking]> Variables, or functions of 
-#'   variables. Use [desc()] to sort a variable in descending order.
+#' @param ... data masking variables, or functions of 
+#'   variables. Use `dplyr::desc()` to sort a variable in descending order.
 #' @param .by_group If `TRUE`, will sort first by grouping variable. Applies to 
 #'   grouped data frames only. 
 #' 
