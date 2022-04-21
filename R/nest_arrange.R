@@ -23,8 +23,10 @@
 #' 
 #' @importFrom dplyr enquos
 #' @importFrom dplyr mutate
+#' @importFrom rlang :=
 #' @importFrom purrr map
 #' @importFrom dplyr arrange
+#' @importFrom rlang !!!
 #'   
 #' @examples 
 #' \dontrun{
