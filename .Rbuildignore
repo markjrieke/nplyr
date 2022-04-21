@@ -1,0 +1,13 @@
+^nplyr\.Rproj$
+^\.Rproj\.user$
+^README\.Rmd$
+^LICENSE\.md$
+^cran-comments\.md$
+^data-raw$
+^pkgdown$
+^revdep$
+^_pkgdown\.yml$
+^\.github$
+
+^CRAN-SUBMISSION$
+^codecov\.yml$
