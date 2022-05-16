@@ -10,7 +10,7 @@ nest_arrange(.data, .nest_data, ..., .by_group = FALSE)
 \item{.data}{A data frame, data frame extension (e.g. a tibble), or a lazy
 lazy data frame (e.g. from dbplyr or dtplyr).}
 
-\item{.nest_data}{A list-col containing a data frames (or tibbles).}
+\item{.nest_data}{A list-col containing data frames (or tibbles).}
 
 \item{...}{data masking variables, or functions of
 variables. Use \code{dplyr::desc()} to sort a variable in descending order.}

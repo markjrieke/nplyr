@@ -13,7 +13,7 @@
 #' 
 #' @param .data A data frame, data frame extension (e.g. a tibble), or a lazy 
 #'   lazy data frame (e.g. from dbplyr or dtplyr).
-#' @param .nest_data A list-col containing a data frames (or tibbles).
+#' @param .nest_data A list-col containing data frames (or tibbles).
 #' @param ... data masking variables, or functions of 
 #'   variables. Use `dplyr::desc()` to sort a variable in descending order.
 #' @param .by_group If `TRUE`, will sort first by grouping variable. Applies to 

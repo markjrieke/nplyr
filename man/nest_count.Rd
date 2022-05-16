@@ -11,9 +11,9 @@ nest_add_count(.data, .nest_data, ..., wt = NULL, sort = FALSE, name = NULL)
 }
 \arguments{
 \item{.data}{A data frame, data frame extension (e.g. a tibble), or a lazy
-lazy data frame (e.g. from dbplyr or dtplyr).}
+data frame (e.g. from dbplyr or dtplyr).}
 
-\item{.nest_data}{A list-col containing a data frames (or tibbles).}
+\item{.nest_data}{A list-col containing data frames (or tibbles).}
 
 \item{...}{data masking variables to group by.}
 
