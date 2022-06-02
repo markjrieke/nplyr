@@ -1,0 +1,15 @@
+#' @export
+nest_select <- function(.data, 
+                        .nest_data,
+                        ...) {
+  
+  # tidyeval of dots
+  dots <- dplyr::enquos(...)
+  
+  # map select over list-col
+  dplyr::mutate(
+    .data,
+    "{{.nest_data}}" := purrr::map({{ .nest_data }}, ~dplyr::select(.x, !!!dots))
+  )
+  
+}
