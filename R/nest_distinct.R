@@ -1,3 +1,9 @@
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr distinct
+#' 
 #' @export
 nest_distinct <- function(.data,
                           .nest_data,

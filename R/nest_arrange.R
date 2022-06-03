@@ -1,3 +1,9 @@
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr arrange
+#' 
 #' @export
 nest_arrange <- function(.data, 
                          .nest_data,
