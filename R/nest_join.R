@@ -1,3 +1,9 @@
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr inner_join
+#' 
 #' @export
 nest_inner_join <- function(.data,
                             .nest_data,
@@ -19,6 +25,12 @@ nest_inner_join <- function(.data,
   
 }
 
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr left_join
+#' 
 #' @export
 nest_left_join <- function(.data,
                            .nest_data,
@@ -40,6 +52,12 @@ nest_left_join <- function(.data,
   
 }
 
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr right_join
+#' 
 #' @export
 nest_right_join <- function(.data,
                             .nest_data,
@@ -61,6 +79,12 @@ nest_right_join <- function(.data,
   
 }
 
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr full_join
+#' 
 #' @export
 nest_full_join <- function(.data,
                            .nest_data,
@@ -82,6 +106,12 @@ nest_full_join <- function(.data,
   
 }
 
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr semi_join
+#' 
 #' @export
 nest_semi_join <- function(.data,
                            .nest_data,
@@ -101,6 +131,12 @@ nest_semi_join <- function(.data,
   
 }
 
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr anti_join
+#' 
 #' @export
 nest_anti_join <- function(.data,
                            .nest_data,
@@ -120,6 +156,12 @@ nest_anti_join <- function(.data,
   
 }
 
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr nest_join
+#' 
 #' @export
 nest_nest_join <- function(.data,
                            .nest_data,

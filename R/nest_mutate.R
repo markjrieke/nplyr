@@ -1,3 +1,8 @@
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' 
 #' @export
 nest_mutate <- function(.data, 
                         .nest_data,
@@ -14,6 +19,12 @@ nest_mutate <- function(.data,
   
 }
 
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr transmute
+#' 
 #' @export
 nest_transmute <- function(.data,
                            .nest_data,

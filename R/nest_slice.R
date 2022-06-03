@@ -1,3 +1,9 @@
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr slice
+#' 
 #' @export
 nest_slice <- function(.data, 
                        .nest_data,
@@ -15,6 +21,12 @@ nest_slice <- function(.data,
   
 }
 
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr slice_head
+#' 
 #' @export
 nest_slice_head <- function(.data,
                             .nest_data,
@@ -33,6 +45,12 @@ nest_slice_head <- function(.data,
   
 }
 
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr slice_tail
+#' 
 #' @export
 nest_slice_tail <- function(.data,
                             .nest_data,
@@ -51,6 +69,12 @@ nest_slice_tail <- function(.data,
   
 }
 
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr slice_min
+#' 
 #' @export
 nest_slice_min <- function(.data,
                            .nest_data,
@@ -71,6 +95,12 @@ nest_slice_min <- function(.data,
   
 }
 
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr slice_max
+#' 
 #' @export
 nest_slice_max <- function(.data,
                            .nest_data,
@@ -91,6 +121,12 @@ nest_slice_max <- function(.data,
   
 }
 
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr slice_sample
+#' 
 #' @export
 nest_slice_sample <- function(.data,
                               .nest_data,

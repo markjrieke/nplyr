@@ -1,3 +1,9 @@
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr group_by
+#' 
 #' @export
 nest_group_by <- function(.data,
                           .nest_data,
@@ -16,6 +22,12 @@ nest_group_by <- function(.data,
   
 }
 
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr ungroup
+#' 
 #' @export
 nest_ungroup <- function(.data,
                          .nest_data,

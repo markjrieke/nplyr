@@ -1,3 +1,9 @@
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr relocate
+#' 
 #' @export
 nest_relocate <- function(.data, 
                           .nest_data,

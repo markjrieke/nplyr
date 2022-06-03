@@ -1,3 +1,9 @@
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr rename
+#' 
 #' @export
 nest_rename <- function(.data, 
                         .nest_data,
@@ -14,6 +20,12 @@ nest_rename <- function(.data,
   
 }
 
+#' @importFrom dplyr enquos
+#' @importFrom dplyr mutate
+#' @importFrom rlang :=
+#' @importFrom purrr map
+#' @importFrom dplyr rename_with
+#' 
 #' @export
 nest_rename_with <- function(.data,
                              .nest_data,
