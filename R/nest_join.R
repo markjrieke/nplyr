@@ -12,7 +12,7 @@ nest_inner_join <- function(.data,
                             copy = FALSE,
                             suffix = c(".x", ".y"),
                             ...,
-                            keep = NULL) {
+                            keep = FALSE) {
   
   # tidyeval of dots
   dots <- dplyr::enquos(...)
@@ -39,7 +39,7 @@ nest_left_join <- function(.data,
                            copy = FALSE,
                            suffix = c(".x", ".y"),
                            ...,
-                           keep = NULL) {
+                           keep = FALSE) {
   
   # tidyeval of dots
   dots <- dplyr::enquos(...)
@@ -66,7 +66,7 @@ nest_right_join <- function(.data,
                             copy = FALSE,
                             suffix = c(".x", ".y"),
                             ...,
-                            keep = NULL) {
+                            keep = FALSE) {
   
   # tidyeval of dots
   dots <- dplyr::enquos(...)
@@ -93,7 +93,7 @@ nest_full_join <- function(.data,
                            copy = FALSE,
                            suffix = c(".x", ".y"),
                            ...,
-                           keep = NULL) {
+                           keep = FALSE) {
   
   # tidyeval of dots
   dots <- dplyr::enquos(...)
@@ -168,7 +168,7 @@ nest_nest_join <- function(.data,
                            y,
                            by = NULL,
                            copy = FALSE,
-                           keep = NULL,
+                           keep = FALSE,
                            name = NULL,
                            ...) {
   
