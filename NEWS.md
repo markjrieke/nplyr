@@ -6,7 +6,8 @@
   + `nest_distinct()`
   + `nest_filter()`
   + `nest_group_by()`, `nest_ungroup()`
-  + `nest_inner_join()`, `nest_left_join()`, `nest_right_join()`, `nest_full_join()`, `nest_semi_join()`, `nest_anti_join()`, `nest_nest_join()`
+  + `nest_inner_join()`, `nest_left_join()`, `nest_right_join()`, `nest_full_join()`
+  + `nest_semi_join()`, `nest_anti_join()`, `nest_nest_join()`
   + `nest_mutate()`, `nest_transmute()`
   + `nest_relocate()`
   + `nest_rename()`, `nest_rename_with()`
