@@ -30,9 +30,7 @@ nest_slice <- function(.data,
 #' @export
 nest_slice_head <- function(.data,
                             .nest_data,
-                            ...,
-                            n,
-                            prop) {
+                            ...) {
   
   # tidyeval of dots
   dots <- dplyr::enquos(...)
@@ -40,7 +38,7 @@ nest_slice_head <- function(.data,
   # map slice_head over list-col
   dplyr::mutate(
     .data,
-    "{{.nest_data}}" := purrr::map({{ .nest_data }}, ~dplyr::slice_head(.x, !!!dots, n = n, prop = prop))
+    "{{.nest_data}}" := purrr::map({{ .nest_data }}, ~dplyr::slice_head(.x, !!!dots))
   )
   
 }
@@ -54,9 +52,7 @@ nest_slice_head <- function(.data,
 #' @export
 nest_slice_tail <- function(.data,
                             .nest_data,
-                            ...,
-                            n,
-                            prop) {
+                            ...) {
   
   # tidyeval of dots
   dots <- dplyr::enquos(...)
@@ -64,7 +60,7 @@ nest_slice_tail <- function(.data,
   # map slice_tail over list-col
   dplyr::mutate(
     .data,
-    "{{.nest_data}}" := purrr::map({{ .nest_data }}, ~dplyr::slice_tail(.x, !!!dots, n = n, prop = prop))
+    "{{.nest_data}}" := purrr::map({{ .nest_data }}, ~dplyr::slice_tail(.x, !!!dots))
   )
   
 }
@@ -80,8 +76,6 @@ nest_slice_min <- function(.data,
                            .nest_data,
                            order_by, 
                            ...,
-                           n,
-                           prop,
                            with_ties = TRUE) {
   
   # tidyeval of dots 
@@ -90,7 +84,7 @@ nest_slice_min <- function(.data,
   # map slice_min over list-col
   dplyr::mutate(
     .data,
-    "{{.nest_data}}" := purrr::map({{ .nest_data }}, ~dplyr::slice_min(.x, order_by = order_by, !!!dots, n = n, prop = prop, with_ties = with_ties))
+    "{{.nest_data}}" := purrr::map({{ .nest_data }}, ~dplyr::slice_min(.x, order_by = {{ order_by }}, !!!dots, with_ties = with_ties))
   )
   
 }
@@ -106,8 +100,6 @@ nest_slice_max <- function(.data,
                            .nest_data,
                            order_by,
                            ...,
-                           n,
-                           prop,
                            with_ties = TRUE) {
   
   # tidyeval of dots
@@ -116,7 +108,7 @@ nest_slice_max <- function(.data,
   # map slice_max over list-col
   dplyr::mutate(
     .data,
-    "{{.nest_data}}" := purrr::map({{ .nest_data }}, ~dplyr::slice_max(.x, order_by = order_by, !!!dots, n = n, prop = prop, with_ties = with_ties))
+    "{{.nest_data}}" := purrr::map({{ .nest_data }}, ~dplyr::slice_max(.x, order_by = {{ order_by }}, !!!dots, with_ties = with_ties))
   )
   
 }
@@ -131,8 +123,6 @@ nest_slice_max <- function(.data,
 nest_slice_sample <- function(.data,
                               .nest_data,
                               ...,
-                              n,
-                              prop,
                               weight_by = NULL,
                               replace = FALSE) {
   
@@ -142,7 +132,7 @@ nest_slice_sample <- function(.data,
   # map slice_sample over list-col
   dplyr::mutate(
     .data,
-    "{{.nest_data}}" := purrr::map({{ .nest_data }}, ~dplyr::slice_sample(.x, !!!dots, n = n, prop = prop, weight_by = weight_by, replace = replace))
+    "{{.nest_data}}" := purrr::map({{ .nest_data }}, ~dplyr::slice_sample(.x, !!!dots, weight_by = weight_by, replace = replace))
   )
   
 }
