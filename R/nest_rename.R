@@ -30,7 +30,7 @@ nest_rename <- function(.data,
 nest_rename_with <- function(.data,
                              .nest_data,
                              .fn,
-                             .cols = dplyr::everything(),
+                             .cols = everything(),
                              ...) {
   
   # tidyeval of dots
