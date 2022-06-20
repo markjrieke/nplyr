@@ -11,6 +11,9 @@ nest_relocate <- function(.data,
                           .before = NULL,
                           .after = NULL) {
   
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
+  
   # tidyeval of dots
   dots <- dplyr::enquos(...)
   

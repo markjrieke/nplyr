@@ -14,6 +14,7 @@ BugReports: https://github.com/markjrieke/nplyr/issues
 Depends:
     dplyr
 Imports:
+    assertthat,
     purrr,
     rlang
 Encoding: UTF-8

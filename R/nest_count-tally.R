@@ -12,6 +12,9 @@ nest_count <- function(.data,
                        sort = FALSE,
                        name = NULL) {
   
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
+  
   # tidyeval of dots 
   dots <- dplyr::enquos(...)
   
@@ -36,6 +39,9 @@ nest_add_count <- function(.data,
                            wt = NULL,
                            sort = FALSE,
                            name = NULL) {
+  
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
   
   # tidyeval of dots
   dots <- dplyr::enquos(...)

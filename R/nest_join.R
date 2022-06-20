@@ -14,6 +14,9 @@ nest_inner_join <- function(.data,
                             ...,
                             keep = FALSE) {
   
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
+  
   # tidyeval of dots
   dots <- dplyr::enquos(...)
   
@@ -40,6 +43,9 @@ nest_left_join <- function(.data,
                            suffix = c(".x", ".y"),
                            ...,
                            keep = FALSE) {
+  
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
   
   # tidyeval of dots
   dots <- dplyr::enquos(...)
@@ -68,6 +74,9 @@ nest_right_join <- function(.data,
                             ...,
                             keep = FALSE) {
   
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
+  
   # tidyeval of dots
   dots <- dplyr::enquos(...)
   
@@ -95,6 +104,9 @@ nest_full_join <- function(.data,
                            ...,
                            keep = FALSE) {
   
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
+  
   # tidyeval of dots
   dots <- dplyr::enquos(...)
   
@@ -120,6 +132,9 @@ nest_semi_join <- function(.data,
                            copy = FALSE,
                            ...) {
   
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
+  
   # tidyeval of dots 
   dots <- dplyr::enquos(...)
   
@@ -144,6 +159,9 @@ nest_anti_join <- function(.data,
                            by = NULL,
                            copy = FALSE,
                            ...) {
+  
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
   
   # tidyeval of dots
   dots <- dplyr::enquos(...)
@@ -171,6 +189,9 @@ nest_nest_join <- function(.data,
                            keep = FALSE,
                            name = NULL,
                            ...) {
+  
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
   
   # tidyeval of dots
   dots <- dplyr::enquos(...)

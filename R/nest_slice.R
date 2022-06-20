@@ -10,6 +10,9 @@ nest_slice <- function(.data,
                        ...,
                        .preserve = FALSE) {
   
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
+  
   # tidyeval of dots
   dots <- dplyr::enquos(...)
   
@@ -32,6 +35,9 @@ nest_slice_head <- function(.data,
                             .nest_data,
                             ...) {
   
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
+  
   # tidyeval of dots
   dots <- dplyr::enquos(...)
   
@@ -53,6 +59,9 @@ nest_slice_head <- function(.data,
 nest_slice_tail <- function(.data,
                             .nest_data,
                             ...) {
+  
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
   
   # tidyeval of dots
   dots <- dplyr::enquos(...)
@@ -78,6 +87,9 @@ nest_slice_min <- function(.data,
                            ...,
                            with_ties = TRUE) {
   
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
+  
   # tidyeval of dots 
   dots <- dplyr::enquos(...)
   
@@ -102,6 +114,9 @@ nest_slice_max <- function(.data,
                            ...,
                            with_ties = TRUE) {
   
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
+  
   # tidyeval of dots
   dots <- dplyr::enquos(...) 
   
@@ -125,6 +140,9 @@ nest_slice_sample <- function(.data,
                               ...,
                               weight_by = NULL,
                               replace = FALSE) {
+  
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
   
   # tidyeval of dots
   dots <- dplyr::enquos(...)

@@ -10,6 +10,9 @@ nest_distinct <- function(.data,
                           ...,
                           .keep_all = FALSE) {
   
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
+  
   # tidyeval of dots
   dots <- dplyr::enquos(...)
   
