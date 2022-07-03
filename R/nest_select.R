@@ -9,6 +9,9 @@ nest_select <- function(.data,
                         .nest_data,
                         ...) {
   
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
+  
   # tidyeval of dots
   dots <- dplyr::enquos(...)
   

@@ -11,6 +11,9 @@ nest_group_by <- function(.data,
                           .add = FALSE,
                           .drop = TRUE) {
   
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
+  
   # tidyeval of dots
   dots <- dplyr::enquos(...)
   
@@ -32,6 +35,9 @@ nest_group_by <- function(.data,
 nest_ungroup <- function(.data,
                          .nest_data,
                          ...) {
+  
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
   
   # tidyeval of dots
   dots <- dplyr::enquos(...)

@@ -9,6 +9,9 @@ nest_rename <- function(.data,
                         .nest_data,
                         ...) {
   
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
+  
   # tidyeval of dots
   dots <- dplyr::enquos(...)
   
@@ -30,8 +33,11 @@ nest_rename <- function(.data,
 nest_rename_with <- function(.data,
                              .nest_data,
                              .fn,
-                             .cols = dplyr::everything(),
+                             .cols = everything(),
                              ...) {
+  
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
   
   # tidyeval of dots
   dots <- dplyr::enquos(...)

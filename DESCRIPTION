@@ -14,8 +14,12 @@ BugReports: https://github.com/markjrieke/nplyr/issues
 Depends:
     dplyr
 Imports:
+    assertthat,
     purrr,
     rlang
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

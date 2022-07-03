@@ -10,6 +10,9 @@ nest_arrange <- function(.data,
                          ...,
                          .by_group = FALSE) {
   
+  # assertions and checks
+  check_nest_data(.data, {{ .nest_data }})
+  
   # tidyeval of dots
   dots <- dplyr::enquos(...)
   
