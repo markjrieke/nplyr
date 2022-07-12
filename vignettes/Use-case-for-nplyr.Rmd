@@ -1,0 +1,128 @@
+---
+title: "Use case for nplyr"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Use case for nplyr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+The package README uses the [gapminder dataset](https://cran.r-project.org/web/packages/gapminder/index.html) to demonstrate nplyr's functionality. In this case (and other similar cases) the outuput from nplyr's nested operations could be obtained by unnesting and performing grouped dplyr operations.
+
+```{r}
+library(nplyr)
+
+gm_nest <- 
+  gapminder::gapminder_unfiltered %>%
+  tidyr::nest(country_data = -continent)
+
+gm_nest
+
+# we can use nplyr to perform operations on the nested data
+gm_nest %>%
+  nest_filter(country_data, year == max(year)) %>%
+  nest_mutate(country_data, pop_millions = pop/1000000) %>%
+  slice_head(n = 1) %>%
+  tidyr::unnest(country_data)
+
+# in this case, we could have obtained the same result with tidyr and dplyr
+gm_nest %>%
+  tidyr::unnest(country_data) %>%
+  group_by(continent) %>%
+  filter(year == max(year)) %>%
+  mutate(pop_millions = pop/1000000) %>%
+  ungroup() %>%
+  filter(continent == "Asia")
+```
+
+Why, then, might we need to use nplyr? Well, in other scenarios, it may be far more convenient to work with nested data frames or it may not even be possible to unnest!
+
+## A motivating example
+
+Consider a set of surveys that an organization might use to gather market data. It is common for organizations to have separate surveys for separate purposes but gather the same baseline set of data across all surveys (for example, a respondent's age and gender may be recorded across all surveys, but each survey will have a different set of questions). Let's use two fake surveys with the below questions for this example:
+
+###### Survey 1: Job
+
+1. How old are you? (multiple choice)
+2. What city do you live in? (multiple choice)
+3. What field do you work in? (multiple choice)
+4. Overall, how satisfied are you with your job? (multiple choice)
+5. What is your annual salary? (numeric entry)
+
+###### Survey 2: Personal Life
+
+1. How old are you? (multiple choice)
+2. What city do you live in (multiple choice)
+3. What field do you work in? (multiple choice)
+4. Overall, how satisfied are you with your personal life (multiple choice)
+5. Please provide additional detail (text entry)
+
+In this scenario, both surveys are collecting demographic information --- age, location, and industry --- but differ in the questions. A convenient way to get the response files into the environment would be to use [`purrr::map()`](https://purrr.tidyverse.org/reference/map.html) to read in each file to a nested data frame.
+
+```{r}
+path <- "https://raw.githubusercontent.com/markjrieke/nplyr/main/data-raw/"
+
+surveys <- 
+  tibble::tibble(survey_file = c("job_survey", "personal_survey")) %>%
+  mutate(survey_data = purrr::map(survey_file, ~readr::read_csv(paste0(path, .x, ".csv"))))
+
+surveys
+```
+
+[`tidyr::unnest()`](https://tidyr.tidyverse.org/reference/nest.html) can usually handle idiosyncrasies in layout when unnesting but in this case unnesting throws an error!
+
+```{r, error=TRUE}
+surveys %>%
+  tidyr::unnest(survey_data)
+```
+
+This is because the surveys share column names but not necessarily column types! In this case, both data frames contain a column named "Q5", but in `job_survey` it's a double and in `personal_survey` it's a character.
+
+```{r}
+surveys %>%
+  slice(1) %>%
+  tidyr::unnest(survey_data) %>%
+  glimpse()
+
+surveys %>%
+  slice(2) %>%
+  tidyr::unnest(survey_data) %>%
+  glimpse()
+```
+
+We could potentially get around this issue with unnesting by reading in all columns as characters via `readr::read_csv(x, col_types = cols(.default = "c"))`, but this presents its own challenges. `Q5` would still be better represented as a double in `job_survey` and from the survey question text `Q4` has similar, but distinctly different, meanings across the survey files.
+
+This is where nplyr comes into play! Rather than malign the data types or create separate objects for each survey file, we can use nplyr to perform operations directly on the nested data frames.
+
+```{r}
+surveys <- 
+  surveys %>%
+  nest_mutate(survey_data,
+              age_group = if_else(Q1 < 65, "Adult", "Retirement Age")) %>%
+  nest_group_by(survey_data, Q3) %>%
+  nest_add_count(survey_data, 
+                 name = "n_respondents_in_industry") %>%
+  nest_mutate(survey_data, 
+              median_industry_age = median(Q1)) %>%
+  nest_ungroup(survey_data)
+
+surveys %>%
+  slice(1) %>%
+  tidyr::unnest(survey_data)
+
+surveys %>%
+  slice(2) %>%
+  tidyr::unnest(survey_data)
+```
+
+
+

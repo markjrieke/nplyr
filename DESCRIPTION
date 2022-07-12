@@ -12,7 +12,8 @@ License: MIT + file LICENSE
 URL: https://github.com/markjrieke/nplyr
 BugReports: https://github.com/markjrieke/nplyr/issues
 Depends:
-    dplyr
+    dplyr,
+    R (>= 2.10)
 Imports:
     assertthat,
     purrr,
@@ -21,6 +22,14 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.0
 Suggests: 
+    gapminder,
+    knitr,
+    readr,
+    rmarkdown,
     stringr,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    tibble,
+    tidyr
 Config/testthat/edition: 3
+VignetteBuilder: knitr
+LazyData: true
