@@ -29,16 +29,80 @@ knitr::opts_chunk$set(
 
 ## Overview
 
-`{nplyr}` overview....
+`{nplyr}` is a grammar of nested data manipulation that allows users to perform [dplyr](https://dplyr.tidyverse.org/)-like manipulations on data frames nested within a list-col of another data frame. Most dplyr verbs have nested equivalents in nplyr. A (non-exhaustive) list of examples:
+
+* `nest_mutate()` is the nested equivalent of `mutate()`
+* `nest_select()` is the nested equivalent of `select()`
+* `nest_filter()` is the nested equivalent of `filter()`
+* `nest_summarise()` is the nested equivalent of `summarise()`
+* `nest_group_by()` is the nested equivalent of `goup_by()`
+
+nplyr is largely a wrapper for dplyr. For the most up-to-date information on dplyr please visit [dplyr's website](https://dplyr.tidyverse.org). If you are new to dplyr, the best place to start is the [data transformation chapter](https://r4ds.had.co.nz/transform.html) in R for data science.
 
 ## Installation
 
-*installation notes*
+nplyr is not yet on CRAN, but you can install the development version from github with the [devtools](https://cran.r-project.org/package=devtools) or [remotes](https://cran.r-project.org/package=remotes) package:
+
+```{r, eval=FALSE}
+# install from github
+devtools::install_github("markjrieke/nplyr")
+```
 
 ## Usage
 
-*usage example w/gapminder*
+To get started, we'll create a nested column for the country data within each continent from the [gapminder](https://cran.r-project.org/web/packages/gapminder/index.html) dataset.
+
+```{r}
+library(nplyr)
+
+gm_nest <- 
+  gapminder::gapminder_unfiltered %>%
+  tidyr::nest(country_data = -continent)
+
+gm_nest
+```
+
+dplyr can perform operations on the top-level data frame, but with nplyr, we can perform operations on the nested data frames:
+
+```{r}
+gm_nest_example <- 
+  gm_nest %>%
+  nest_filter(country_data, year == max(year)) %>%
+  nest_mutate(country_data, pop_millions = pop/1000000)
+
+# each nested tibble is now filtered to the most recent year
+gm_nest_example
+
+# if we unnest, we can see that a new column for pop_millions has been added
+gm_nest_example %>%
+  slice_head(n = 1) %>%
+  tidyr::unnest(country_data)
+```
+
+nplyr also supports grouped operations with `nest_group_by()`:
+
+```{r}
+gm_nest_example <- 
+  gm_nest %>%
+  nest_group_by(country_data, year) %>%
+  nest_summarise(
+    country_data, 
+    n = n(),
+    lifeExp = median(lifeExp),
+    pop = median(pop),
+    gdpPercap = median(gdpPercap)
+  )
+
+gm_nest_example
+
+# unnesting shows summarised tibbles for each continent
+gm_nest_example %>%
+  slice(2) %>%
+  tidyr::unnest(country_data)
+```
+
+More examples can be found in the package vignettes and function documentation.
 
 ## Bug reports/feature requests
 
-*notes*
+If you notice a bug, want to request a new feature, or have recommendations on improving documentation, please [open an issue](https://github.com/markjrieke/nplyr/issues) in the package repository. 
