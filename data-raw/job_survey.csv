@@ -1,0 +1,501 @@
+survey_name,Q1,Q2,Q3,Q4,Q5
+job,100,Austin,Consulting,Somewhat dissatisfied,163
+job,81,San Antonio,Consulting,Neither satisfied nor dissatisfied,48
+job,51,Austin,Consulting,Extremely satisfied,190
+job,81,Austin,Technology,Extremely dissatisfied,25
+job,80,Dallas,Consulting,Extremely satisfied,143
+job,32,Fort Worth,Energy,Somewhat satisfied,233
+job,65,Dallas,Consulting,Somewhat dissatisfied,43
+job,57,Houston,Healthcare,Somewhat dissatisfied,243
+job,43,Dallas,Government Services,Neither satisfied nor dissatisfied,158
+job,94,Fort Worth,Healthcare,Extremely dissatisfied,235
+job,25,Fort Worth,Energy,Somewhat dissatisfied,245
+job,83,San Antonio,Energy,Somewhat satisfied,195
+job,61,Houston,Technology,Extremely satisfied,248
+job,66,Austin,Technology,Extremely dissatisfied,170
+job,85,San Antonio,Healthcare,Somewhat dissatisfied,60
+job,27,Dallas,Technology,Neither satisfied nor dissatisfied,30
+job,25,Dallas,Energy,Extremely dissatisfied,190
+job,38,Fort Worth,Consulting,Somewhat dissatisfied,195
+job,21,Houston,Healthcare,Extremely dissatisfied,245
+job,76,Dallas,Technology,Extremely satisfied,155
+job,29,Houston,Healthcare,Neither satisfied nor dissatisfied,55
+job,94,Dallas,Consulting,Neither satisfied nor dissatisfied,90
+job,38,Fort Worth,Energy,Somewhat dissatisfied,240
+job,52,Dallas,Consulting,Somewhat dissatisfied,133
+job,94,San Antonio,Technology,Somewhat dissatisfied,238
+job,77,Dallas,Energy,Somewhat dissatisfied,140
+job,48,Fort Worth,Consulting,Somewhat satisfied,218
+job,86,Houston,Consulting,Somewhat satisfied,175
+job,58,San Antonio,Healthcare,Somewhat satisfied,163
+job,61,Dallas,Healthcare,Somewhat dissatisfied,98
+job,25,San Antonio,Consulting,Extremely satisfied,53
+job,90,Fort Worth,Energy,Extremely dissatisfied,135
+job,90,Austin,Energy,Somewhat satisfied,30
+job,83,Dallas,Consulting,Extremely dissatisfied,213
+job,26,Fort Worth,Energy,Somewhat satisfied,140
+job,88,Austin,Healthcare,Extremely dissatisfied,55
+job,75,Austin,Consulting,Somewhat dissatisfied,233
+job,48,Dallas,Healthcare,Somewhat satisfied,238
+job,87,San Antonio,Consulting,Extremely dissatisfied,55
+job,39,Dallas,Technology,Neither satisfied nor dissatisfied,90
+job,39,Dallas,Technology,Extremely dissatisfied,143
+job,25,Austin,Consulting,Somewhat satisfied,83
+job,48,Fort Worth,Healthcare,Somewhat satisfied,28
+job,21,Dallas,Energy,Neither satisfied nor dissatisfied,180
+job,29,Austin,Consulting,Extremely satisfied,165
+job,21,Dallas,Government Services,Somewhat dissatisfied,143
+job,65,Houston,Technology,Extremely dissatisfied,58
+job,77,Houston,Healthcare,Somewhat dissatisfied,160
+job,21,San Antonio,Consulting,Extremely satisfied,248
+job,18,Dallas,Healthcare,Extremely satisfied,55
+job,46,Houston,Technology,Extremely dissatisfied,130
+job,69,San Antonio,Consulting,Extremely dissatisfied,178
+job,83,Austin,Healthcare,Extremely dissatisfied,250
+job,71,Dallas,Energy,Somewhat satisfied,220
+job,94,Dallas,Government Services,Neither satisfied nor dissatisfied,225
+job,45,Dallas,Government Services,Extremely satisfied,170
+job,89,San Antonio,Energy,Somewhat satisfied,203
+job,38,Dallas,Energy,Extremely satisfied,223
+job,23,Dallas,Consulting,Neither satisfied nor dissatisfied,115
+job,48,Fort Worth,Government Services,Extremely satisfied,190
+job,90,Houston,Government Services,Neither satisfied nor dissatisfied,250
+job,93,Austin,Consulting,Extremely satisfied,70
+job,98,Fort Worth,Healthcare,Somewhat dissatisfied,208
+job,87,San Antonio,Energy,Somewhat dissatisfied,28
+job,21,Fort Worth,Government Services,Extremely dissatisfied,65
+job,48,Houston,Government Services,Somewhat satisfied,20
+job,99,Dallas,Government Services,Extremely dissatisfied,130
+job,43,Fort Worth,Technology,Somewhat dissatisfied,248
+job,66,Houston,Technology,Somewhat dissatisfied,78
+job,63,Austin,Technology,Somewhat satisfied,158
+job,23,Fort Worth,Energy,Somewhat dissatisfied,153
+job,31,Fort Worth,Consulting,Neither satisfied nor dissatisfied,20
+job,49,Austin,Consulting,Extremely dissatisfied,115
+job,61,Fort Worth,Consulting,Extremely satisfied,188
+job,60,Fort Worth,Energy,Somewhat satisfied,98
+job,61,Dallas,Consulting,Extremely dissatisfied,225
+job,47,Houston,Healthcare,Extremely dissatisfied,203
+job,52,Austin,Government Services,Extremely dissatisfied,73
+job,88,Fort Worth,Technology,Neither satisfied nor dissatisfied,55
+job,52,Houston,Government Services,Somewhat satisfied,180
+job,88,Houston,Government Services,Somewhat satisfied,228
+job,40,Dallas,Energy,Somewhat dissatisfied,145
+job,37,Dallas,Government Services,Extremely satisfied,0
+job,66,Fort Worth,Energy,Somewhat dissatisfied,73
+job,29,Fort Worth,Government Services,Somewhat dissatisfied,0
+job,65,Dallas,Technology,Neither satisfied nor dissatisfied,100
+job,97,Houston,Consulting,Extremely satisfied,138
+job,53,Fort Worth,Energy,Somewhat dissatisfied,165
+job,94,Houston,Technology,Somewhat satisfied,123
+job,61,San Antonio,Consulting,Somewhat satisfied,13
+job,50,Dallas,Consulting,Somewhat dissatisfied,48
+job,37,Austin,Consulting,Somewhat satisfied,13
+job,80,Austin,Energy,Extremely dissatisfied,98
+job,67,Houston,Government Services,Extremely satisfied,218
+job,71,Austin,Healthcare,Somewhat dissatisfied,48
+job,82,Houston,Technology,Extremely satisfied,148
+job,59,Austin,Consulting,Somewhat dissatisfied,178
+job,25,Austin,Consulting,Somewhat satisfied,60
+job,89,Austin,Healthcare,Extremely satisfied,235
+job,21,Houston,Energy,Somewhat dissatisfied,95
+job,70,Fort Worth,Consulting,Extremely dissatisfied,198
+job,80,San Antonio,Energy,Somewhat dissatisfied,200
+job,69,Fort Worth,Technology,Neither satisfied nor dissatisfied,63
+job,80,Fort Worth,Consulting,Extremely dissatisfied,10
+job,83,Dallas,Technology,Extremely satisfied,20
+job,52,Houston,Energy,Extremely satisfied,145
+job,78,Austin,Technology,Somewhat dissatisfied,173
+job,71,Dallas,Government Services,Somewhat satisfied,210
+job,19,Houston,Technology,Extremely dissatisfied,65
+job,84,Houston,Technology,Somewhat dissatisfied,33
+job,22,Austin,Consulting,Somewhat dissatisfied,213
+job,35,Austin,Technology,Extremely satisfied,90
+job,61,Fort Worth,Consulting,Somewhat dissatisfied,28
+job,29,Austin,Consulting,Somewhat dissatisfied,118
+job,60,Austin,Energy,Extremely dissatisfied,73
+job,37,Austin,Consulting,Extremely dissatisfied,220
+job,46,Dallas,Energy,Extremely satisfied,15
+job,39,San Antonio,Healthcare,Extremely dissatisfied,135
+job,48,Houston,Healthcare,Extremely dissatisfied,118
+job,29,Dallas,Consulting,Somewhat satisfied,143
+job,44,Fort Worth,Consulting,Neither satisfied nor dissatisfied,68
+job,71,Houston,Technology,Extremely dissatisfied,8
+job,66,Austin,Healthcare,Neither satisfied nor dissatisfied,248
+job,76,Austin,Consulting,Extremely satisfied,145
+job,25,Dallas,Technology,Extremely dissatisfied,60
+job,75,Houston,Healthcare,Extremely dissatisfied,120
+job,89,Fort Worth,Government Services,Neither satisfied nor dissatisfied,105
+job,98,Austin,Healthcare,Somewhat dissatisfied,128
+job,29,Austin,Technology,Extremely dissatisfied,128
+job,66,San Antonio,Healthcare,Somewhat dissatisfied,0
+job,79,San Antonio,Consulting,Extremely satisfied,115
+job,51,San Antonio,Technology,Extremely dissatisfied,20
+job,34,Dallas,Government Services,Extremely satisfied,123
+job,82,San Antonio,Consulting,Extremely dissatisfied,20
+job,37,San Antonio,Healthcare,Extremely satisfied,73
+job,92,Austin,Energy,Somewhat dissatisfied,138
+job,70,San Antonio,Energy,Somewhat dissatisfied,220
+job,35,Fort Worth,Government Services,Somewhat dissatisfied,28
+job,94,Dallas,Consulting,Neither satisfied nor dissatisfied,90
+job,98,San Antonio,Government Services,Extremely dissatisfied,230
+job,52,Austin,Healthcare,Neither satisfied nor dissatisfied,143
+job,36,Dallas,Consulting,Somewhat satisfied,145
+job,78,Dallas,Government Services,Extremely satisfied,88
+job,51,Fort Worth,Consulting,Neither satisfied nor dissatisfied,228
+job,40,Houston,Technology,Extremely dissatisfied,118
+job,79,Fort Worth,Energy,Somewhat dissatisfied,35
+job,75,Fort Worth,Technology,Somewhat satisfied,70
+job,60,Houston,Consulting,Extremely dissatisfied,30
+job,86,Houston,Energy,Somewhat satisfied,248
+job,49,San Antonio,Energy,Extremely dissatisfied,205
+job,74,Dallas,Government Services,Extremely dissatisfied,210
+job,86,San Antonio,Consulting,Somewhat dissatisfied,168
+job,43,San Antonio,Consulting,Neither satisfied nor dissatisfied,90
+job,20,San Antonio,Healthcare,Neither satisfied nor dissatisfied,190
+job,21,Houston,Healthcare,Somewhat dissatisfied,160
+job,20,Fort Worth,Energy,Extremely satisfied,215
+job,52,Austin,Energy,Somewhat satisfied,150
+job,43,Fort Worth,Technology,Somewhat dissatisfied,233
+job,92,Houston,Government Services,Somewhat satisfied,155
+job,68,San Antonio,Government Services,Extremely satisfied,118
+job,67,Houston,Healthcare,Extremely dissatisfied,25
+job,97,Fort Worth,Government Services,Neither satisfied nor dissatisfied,183
+job,65,San Antonio,Government Services,Somewhat satisfied,50
+job,45,Houston,Consulting,Extremely dissatisfied,10
+job,89,San Antonio,Energy,Neither satisfied nor dissatisfied,30
+job,55,Houston,Technology,Neither satisfied nor dissatisfied,33
+job,84,San Antonio,Technology,Somewhat dissatisfied,173
+job,99,San Antonio,Healthcare,Extremely satisfied,75
+job,59,Austin,Technology,Neither satisfied nor dissatisfied,48
+job,57,Austin,Energy,Extremely dissatisfied,85
+job,22,San Antonio,Healthcare,Somewhat satisfied,220
+job,25,Fort Worth,Consulting,Neither satisfied nor dissatisfied,130
+job,48,Dallas,Energy,Somewhat satisfied,143
+job,62,Dallas,Healthcare,Neither satisfied nor dissatisfied,50
+job,80,San Antonio,Technology,Extremely dissatisfied,170
+job,30,Austin,Technology,Neither satisfied nor dissatisfied,23
+job,92,San Antonio,Healthcare,Somewhat dissatisfied,228
+job,70,San Antonio,Technology,Extremely dissatisfied,183
+job,57,Fort Worth,Consulting,Somewhat dissatisfied,248
+job,70,Fort Worth,Government Services,Somewhat dissatisfied,228
+job,70,San Antonio,Government Services,Extremely dissatisfied,8
+job,82,Dallas,Healthcare,Somewhat dissatisfied,188
+job,43,Austin,Government Services,Extremely satisfied,153
+job,95,Houston,Government Services,Somewhat dissatisfied,248
+job,54,Dallas,Energy,Somewhat satisfied,108
+job,66,Fort Worth,Technology,Extremely dissatisfied,233
+job,85,Austin,Technology,Extremely satisfied,160
+job,85,Dallas,Technology,Extremely satisfied,15
+job,42,Austin,Technology,Somewhat satisfied,20
+job,41,Houston,Government Services,Extremely dissatisfied,125
+job,96,Austin,Technology,Somewhat dissatisfied,10
+job,51,Fort Worth,Consulting,Somewhat satisfied,40
+job,98,Austin,Government Services,Extremely satisfied,195
+job,98,San Antonio,Energy,Neither satisfied nor dissatisfied,38
+job,75,Fort Worth,Government Services,Somewhat dissatisfied,43
+job,93,Houston,Healthcare,Neither satisfied nor dissatisfied,155
+job,61,Houston,Technology,Extremely satisfied,225
+job,27,Dallas,Technology,Extremely satisfied,28
+job,49,Austin,Technology,Somewhat dissatisfied,208
+job,43,Dallas,Technology,Neither satisfied nor dissatisfied,210
+job,45,Fort Worth,Government Services,Extremely satisfied,165
+job,33,Houston,Government Services,Extremely satisfied,45
+job,96,Austin,Government Services,Somewhat satisfied,68
+job,19,Dallas,Government Services,Extremely dissatisfied,233
+job,83,San Antonio,Consulting,Extremely satisfied,125
+job,92,San Antonio,Energy,Extremely satisfied,98
+job,78,Houston,Government Services,Somewhat satisfied,60
+job,85,Austin,Technology,Extremely dissatisfied,168
+job,33,Austin,Energy,Somewhat dissatisfied,240
+job,86,Dallas,Government Services,Somewhat satisfied,85
+job,43,Dallas,Energy,Neither satisfied nor dissatisfied,215
+job,26,Houston,Government Services,Extremely satisfied,243
+job,58,San Antonio,Consulting,Somewhat dissatisfied,180
+job,34,Fort Worth,Government Services,Somewhat satisfied,243
+job,24,Austin,Technology,Somewhat dissatisfied,3
+job,98,Dallas,Consulting,Neither satisfied nor dissatisfied,195
+job,64,Austin,Government Services,Somewhat dissatisfied,123
+job,58,Fort Worth,Government Services,Somewhat satisfied,93
+job,44,Houston,Government Services,Extremely dissatisfied,63
+job,52,Dallas,Technology,Somewhat dissatisfied,55
+job,70,Austin,Energy,Somewhat satisfied,158
+job,52,San Antonio,Government Services,Neither satisfied nor dissatisfied,175
+job,76,Houston,Technology,Somewhat dissatisfied,240
+job,91,Houston,Energy,Somewhat dissatisfied,153
+job,63,Dallas,Consulting,Neither satisfied nor dissatisfied,138
+job,88,Austin,Technology,Somewhat satisfied,205
+job,82,Austin,Consulting,Extremely satisfied,105
+job,50,San Antonio,Government Services,Extremely dissatisfied,125
+job,84,San Antonio,Healthcare,Somewhat dissatisfied,20
+job,19,Austin,Consulting,Neither satisfied nor dissatisfied,50
+job,80,San Antonio,Government Services,Somewhat dissatisfied,168
+job,52,Austin,Government Services,Extremely dissatisfied,70
+job,18,San Antonio,Technology,Extremely satisfied,170
+job,37,Austin,Government Services,Extremely satisfied,250
+job,59,Austin,Technology,Neither satisfied nor dissatisfied,148
+job,46,San Antonio,Technology,Extremely dissatisfied,18
+job,65,Houston,Government Services,Extremely satisfied,128
+job,52,Houston,Consulting,Extremely satisfied,78
+job,20,San Antonio,Technology,Somewhat dissatisfied,125
+job,23,Dallas,Government Services,Extremely dissatisfied,200
+job,31,Houston,Government Services,Neither satisfied nor dissatisfied,90
+job,84,Austin,Technology,Somewhat dissatisfied,98
+job,52,San Antonio,Energy,Somewhat satisfied,168
+job,88,Houston,Technology,Somewhat dissatisfied,208
+job,30,Fort Worth,Consulting,Somewhat dissatisfied,165
+job,98,Dallas,Energy,Somewhat satisfied,75
+job,47,Houston,Technology,Extremely satisfied,220
+job,41,Fort Worth,Healthcare,Somewhat satisfied,220
+job,37,Dallas,Energy,Somewhat dissatisfied,163
+job,24,Houston,Government Services,Extremely dissatisfied,120
+job,62,San Antonio,Consulting,Somewhat dissatisfied,168
+job,20,Houston,Consulting,Somewhat dissatisfied,215
+job,27,San Antonio,Technology,Neither satisfied nor dissatisfied,208
+job,41,San Antonio,Energy,Neither satisfied nor dissatisfied,143
+job,34,Dallas,Technology,Somewhat dissatisfied,235
+job,51,Austin,Energy,Neither satisfied nor dissatisfied,3
+job,75,Austin,Technology,Extremely dissatisfied,38
+job,95,San Antonio,Government Services,Somewhat dissatisfied,250
+job,70,Fort Worth,Technology,Neither satisfied nor dissatisfied,143
+job,65,San Antonio,Energy,Somewhat dissatisfied,143
+job,19,Austin,Healthcare,Neither satisfied nor dissatisfied,115
+job,25,Dallas,Energy,Somewhat satisfied,118
+job,24,Fort Worth,Technology,Somewhat satisfied,208
+job,32,Houston,Consulting,Somewhat satisfied,133
+job,20,Houston,Government Services,Extremely satisfied,145
+job,92,Houston,Healthcare,Somewhat dissatisfied,108
+job,52,Houston,Technology,Somewhat satisfied,180
+job,70,Houston,Technology,Neither satisfied nor dissatisfied,238
+job,98,San Antonio,Energy,Extremely satisfied,128
+job,75,Dallas,Energy,Neither satisfied nor dissatisfied,10
+job,25,San Antonio,Government Services,Extremely satisfied,3
+job,90,Houston,Healthcare,Somewhat satisfied,85
+job,64,Fort Worth,Government Services,Extremely dissatisfied,195
+job,47,Austin,Energy,Extremely dissatisfied,248
+job,86,Fort Worth,Government Services,Extremely dissatisfied,48
+job,89,San Antonio,Technology,Neither satisfied nor dissatisfied,98
+job,43,Austin,Technology,Extremely satisfied,123
+job,75,Houston,Government Services,Neither satisfied nor dissatisfied,185
+job,53,San Antonio,Consulting,Extremely satisfied,228
+job,93,San Antonio,Government Services,Neither satisfied nor dissatisfied,205
+job,73,San Antonio,Consulting,Extremely dissatisfied,233
+job,84,Houston,Energy,Extremely satisfied,153
+job,46,Fort Worth,Consulting,Neither satisfied nor dissatisfied,123
+job,71,Austin,Government Services,Somewhat satisfied,95
+job,29,Austin,Healthcare,Extremely dissatisfied,3
+job,83,Houston,Healthcare,Extremely dissatisfied,8
+job,26,Houston,Technology,Somewhat dissatisfied,143
+job,89,Dallas,Healthcare,Extremely dissatisfied,200
+job,45,Fort Worth,Government Services,Neither satisfied nor dissatisfied,90
+job,19,San Antonio,Healthcare,Somewhat satisfied,235
+job,56,San Antonio,Technology,Somewhat dissatisfied,65
+job,87,Houston,Healthcare,Somewhat dissatisfied,138
+job,40,Houston,Consulting,Somewhat dissatisfied,68
+job,43,Austin,Healthcare,Neither satisfied nor dissatisfied,175
+job,84,Houston,Energy,Somewhat satisfied,115
+job,98,Dallas,Technology,Somewhat dissatisfied,80
+job,83,San Antonio,Consulting,Somewhat satisfied,208
+job,44,Austin,Government Services,Somewhat dissatisfied,145
+job,41,Fort Worth,Technology,Somewhat dissatisfied,153
+job,82,San Antonio,Healthcare,Neither satisfied nor dissatisfied,210
+job,48,Houston,Technology,Somewhat satisfied,38
+job,71,Austin,Energy,Extremely satisfied,30
+job,24,San Antonio,Government Services,Extremely dissatisfied,20
+job,98,San Antonio,Consulting,Somewhat dissatisfied,245
+job,67,San Antonio,Consulting,Somewhat dissatisfied,23
+job,82,Fort Worth,Consulting,Extremely satisfied,125
+job,23,Houston,Government Services,Somewhat satisfied,210
+job,63,Dallas,Energy,Somewhat satisfied,25
+job,65,Dallas,Government Services,Somewhat dissatisfied,58
+job,57,San Antonio,Government Services,Extremely dissatisfied,15
+job,79,Houston,Technology,Extremely satisfied,43
+job,82,Dallas,Technology,Neither satisfied nor dissatisfied,120
+job,52,Houston,Technology,Extremely dissatisfied,125
+job,20,San Antonio,Healthcare,Neither satisfied nor dissatisfied,220
+job,24,Austin,Technology,Somewhat dissatisfied,163
+job,92,Austin,Energy,Neither satisfied nor dissatisfied,50
+job,26,Austin,Consulting,Extremely dissatisfied,83
+job,36,Houston,Consulting,Somewhat satisfied,145
+job,81,San Antonio,Government Services,Somewhat dissatisfied,8
+job,42,San Antonio,Healthcare,Neither satisfied nor dissatisfied,108
+job,75,Houston,Consulting,Somewhat satisfied,138
+job,67,Dallas,Energy,Somewhat satisfied,93
+job,95,Austin,Energy,Somewhat dissatisfied,53
+job,91,Dallas,Consulting,Somewhat dissatisfied,38
+job,75,Fort Worth,Technology,Neither satisfied nor dissatisfied,110
+job,88,Austin,Technology,Somewhat satisfied,230
+job,68,Houston,Government Services,Extremely satisfied,125
+job,86,Dallas,Technology,Somewhat dissatisfied,50
+job,34,Houston,Technology,Extremely dissatisfied,165
+job,54,San Antonio,Government Services,Somewhat satisfied,68
+job,91,San Antonio,Consulting,Somewhat dissatisfied,43
+job,35,Dallas,Consulting,Somewhat satisfied,113
+job,78,Fort Worth,Healthcare,Somewhat satisfied,220
+job,39,Austin,Energy,Neither satisfied nor dissatisfied,125
+job,71,San Antonio,Government Services,Somewhat dissatisfied,155
+job,39,Houston,Government Services,Neither satisfied nor dissatisfied,168
+job,34,San Antonio,Technology,Extremely satisfied,0
+job,49,Houston,Consulting,Extremely satisfied,248
+job,63,Dallas,Government Services,Somewhat satisfied,193
+job,60,Houston,Consulting,Somewhat dissatisfied,225
+job,57,Fort Worth,Government Services,Extremely dissatisfied,20
+job,39,Austin,Energy,Somewhat satisfied,30
+job,81,San Antonio,Consulting,Extremely dissatisfied,43
+job,86,Austin,Government Services,Somewhat dissatisfied,28
+job,89,Dallas,Consulting,Extremely dissatisfied,40
+job,20,Austin,Healthcare,Neither satisfied nor dissatisfied,143
+job,45,Dallas,Energy,Extremely satisfied,18
+job,100,Dallas,Healthcare,Neither satisfied nor dissatisfied,218
+job,25,Fort Worth,Consulting,Neither satisfied nor dissatisfied,68
+job,97,Houston,Healthcare,Extremely satisfied,140
+job,93,Houston,Energy,Somewhat satisfied,185
+job,59,Houston,Energy,Extremely dissatisfied,28
+job,32,Austin,Healthcare,Somewhat satisfied,215
+job,80,Houston,Technology,Extremely dissatisfied,5
+job,91,Houston,Energy,Extremely dissatisfied,55
+job,70,Fort Worth,Technology,Extremely dissatisfied,140
+job,85,Austin,Consulting,Somewhat dissatisfied,178
+job,76,San Antonio,Government Services,Extremely satisfied,170
+job,94,Dallas,Technology,Neither satisfied nor dissatisfied,120
+job,63,San Antonio,Technology,Neither satisfied nor dissatisfied,130
+job,39,Fort Worth,Technology,Neither satisfied nor dissatisfied,40
+job,94,Dallas,Technology,Extremely dissatisfied,210
+job,83,Fort Worth,Technology,Extremely dissatisfied,233
+job,53,Fort Worth,Government Services,Neither satisfied nor dissatisfied,198
+job,48,Austin,Government Services,Extremely satisfied,68
+job,35,San Antonio,Technology,Somewhat satisfied,60
+job,46,Dallas,Healthcare,Extremely dissatisfied,250
+job,89,Houston,Healthcare,Neither satisfied nor dissatisfied,95
+job,68,San Antonio,Healthcare,Somewhat dissatisfied,33
+job,43,Houston,Energy,Extremely dissatisfied,195
+job,62,Houston,Consulting,Somewhat satisfied,68
+job,39,Dallas,Energy,Extremely dissatisfied,188
+job,52,Austin,Energy,Extremely dissatisfied,223
+job,25,Fort Worth,Technology,Neither satisfied nor dissatisfied,88
+job,24,San Antonio,Energy,Extremely dissatisfied,28
+job,66,San Antonio,Government Services,Somewhat satisfied,205
+job,25,San Antonio,Government Services,Somewhat dissatisfied,30
+job,40,Houston,Healthcare,Neither satisfied nor dissatisfied,153
+job,75,San Antonio,Energy,Extremely dissatisfied,13
+job,28,Houston,Healthcare,Extremely dissatisfied,58
+job,37,Fort Worth,Government Services,Somewhat dissatisfied,200
+job,32,Fort Worth,Technology,Neither satisfied nor dissatisfied,183
+job,63,Fort Worth,Technology,Somewhat dissatisfied,48
+job,100,Austin,Consulting,Extremely dissatisfied,180
+job,70,Fort Worth,Government Services,Extremely dissatisfied,225
+job,93,Dallas,Government Services,Somewhat satisfied,205
+job,79,Fort Worth,Technology,Somewhat satisfied,205
+job,64,Houston,Energy,Somewhat dissatisfied,13
+job,55,Houston,Government Services,Extremely dissatisfied,250
+job,22,Fort Worth,Technology,Somewhat satisfied,18
+job,41,Fort Worth,Healthcare,Neither satisfied nor dissatisfied,83
+job,34,Dallas,Healthcare,Neither satisfied nor dissatisfied,210
+job,46,Dallas,Energy,Neither satisfied nor dissatisfied,195
+job,70,Fort Worth,Consulting,Extremely satisfied,78
+job,25,Austin,Technology,Extremely dissatisfied,118
+job,39,Austin,Energy,Neither satisfied nor dissatisfied,160
+job,41,Dallas,Government Services,Extremely satisfied,165
+job,32,San Antonio,Energy,Somewhat dissatisfied,123
+job,73,San Antonio,Energy,Neither satisfied nor dissatisfied,205
+job,55,Houston,Technology,Extremely dissatisfied,238
+job,87,Houston,Government Services,Extremely dissatisfied,110
+job,70,San Antonio,Healthcare,Neither satisfied nor dissatisfied,35
+job,45,Houston,Consulting,Extremely dissatisfied,238
+job,80,Austin,Government Services,Somewhat dissatisfied,55
+job,48,San Antonio,Technology,Somewhat satisfied,225
+job,20,Dallas,Energy,Extremely dissatisfied,70
+job,56,Dallas,Consulting,Extremely satisfied,170
+job,38,San Antonio,Energy,Somewhat dissatisfied,245
+job,75,Houston,Government Services,Somewhat dissatisfied,13
+job,61,Dallas,Energy,Neither satisfied nor dissatisfied,95
+job,54,Fort Worth,Energy,Somewhat dissatisfied,63
+job,29,Houston,Consulting,Extremely satisfied,138
+job,96,San Antonio,Government Services,Somewhat satisfied,25
+job,65,Austin,Government Services,Extremely satisfied,58
+job,57,Houston,Government Services,Somewhat satisfied,25
+job,45,Houston,Government Services,Neither satisfied nor dissatisfied,230
+job,89,Fort Worth,Energy,Extremely satisfied,213
+job,38,Austin,Consulting,Somewhat dissatisfied,208
+job,75,Austin,Energy,Somewhat dissatisfied,25
+job,59,Austin,Technology,Somewhat satisfied,205
+job,65,San Antonio,Consulting,Extremely satisfied,88
+job,18,Fort Worth,Consulting,Neither satisfied nor dissatisfied,98
+job,89,Dallas,Energy,Somewhat satisfied,160
+job,45,Austin,Government Services,Extremely satisfied,40
+job,63,Houston,Energy,Extremely dissatisfied,245
+job,48,Dallas,Healthcare,Somewhat satisfied,105
+job,64,Dallas,Consulting,Extremely satisfied,130
+job,91,San Antonio,Energy,Neither satisfied nor dissatisfied,40
+job,94,San Antonio,Technology,Neither satisfied nor dissatisfied,145
+job,35,Houston,Government Services,Extremely dissatisfied,110
+job,29,Fort Worth,Energy,Somewhat dissatisfied,218
+job,54,Houston,Energy,Neither satisfied nor dissatisfied,70
+job,22,Austin,Government Services,Extremely satisfied,38
+job,82,Houston,Government Services,Neither satisfied nor dissatisfied,65
+job,89,Dallas,Healthcare,Extremely satisfied,38
+job,31,Dallas,Energy,Neither satisfied nor dissatisfied,65
+job,23,Fort Worth,Healthcare,Extremely dissatisfied,170
+job,83,Fort Worth,Consulting,Somewhat satisfied,140
+job,51,San Antonio,Government Services,Extremely dissatisfied,40
+job,97,Austin,Healthcare,Extremely satisfied,38
+job,52,Fort Worth,Healthcare,Extremely dissatisfied,110
+job,78,Houston,Healthcare,Somewhat dissatisfied,148
+job,56,Houston,Consulting,Extremely dissatisfied,213
+job,66,Dallas,Government Services,Neither satisfied nor dissatisfied,128
+job,88,Austin,Healthcare,Somewhat dissatisfied,123
+job,65,Dallas,Healthcare,Somewhat dissatisfied,185
+job,39,Houston,Technology,Extremely satisfied,223
+job,87,Dallas,Energy,Extremely dissatisfied,110
+job,53,Dallas,Energy,Somewhat dissatisfied,75
+job,98,Fort Worth,Technology,Extremely satisfied,210
+job,43,Fort Worth,Government Services,Neither satisfied nor dissatisfied,33
+job,68,Dallas,Healthcare,Somewhat satisfied,190
+job,57,Dallas,Government Services,Extremely dissatisfied,223
+job,62,San Antonio,Technology,Somewhat satisfied,85
+job,85,San Antonio,Government Services,Neither satisfied nor dissatisfied,223
+job,62,San Antonio,Energy,Somewhat satisfied,140
+job,72,Houston,Healthcare,Neither satisfied nor dissatisfied,103
+job,60,San Antonio,Energy,Somewhat dissatisfied,60
+job,29,Austin,Consulting,Extremely satisfied,53
+job,64,Houston,Technology,Somewhat satisfied,60
+job,21,Fort Worth,Consulting,Extremely dissatisfied,25
+job,82,San Antonio,Consulting,Somewhat dissatisfied,73
+job,54,San Antonio,Consulting,Somewhat satisfied,35
+job,21,Fort Worth,Healthcare,Somewhat satisfied,238
+job,96,Austin,Healthcare,Somewhat satisfied,60
+job,18,Dallas,Consulting,Extremely satisfied,98
+job,65,San Antonio,Healthcare,Neither satisfied nor dissatisfied,228
+job,51,San Antonio,Energy,Neither satisfied nor dissatisfied,248
+job,23,Fort Worth,Energy,Somewhat dissatisfied,208
+job,78,Dallas,Consulting,Somewhat dissatisfied,138
+job,61,Austin,Government Services,Somewhat satisfied,45
+job,39,Dallas,Government Services,Extremely satisfied,80
+job,19,Houston,Technology,Somewhat dissatisfied,90
+job,48,Austin,Government Services,Somewhat satisfied,115
+job,85,Houston,Technology,Extremely dissatisfied,65
+job,28,Houston,Government Services,Neither satisfied nor dissatisfied,15
+job,23,San Antonio,Consulting,Somewhat dissatisfied,60
+job,92,San Antonio,Government Services,Neither satisfied nor dissatisfied,180
+job,48,Austin,Consulting,Somewhat satisfied,180
+job,91,Houston,Energy,Neither satisfied nor dissatisfied,130
+job,85,Austin,Technology,Somewhat dissatisfied,135
+job,31,Houston,Energy,Somewhat dissatisfied,100
+job,93,Austin,Technology,Extremely satisfied,148
+job,60,Fort Worth,Technology,Neither satisfied nor dissatisfied,153
+job,56,Austin,Consulting,Neither satisfied nor dissatisfied,8
+job,34,Dallas,Government Services,Somewhat satisfied,93
+job,40,San Antonio,Energy,Somewhat satisfied,170
+job,89,Dallas,Government Services,Extremely satisfied,190
+job,84,Houston,Energy,Extremely dissatisfied,215
+job,67,Fort Worth,Energy,Neither satisfied nor dissatisfied,20
+job,55,San Antonio,Consulting,Extremely satisfied,128
+job,24,San Antonio,Government Services,Somewhat satisfied,13
+job,20,Austin,Consulting,Somewhat satisfied,128
+job,60,Houston,Technology,Extremely satisfied,70
+job,62,Houston,Consulting,Somewhat dissatisfied,78
+job,88,Dallas,Government Services,Neither satisfied nor dissatisfied,25
+job,29,San Antonio,Energy,Extremely satisfied,73
+job,65,Houston,Healthcare,Somewhat dissatisfied,68
+job,75,Fort Worth,Consulting,Extremely satisfied,33
+job,29,Dallas,Government Services,Extremely satisfied,70
