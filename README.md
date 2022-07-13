@@ -28,7 +28,7 @@ have nested equivalents in nplyr. A (non-exhaustive) list of examples:
 -   `nest_select()` is the nested equivalent of `select()`
 -   `nest_filter()` is the nested equivalent of `filter()`
 -   `nest_summarise()` is the nested equivalent of `summarise()`
--   `nest_group_by()` is the nested equivalent of `goup_by()`
+-   `nest_group_by()` is the nested equivalent of `group_by()`
 
 nplyr is largely a wrapper for dplyr. For the most up-to-date
 information on dplyr please visit [dplyr’s
