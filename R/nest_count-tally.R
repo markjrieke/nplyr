@@ -13,7 +13,7 @@
 #' information on `count()` and `add_count()`, please refer to the documentation
 #' in [`dplyr`](https://dplyr.tidyverse.org/). 
 #' 
-#' @inheritParams generic-params
+#' @inheritParams nest_select
 #' @param ... Variables to group by.
 #' @param wt Frequency weights. 
 #'   Can be `NULL` or a variable:

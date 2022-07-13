@@ -11,3 +11,4 @@
 
 ^CRAN-SUBMISSION$
 ^codecov\.yml$
+^docs$

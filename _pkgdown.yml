@@ -1,0 +1,37 @@
+url: https://markjrieke.github.io/nplyr/
+template:
+  bootstrap: 5
+  bootswatch: minty
+
+figures:
+  fig.width: 8
+  fig.height: 5.75
+  
+reference:
+- title: One table verbs
+  contents:
+  - nest_arrange
+  - nest_count
+  - nest_distinct
+  - nest_filter
+  - nest_mutate
+  - nest_relocate
+  - nest_rename
+  - nest_select
+  - nest_summarise
+  - nest_slice
+  
+- title: Two table verbs
+  contents:
+  - nest_left_join
+  - nest_nest_join
+  - nest_semi_join
+  
+- title: Grouping
+  contents:
+  - nest_group_by
+
+- title: Data
+  contents:
+  - job_survey
+  - personal_survey

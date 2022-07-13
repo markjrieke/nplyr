@@ -30,7 +30,7 @@
 #' `full_join()`, please refer to the documentation in 
 #' [`dplyr`](https://dplyr.tidyverse.org/).
 #' 
-#' @inheritParams generic-params
+#' @inheritParams nest_select
 #' @param y A data frame, data frame extension (e.g., a tibble), or a lazy data
 #'   frame (e.g., from dbplyr or dtplyr).
 #' @param by A character vector of variables to join by or a join specification 
@@ -224,7 +224,7 @@ nest_full_join <- function(.data,
 #' information on `semi_join()` or `anti_join()`, please refer to the 
 #' documentation in [`dplyr`](https://dplyr.tidyverse.org/).
 #' 
-#' @inheritParams generic-params
+#' @inheritParams nest_select
 #' @inheritParams nest_left_join
 #' 
 #' @family joins
@@ -310,7 +310,7 @@ nest_anti_join <- function(.data,
 #' For more information on `nest_join()`, please refer to the documentation in
 #' [`dplyr`](https://dplyr.tidyverse.org/).
 #' 
-#' @inheritParams generic-params
+#' @inheritParams nest_select
 #' @inheritParams nest_left_join
 #' @param name The name of the list column nesting joins create. If `NULL`, the 
 #'   name of `y` is used.

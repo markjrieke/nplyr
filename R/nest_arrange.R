@@ -9,7 +9,7 @@
 #' information on `arrange()`, please refer to the documentation in 
 #' [`dplyr`](https://dplyr.tidyverse.org/). 
 #' 
-#' @inheritParams generic-params
+#' @inheritParams nest_select
 #' @param ... Variables, or functions of variables. Use [dplyr::desc()] to sort 
 #'   a variable in descending order.
 #' @param .by_group If `TRUE`, will sort first by grouping variable. Applies to 

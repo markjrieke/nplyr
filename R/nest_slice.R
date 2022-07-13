@@ -23,7 +23,7 @@
 #' helpers, please refer to the documentation in 
 #' [`dplyr`](https://dplyr.tidyverse.org/).
 #' 
-#' @inheritParams generic-params
+#' @inheritParams nest_select
 #' @param ... For `nest_slice()`: Integer row values. 
 #' 
 #'   Provide either positive values to keep, or negative values to drop. The 

@@ -8,7 +8,7 @@
 #' information on `distinct()`, please refer to the documentation in 
 #' [`dplyr`](https://dplyr.tidyverse.org/). 
 #' 
-#' @inheritParams generic-params
+#' @inheritParams nest_select
 #' @param ... Optional variables to use when determining uniqueness. If there 
 #'   are multiple rows for a given combination of inputs, only the first row 
 #'   will be preserved. If omitted, will use all variables.

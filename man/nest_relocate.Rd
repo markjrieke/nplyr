@@ -8,7 +8,7 @@ nest_relocate(.data, .nest_data, ..., .before = NULL, .after = NULL)
 }
 \arguments{
 \item{.data}{A data frame, data frame extension (e.g., a tibble), or a lazy
-data frame (e.g. from dbplyr or dtplyr).}
+data frame (e.g., from dbplyr or dtplyr).}
 
 \item{.nest_data}{A list-column containing data frames}
 

@@ -15,7 +15,7 @@
 #' For more information on `summarise()`, please refer to the documentation in
 #' [`dplyr`](https://dplyr.tidyverse.org/).
 #' 
-#' @inheritParams generic-params
+#' @inheritParams nest_select
 #' @param ... Name-value pairs of functions. The name will be the name of the 
 #'   variable in the result.
 #'   
