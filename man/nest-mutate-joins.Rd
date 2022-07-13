@@ -80,7 +80,7 @@ Should be a character vector of length 2.}
 \item \code{"never"} treats two \code{NA} or two \code{NaN} values as different, and will
 never match them together or to any other values.
 }
-\item \code{multiple} : Handlind of rows in \code{.nest_data} with multiple matches in \code{y}.
+\item \code{multiple} : Handling of rows in \code{.nest_data} with multiple matches in \code{y}.
 \itemize{
 \item \code{"all"} returns every match detected in \code{y}.
 \item \code{"any"} returns one match detected in \code{y}, with no guarantees on which

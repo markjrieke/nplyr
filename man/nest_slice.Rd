@@ -52,7 +52,7 @@ group size does not yield an integer number of rows, the absolute value of
 
 \item{.preserve}{Relevant when \code{.nest_data} is grouped.
 If \code{.preserve = FALSE} (the default), the grouping structure is
-recalcualted based on the resulting data, otherwise the grouping data is
+recalculated based on the resulting data, otherwise the grouping data is
 kept as is.}
 
 \item{order_by}{Variable or function of variables to order by.}

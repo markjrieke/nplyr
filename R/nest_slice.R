@@ -48,7 +48,7 @@
 #' 
 #' @param .preserve Relevant when `.nest_data` is grouped. 
 #'   If `.preserve = FALSE` (the default), the grouping structure is 
-#'   recalcualted based on the resulting data, otherwise the grouping data is 
+#'   recalculated based on the resulting data, otherwise the grouping data is 
 #'   kept as is.
 #' 
 #' @importFrom dplyr enquos

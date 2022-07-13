@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-The package README uses the [gapminder dataset](https://cran.r-project.org/web/packages/gapminder/index.html) to demonstrate nplyr's functionality. In this case (and other similar cases) the outuput from nplyr's nested operations could be obtained by unnesting and performing grouped dplyr operations.
+The package README uses the [gapminder dataset](https://cran.r-project.org/web/packages/gapminder/index.html) to demonstrate nplyr's functionality. In this case (and other similar cases) the output from nplyr's nested operations could be obtained by unnesting and performing grouped dplyr operations.
 
 ```{r}
 library(nplyr)

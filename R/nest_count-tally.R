@@ -5,7 +5,7 @@
 #' variables within each nested data frame. `nest_count()` results in a summary 
 #' with one row per each set of variables to count by. `nest_add_count()` is 
 #' equivalent with the exception that it retains all rows and adds a new column
-#' ith group-wise counts.
+#' with group-wise counts.
 #' 
 #' `nest_count()` and `nest_add_count()` are largely wrappers for 
 #' [dplyr::count()] and [dplyr::add_count()] and maintain the functionality of 

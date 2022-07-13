@@ -33,7 +33,7 @@ Can be \code{NULL} or a variable:
 variables within each nested data frame. \code{nest_count()} results in a summary
 with one row per each set of variables to count by. \code{nest_add_count()} is
 equivalent with the exception that it retains all rows and adds a new column
-ith group-wise counts.
+with group-wise counts.
 
 \code{nest_count()} and \code{nest_add_count()} are largely wrappers for
 \code{\link[dplyr:count]{dplyr::count()}} and \code{\link[dplyr:count]{dplyr::add_count()}} and maintain the functionality of

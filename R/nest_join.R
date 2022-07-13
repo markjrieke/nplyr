@@ -51,7 +51,7 @@
 #'     - `"never"` treats two `NA` or two `NaN` values as different, and will
 #'       never match them together or to any other values.
 #'   
-#'   * `multiple` : Handlind of rows in `.nest_data` with multiple matches in `y`.
+#'   * `multiple` : Handling of rows in `.nest_data` with multiple matches in `y`.
 #'   
 #'     - `"all"` returns every match detected in `y`.
 #'     - `"any"` returns one match detected in `y`, with no guarantees on which
