@@ -1,5 +1,5 @@
 Package: nplyr
-Title: A Grammar of (Nested) Data Manipulation
+Title: A Grammar of Nested Data Manipulation
 Version: 0.1.0
 Authors@R: 
     person(given = "Mark",
@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "markjrieke@gmail.com")
 Description: A wrapper around the 'dplyr' package. Provides functions
-    for manipulating nested data frames in a list-column.
+    for manipulating nested data frames in a list-column with 'dplyr' syntax
 License: MIT + file LICENSE
 URL: https://github.com/markjrieke/nplyr,
     https://markjrieke.github.io/nplyr/
