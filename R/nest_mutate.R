@@ -11,7 +11,7 @@
 #' information on `mutate()` or `transmute()`, please refer to the documentation
 #' in [`dplyr`](https://dplyr.tidyverse.org/).
 #' 
-#' @inheritParams generic-params
+#' @inheritParams nest_select
 #' @param ... Name-value pairs.
 #'   The name gives the name of the column in the output.
 #'   

@@ -9,7 +9,8 @@ Authors@R:
 Description: A wrapper around the 'dplyr' package. Provides functions
     for manipulating nested data frames in a list-column.
 License: MIT + file LICENSE
-URL: https://github.com/markjrieke/nplyr
+URL: https://github.com/markjrieke/nplyr,
+    https://markjrieke.github.io/nplyr/
 BugReports: https://github.com/markjrieke/nplyr/issues
 Depends:
     dplyr,

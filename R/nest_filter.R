@@ -15,7 +15,7 @@
 #' information on `filter()`, please refer to the documentation in 
 #' [`dplyr`](https://dplyr.tidyverse.org/).
 #' 
-#' @inheritParams generic-params
+#' @inheritParams nest_select
 #' @param ... Expressions that return a logical value, and are defined in terms 
 #'   of the variables in `.nest_data`. If multiple expressions are included, 
 #'   they are combined with the `&` operator. Only rows for which all conditions

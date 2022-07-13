@@ -11,7 +11,7 @@
 #' information on `group_by()` or `ungroup()`, please refer to the documentation
 #' in [`dplyr`](https://dplyr.tidyverse.org/).
 #' 
-#' @inheritParams generic-params
+#' @inheritParams nest_select
 #' @param ... In `nest_group_by()`, variables or computations to group by. 
 #'   Computations are always done on the ungrouped data frames. To perform 
 #'   computations on the grouped data, you need to use a separate `mutate()` 
@@ -49,12 +49,12 @@
 #'   nest_summarise(
 #'     country_data,
 #'     lifeExp = mean(lifeExp),
-#'     pop = mean(pop)
+#'     pop = mean(pop),
 #'     gdpPercap = mean(gdpPercap)
 #'   )
 #' 
 #' # ungrouping removes variable groups:
-#' gm_nest_grouped %>% nest_ungroup()
+#' gm_nest_grouped %>% nest_ungroup(country_data)
 #' }
 nest_group_by <- function(.data,
                           .nest_data,

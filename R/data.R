@@ -29,4 +29,5 @@
 #'   \item{Q4}{respondent's personal life satisfaction (on a scale from extremely satisfied to extremely dissatisfied)}
 #'   \item{Q5}{open text response elaborating on personal life satisfaction}
 #' }
+#' 
 "personal_survey"

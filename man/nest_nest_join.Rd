@@ -17,7 +17,7 @@ nest_nest_join(
 }
 \arguments{
 \item{.data}{A data frame, data frame extension (e.g., a tibble), or a lazy
-data frame (e.g. from dbplyr or dtplyr).}
+data frame (e.g., from dbplyr or dtplyr).}
 
 \item{.nest_data}{A list-column containing data frames}
 
@@ -37,33 +37,9 @@ in the output?}
 \item{name}{The name of the list column nesting joins create. If \code{NULL}, the
 name of \code{y} is used.}
 
-\item{...}{Other parameters passed onto methods. Includes:
-\itemize{
-\item \code{na_matches} : Should two \code{NA} or two \code{NaN} values match?
-\itemize{
-\item \code{"na"}, the default, treats two \code{NA} or two \code{NaN} values as equal.
-\item \code{"never"} treats two \code{NA} or two \code{NaN} values as different, and will
-never match them together or to any other values.
-}
-\item \code{multiple} : Handlind of rows in \code{.nest_data} with multiple matches in \code{y}.
-\itemize{
-\item \code{"all"} returns every match detected in \code{y}.
-\item \code{"any"} returns one match detected in \code{y}, with no guarantees on which
-match will be returned. It is often faster than \code{"first"} and \code{"last"} if
-you just need to detect if there is at least one match.
-\item \code{"first"} returns the first match detected in \code{y}.
-\item \code{"last"} returns the last match detected in \code{y}.
-\item \code{"warning"} throws a warning if multiple matches are detected, and then
-falls back to \code{"all"}.
-\item \code{"error"} throws an error if multiple matches are detected.
-}
-\item \code{unmatched} : How should unmatched keys that would result in dropped rows
-be handled?
-\itemize{
-\item \code{"drop"} drops unmatched keys from the result.
-\item \code{"error"} throws an error if unmatched keys are detected.
-}
-}}
+\item{...}{One or more unquoted expressions separated by commas. Variable
+names can be used if they were positions in the data frame, so expressions
+like \code{x:y} can be used to select a range of variables.}
 }
 \description{
 \code{nest_nest_join()} returns all rows and columns in \code{.nest_data} with a new

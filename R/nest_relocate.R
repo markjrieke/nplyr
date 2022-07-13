@@ -9,7 +9,7 @@
 #' information on `relocate()`, please refer to the documentation in
 #' [`dplyr`](https://dplyr.tidyverse.org/).
 #' 
-#' @inheritParams generic-params
+#' @inheritParams nest_select
 #' @param ... Columns to move.
 #' @param .before,.after Destination of columns selected by `...`. Supplying 
 #'   neither will move columns to the left-hand side; specifying both is an 

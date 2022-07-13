@@ -10,7 +10,7 @@
 #' information on `rename()` or `rename_with()`, please refer to the 
 #' documentation in [`dplyr`](https://dplyr.tidyverse.org/).
 #' 
-#' @inheritParams generic-params
+#' @inheritParams nest_select
 #' @param ...
 #'   For `nest_rename()`: Use `new_name = old_name` to rename selected variables.
 #'   

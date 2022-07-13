@@ -11,7 +11,7 @@ nest_add_count(.data, .nest_data, ..., wt = NULL, sort = FALSE, name = NULL)
 }
 \arguments{
 \item{.data}{A data frame, data frame extension (e.g., a tibble), or a lazy
-data frame (e.g. from dbplyr or dtplyr).}
+data frame (e.g., from dbplyr or dtplyr).}
 
 \item{.nest_data}{A list-column containing data frames}
 

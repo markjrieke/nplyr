@@ -11,7 +11,7 @@ nest_ungroup(.data, .nest_data, ...)
 }
 \arguments{
 \item{.data}{A data frame, data frame extension (e.g., a tibble), or a lazy
-data frame (e.g. from dbplyr or dtplyr).}
+data frame (e.g., from dbplyr or dtplyr).}
 
 \item{.nest_data}{A list-column containing data frames}
 
@@ -56,12 +56,12 @@ gm_nest_grouped \%>\%
   nest_summarise(
     country_data,
     lifeExp = mean(lifeExp),
-    pop = mean(pop)
+    pop = mean(pop),
     gdpPercap = mean(gdpPercap)
   )
 
 # ungrouping removes variable groups:
-gm_nest_grouped \%>\% nest_ungroup()
+gm_nest_grouped \%>\% nest_ungroup(country_data)
 }
 }
 \concept{grouping functions}
