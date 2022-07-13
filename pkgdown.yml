@@ -1,0 +1,10 @@
+pandoc: 2.14.2
+pkgdown: 2.0.5
+pkgdown_sha: ~
+articles:
+  Use-case-for-nplyr: Use-case-for-nplyr.html
+last_built: 2022-07-13T14:11Z
+urls:
+  reference: https://markjrieke.github.io/nplyr/reference
+  article: https://markjrieke.github.io/nplyr/articles
+
