@@ -52,8 +52,7 @@ devtools::install_github("markjrieke/nplyr")
 
 To get started, we’ll create a nested column for the country data within
 each continent from the
-[gapminder](https://cran.r-project.org/web/packages/gapminder/index.html)
-dataset.
+[gapminder](https://CRAN.R-project.org/package=gapminder) dataset.
 
 ``` r
 library(nplyr)
