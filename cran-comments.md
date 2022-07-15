@@ -8,3 +8,4 @@
 This is a resubmission. In this version I have:
 
 * Updated CRAN URLs to the canonical form: https://CRAN.R-project.org/package=pkgname
+* Updated Description field of DESCRIPTION file to fix submission note for sentence structure.
