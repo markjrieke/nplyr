@@ -6,8 +6,8 @@ Authors@R:
            family = "Rieke",
            role = c("aut", "cre"),
            email = "markjrieke@gmail.com")
-Description: A wrapper around the 'dplyr' package. Provides functions
-    for manipulating nested data frames in a list-column with 'dplyr' syntax
+Description: Provides functions for manipulating nested data frames in a 
+    list-column using 'dplyr' <https://dplyr.tidyverse.org/> syntax.
 License: MIT + file LICENSE
 URL: https://github.com/markjrieke/nplyr,
     https://markjrieke.github.io/nplyr/
