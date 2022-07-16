@@ -17,6 +17,7 @@
 #' each group, so that (e.g.) `nest_slice_head(df, nested_dfs, n = 5)` will 
 #' return the first five rows in each group for each nested data frame.
 #' 
+#' @details 
 #' `nest_slice()` and its helpers are largely wrappers for [dplyr::slice()] and 
 #' its helpers and maintains the functionality of `slice()` and its helpers 
 #' within each nested data frame. For more information on `slice()` or its 

@@ -4,6 +4,7 @@
 #' `nest_arrange()` orders the rows of nested data frames by the values of 
 #' selected columns. 
 #' 
+#' @details 
 #' `nest_arrange()` is largely a wrapper for [dplyr::arrange()] and maintains 
 #' the functionality of `arrange()` within each nested data frame. For more 
 #' information on `arrange()`, please refer to the documentation in 

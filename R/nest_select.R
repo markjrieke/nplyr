@@ -7,6 +7,7 @@
 #' the left to `f` on the right). You can also use predicate functions like 
 #' [is.numeric] to select variables based on their properties.
 #' 
+#' @details 
 #' `nest_select()` is largely a wrapper for [dplyr::select()] and maintains the 
 #' functionality of `select()` within each nested data frame. For more 
 #' information on `select()`, please refer to the documentation in 

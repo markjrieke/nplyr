@@ -3,6 +3,7 @@
 #' @description 
 #' `nest_distinct()` selects only unique/distinct rows in a nested data frame. 
 #' 
+#' @details 
 #' `nest_distinct()` is largely a wrapper for [dplyr::distinct()] and maintains 
 #' the functionality of `distinct()` within each nested data frame. For more 
 #' information on `distinct()`, please refer to the documentation in 

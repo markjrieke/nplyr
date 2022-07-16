@@ -4,6 +4,7 @@
 #' `new_name = old_name` syntax; `nest_rename_with()` renames columns using a 
 #' function.
 #' 
+#' @details 
 #' `nest_rename()` and `nest_rename_with()` are largely wrappers for 
 #' [dplyr::rename()] and [dplyr::rename_with()] and maintain the functionality 
 #' of `rename()` and `rename_with()` within each nested data frame. For more 

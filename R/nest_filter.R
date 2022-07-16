@@ -10,6 +10,7 @@
 #' expressions in `...` to the column values to determine which rows should be 
 #' retained. It can be applied to both grouped and ungrouped data.
 #' 
+#' @details 
 #' `nest_filter()` is largely a wrapper for [dplyr::filter()] and maintains the 
 #' functionality of `filter()` within each nested data frame. For more 
 #' information on `filter()`, please refer to the documentation in 

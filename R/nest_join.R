@@ -22,6 +22,7 @@
 #' * `nest_right_join()` keeps all observations in `y`.
 #' * `nest_full_join()` keeps all observations in `.nest_data` and `y`. 
 #' 
+#' @details 
 #' `nest_inner_join()`, `nest_left_join()`, `nest_right_join()`, and 
 #' `nest_full_join()` are largely wrappers for [dplyr::inner_join()], 
 #' [dplyr::left_join()], [dplyr::right_join()], and [dplyr::full_join()] and 
@@ -216,6 +217,7 @@ nest_full_join <- function(.data,
 #' * `nest_semi_join()` returns all rows from `.nest_data` with a match in `y`.
 #' * `nest_anti_join()` returns all rows from `.nest_data` with*out* a match in `y`.
 #' 
+#' @details 
 #' `nest_semi_join()` and `nest_anti_join()` are largely wrappers for 
 #' [dplyr::semi_join()] and [dplyr::anti_join()] and maintain the functionality 
 #' of `semi_join()` and `anti_join()` within each nested data frame. For more 
@@ -301,6 +303,7 @@ nest_anti_join <- function(.data,
 #' nested-df column that contains all matches from `y`. When there is no match, 
 #' the list contains a 0-row tibble.
 #' 
+#' @details 
 #' `nest_nest_join()` is largely a wrapper around [dplyr::nest_join()] and 
 #' maintains the functionality of `nest_join()` within east nested data frame. 
 #' For more information on `nest_join()`, please refer to the documentation in

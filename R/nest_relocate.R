@@ -4,6 +4,7 @@
 #' the same syntax as [nest_select()] or [dplyr::select()] to make it easy to 
 #' move blocks of columns at once.
 #' 
+#' @details 
 #' `nest_relocate()` is largely a wrapper for [dplyr::relocate()] and maintains 
 #' the functionality of `relocate()` within each nested data frame. For more
 #' information on `relocate()`, please refer to the documentation in

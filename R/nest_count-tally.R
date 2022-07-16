@@ -7,6 +7,7 @@
 #' equivalent with the exception that it retains all rows and adds a new column
 #' with group-wise counts.
 #' 
+#' @details 
 #' `nest_count()` and `nest_add_count()` are largely wrappers for 
 #' [dplyr::count()] and [dplyr::add_count()] and maintain the functionality of 
 #' `count()` and `add_count()` within each nested data frame. For more 

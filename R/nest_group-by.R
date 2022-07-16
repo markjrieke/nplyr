@@ -5,6 +5,7 @@
 #' nested grouped tbls where operations are performed "by group". 
 #' `nest_ungroup()` removes grouping.
 #' 
+#' @details 
 #' `nest_group_by()` and `nest_ungroup()` are largely wrappers for 
 #' [dplyr::group_by()] and [dplyr::ungroup()] and maintain the functionality of 
 #' `group_by()` and `ungroup()` within each nested data frame. For more 

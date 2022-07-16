@@ -10,6 +10,7 @@
 #' 
 #' `nest_summarise()` and `nest_summarize()` are synonyms.
 #' 
+#' @details 
 #' `nest_summarise()` is largely a wrapper for [dplyr::summarise()] and 
 #' maintains the functionality of `summarise()` within each nested data frame. 
 #' For more information on `summarise()`, please refer to the documentation in

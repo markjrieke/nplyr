@@ -5,6 +5,7 @@
 #' `nest_transmute()` adds new variables to and drops existing ones from the 
 #' nested data frames in `.nest_data`. 
 #' 
+#' @details 
 #' `nest_mutate()` and `nest_transmute()` are largely wrappers for 
 #' [dplyr::mutate()] and [dplyr::transmute()] and maintain the functionality of 
 #' `mutate()` and `transmute()` within each nested data frame. For more 

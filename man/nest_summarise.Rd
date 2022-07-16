@@ -37,7 +37,8 @@ for each grouping variable and one column for each of the summary statistics
 that you have specified.
 
 \code{nest_summarise()} and \code{nest_summarize()} are synonyms.
-
+}
+\details{
 \code{nest_summarise()} is largely a wrapper for \code{\link[dplyr:summarise]{dplyr::summarise()}} and
 maintains the functionality of \code{summarise()} within each nested data frame.
 For more information on \code{summarise()}, please refer to the documentation in
