@@ -85,7 +85,8 @@ or lowest values of a variable within each nested data frame in
 If \code{.nest_data} is a grouped data frame, the operation will be performed on
 each group, so that (e.g.) \code{nest_slice_head(df, nested_dfs, n = 5)} will
 return the first five rows in each group for each nested data frame.
-
+}
+\details{
 \code{nest_slice()} and its helpers are largely wrappers for \code{\link[dplyr:slice]{dplyr::slice()}} and
 its helpers and maintains the functionality of \code{slice()} and its helpers
 within each nested data frame. For more information on \code{slice()} or its

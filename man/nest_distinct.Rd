@@ -21,7 +21,8 @@ combination of \code{...} is not distinct, this keeps the first row of values.}
 }
 \description{
 \code{nest_distinct()} selects only unique/distinct rows in a nested data frame.
-
+}
+\details{
 \code{nest_distinct()} is largely a wrapper for \code{\link[dplyr:distinct]{dplyr::distinct()}} and maintains
 the functionality of \code{distinct()} within each nested data frame. For more
 information on \code{distinct()}, please refer to the documentation in

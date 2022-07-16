@@ -21,7 +21,8 @@ grouped data frames only.}
 \description{
 \code{nest_arrange()} orders the rows of nested data frames by the values of
 selected columns.
-
+}
+\details{
 \code{nest_arrange()} is largely a wrapper for \code{\link[dplyr:arrange]{dplyr::arrange()}} and maintains
 the functionality of \code{arrange()} within each nested data frame. For more
 information on \code{arrange()}, please refer to the documentation in

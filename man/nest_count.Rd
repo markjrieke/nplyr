@@ -34,7 +34,8 @@ variables within each nested data frame. \code{nest_count()} results in a summar
 with one row per each set of variables to count by. \code{nest_add_count()} is
 equivalent with the exception that it retains all rows and adds a new column
 with group-wise counts.
-
+}
+\details{
 \code{nest_count()} and \code{nest_add_count()} are largely wrappers for
 \code{\link[dplyr:count]{dplyr::count()}} and \code{\link[dplyr:count]{dplyr::add_count()}} and maintain the functionality of
 \code{count()} and \code{add_count()} within each nested data frame. For more

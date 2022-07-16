@@ -33,7 +33,8 @@ details.}
 \code{nest_group_by()} takes a set of nested tbls and converts it to a set of
 nested grouped tbls where operations are performed "by group".
 \code{nest_ungroup()} removes grouping.
-
+}
+\details{
 \code{nest_group_by()} and \code{nest_ungroup()} are largely wrappers for
 \code{\link[dplyr:group_by]{dplyr::group_by()}} and \code{\link[dplyr:group_by]{dplyr::ungroup()}} and maintain the functionality of
 \code{group_by()} and \code{ungroup()} within each nested data frame. For more

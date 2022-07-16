@@ -125,7 +125,9 @@ one of the data frames:
 \item \code{nest_right_join()} keeps all observations in \code{y}.
 \item \code{nest_full_join()} keeps all observations in \code{.nest_data} and \code{y}.
 }
-
+}
+}
+\details{
 \code{nest_inner_join()}, \code{nest_left_join()}, \code{nest_right_join()}, and
 \code{nest_full_join()} are largely wrappers for \code{\link[dplyr:mutate-joins]{dplyr::inner_join()}},
 \code{\link[dplyr:mutate-joins]{dplyr::left_join()}}, \code{\link[dplyr:mutate-joins]{dplyr::right_join()}}, and \code{\link[dplyr:mutate-joins]{dplyr::full_join()}} and
@@ -133,7 +135,6 @@ maintain the functionality of these verbs within each nested data frame. For
 more information on \code{inner_join()}, \code{left_join()}, \code{right_join()}, or
 \code{full_join()}, please refer to the documentation in
 \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.
-}
 }
 \examples{
 gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)

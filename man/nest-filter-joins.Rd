@@ -37,7 +37,8 @@ absence of matches in \code{y}:
 \item \code{nest_semi_join()} returns all rows from \code{.nest_data} with a match in \code{y}.
 \item \code{nest_anti_join()} returns all rows from \code{.nest_data} with\emph{out} a match in \code{y}.
 }
-
+}
+\details{
 \code{nest_semi_join()} and \code{nest_anti_join()} are largely wrappers for
 \code{\link[dplyr:filter-joins]{dplyr::semi_join()}} and \code{\link[dplyr:filter-joins]{dplyr::anti_join()}} and maintain the functionality
 of \code{semi_join()} and \code{anti_join()} within each nested data frame. For more

@@ -22,7 +22,8 @@ frames, using a concise mini-language that makes it easy to refer to
 variables based on their name (e.g., \code{a:f} selects all columns from \code{a} on
 the left to \code{f} on the right). You can also use predicate functions like
 \link{is.numeric} to select variables based on their properties.
-
+}
+\details{
 \code{nest_select()} is largely a wrapper for \code{\link[dplyr:select]{dplyr::select()}} and maintains the
 functionality of \code{select()} within each nested data frame. For more
 information on \code{select()}, please refer to the documentation in

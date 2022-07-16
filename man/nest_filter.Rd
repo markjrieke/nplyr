@@ -30,7 +30,8 @@ row will be dropped, unlike base subsetting with \code{[}.
 \code{nest_filter()} subsets the rows within \code{.nest_data}, applying the
 expressions in \code{...} to the column values to determine which rows should be
 retained. It can be applied to both grouped and ungrouped data.
-
+}
+\details{
 \code{nest_filter()} is largely a wrapper for \code{\link[dplyr:filter]{dplyr::filter()}} and maintains the
 functionality of \code{filter()} within each nested data frame. For more
 information on \code{filter()}, please refer to the documentation in
