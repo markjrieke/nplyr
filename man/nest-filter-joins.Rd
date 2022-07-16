@@ -22,7 +22,7 @@ frame (e.g., from dbplyr or dtplyr).}
 \item{by}{A character vector of variables to join by or a join specification
 created with \code{join_by()}.
 
-If \code{NULL}, the default, \verb{nest_*_join()} will performa a natural join, using
+If \code{NULL}, the default, \verb{nest_*_join()} will perform a natural join, using
 all variables in common across each object in \code{.nest_data} and \code{y}. A
 message lists the variables so you can check they're correct; suppress the
 message by supplying \code{by} explicitly.

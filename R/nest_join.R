@@ -60,7 +60,7 @@
 #' @param by A character vector of variables to join by or a join specification 
 #'   created with `join_by()`.
 #'   
-#'   If `NULL`, the default, `nest_*_join()` will performa a natural join, using 
+#'   If `NULL`, the default, `nest_*_join()` will perform a natural join, using 
 #'   all variables in common across each object in `.nest_data` and `y`. A 
 #'   message lists the variables so you can check they're correct; suppress the 
 #'   message by supplying `by` explicitly.
