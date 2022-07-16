@@ -79,7 +79,7 @@ For more information on \code{nest_join()}, please refer to the documentation in
 gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 gm_codes <- gapminder::country_codes
 
-gm_nest \%>\% nest_nest_join(country_data, country_codes, by = "country")
+gm_nest \%>\% nest_nest_join(country_data, gm_codes, by = "country")
 }
 \seealso{
 Other joins: 

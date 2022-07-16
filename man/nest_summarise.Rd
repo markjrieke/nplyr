@@ -59,7 +59,7 @@ For more information on \code{summarise()}, please refer to the documentation in
 \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.
 }
 \examples{
-gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -countinent)
+gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 
 # a summary applied to an ungrouped tbl returns a single row
 gm_nest \%>\%

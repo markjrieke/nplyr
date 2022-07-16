@@ -121,7 +121,7 @@
 #' gm_nest %>% nest_inner_join(country_data, gm_codes, by = "country")
 #' gm_nest %>% nest_left_join(country_data, gm_codes, by = "country")
 #' gm_nest %>% nest_right_join(country_data, gm_codes, by = "country")
-#' gm_nest %>% nest_full_join(country_data, gm_coces, by = "country")
+#' gm_nest %>% nest_full_join(country_data, gm_codes, by = "country")
 #' 
 #' @name nest-mutate-joins
 NULL
@@ -384,7 +384,7 @@ nest_anti_join <- function(.data,
 #' gm_nest <- gapminder::gapminder %>% tidyr::nest(country_data = -continent)
 #' gm_codes <- gapminder::country_codes
 #' 
-#' gm_nest %>% nest_nest_join(country_data, country_codes, by = "country")
+#' gm_nest %>% nest_nest_join(country_data, gm_codes, by = "country")
 nest_nest_join <- function(.data,
                            .nest_data,
                            y,

@@ -186,7 +186,7 @@ gm_codes <- gapminder::country_codes
 gm_nest \%>\% nest_inner_join(country_data, gm_codes, by = "country")
 gm_nest \%>\% nest_left_join(country_data, gm_codes, by = "country")
 gm_nest \%>\% nest_right_join(country_data, gm_codes, by = "country")
-gm_nest \%>\% nest_full_join(country_data, gm_coces, by = "country")
+gm_nest \%>\% nest_full_join(country_data, gm_codes, by = "country")
 
 }
 \seealso{
