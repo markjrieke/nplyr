@@ -28,6 +28,12 @@ Can be \code{NULL} or a variable:
 
 \item{name}{The name of the new column in the output.}
 }
+\value{
+An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
+will also be of the same type as the input. \code{nest_count()} and
+\code{nest_add_count()} group each object in \code{.nest_data} transiently, so the
+output returned in \code{.nest_data} will have the same groups as the input.
+}
 \description{
 \code{nest_count()} lets you quickly count the unique values of one or more
 variables within each nested data frame. \code{nest_count()} results in a summary

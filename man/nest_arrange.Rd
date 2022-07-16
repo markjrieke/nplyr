@@ -18,6 +18,17 @@ a variable in descending order.}
 \item{.by_group}{If \code{TRUE}, will sort first by grouping variable. Applies to
 grouped data frames only.}
 }
+\value{
+An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
+will be also of the same type as the input. Each object in \code{.nest_data} has
+the following properties:
+\itemize{
+\item All rows appear in the output, but (usually) in a different place.
+\item Columns are not modified.
+\item Groups are not modified.
+\item Data frame attributes are preserved.
+}
+}
 \description{
 \code{nest_arrange()} orders the rows of nested data frames by the values of
 selected columns.

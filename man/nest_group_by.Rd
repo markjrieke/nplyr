@@ -29,6 +29,12 @@ data? The default is \code{TRUE} except when \code{.nest_data} has been previous
 grouped with \code{.drop = FALSE}. See \code{\link[dplyr:group_by_drop_default]{dplyr::group_by_drop_default()}} for
 details.}
 }
+\value{
+An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
+will be returned as a grouped data frame with class \code{grouped_df}, unless the
+combination of \code{...} and \code{.add} yields an empty set of grouping columns, in
+which case a tibble will be returned.
+}
 \description{
 \code{nest_group_by()} takes a set of nested tbls and converts it to a set of
 nested grouped tbls where operations are performed "by group".

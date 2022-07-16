@@ -22,6 +22,29 @@
 #' * `nest_right_join()` keeps all observations in `y`.
 #' * `nest_full_join()` keeps all observations in `.nest_data` and `y`. 
 #' 
+#' @return 
+#' An object of the same type as `.data`. Each object in the column `.nest_data` 
+#' will also be of the same type as the input. The order of the rows and columns 
+#' of each object in `.nest_data` is preserved as much as possible. Each object
+#' in `.nest_data` has the following properties:
+#' 
+#' * For `nest_inner_join()`, a subset of rows in each object in `.nest_data`.
+#'   For `nest_left_join()`, all rows in each object in `.nest_data`.
+#'   For `nest_right_join()`, a subset of rows in each object in `.nest_data`, 
+#'   followed by unmatched `y` rows.
+#'   For `nest_full_join()`, all rows in each object in `.nest_data`, followed 
+#'   by unmatched `y` rows.
+#' * Output columns include all columns from each `.nest_data` and all non-key 
+#'   columns from `y`. If `keep = TRUE`, the key columns from `y` are included
+#'   as well.
+#' * If non-key columns in any object in `.nest_data` and `y` have the same name,
+#'   `suffix`es are added to disambiguate. If `keep = TRUE` and key columns in 
+#'   `.nest_data` and `y` have the same name, `suffix`es are added to 
+#'   disambiguate these as well.
+#' * If `keep = FALSE`, output columns included in `by` are coerced to their 
+#'   common type between the objects in `.nest_data` and `y`. 
+#' * Groups are taken from `.nest_data`.
+#' 
 #' @details 
 #' `nest_inner_join()`, `nest_left_join()`, `nest_right_join()`, and 
 #' `nest_full_join()` are largely wrappers for [dplyr::inner_join()], 
@@ -36,6 +59,25 @@
 #'   frame (e.g., from dbplyr or dtplyr).
 #' @param by A character vector of variables to join by or a join specification 
 #'   created with `join_by()`.
+#'   
+#'   If `NULL`, the default, `nest_*_join()` will performa a natural join, using 
+#'   all variables in common across each object in `.nest_data` and `y`. A 
+#'   message lists the variables so you can check they're correct; suppress the 
+#'   message by supplying `by` explicitly.
+#'   
+#'   To join on different variables between the objects in `.nest_data` and `y`,
+#'   use a named vector. For example, `by = c("a" = "b")` will match 
+#'   `.nest_data$a` to `y$b` for each object in `.nest_data`. 
+#'   
+#'   To join by multiple variables, use a vector with length >1. For example, 
+#'   `by = c("a", "b")` will match `.nest_data$a` to `y$a` and `.nest_data$b` to 
+#'   `y$b` for each object in `.nest_data`. Use a named vector to match 
+#'   different variables in `.nest_data` and `y`. For example,
+#'   `by = c("a" = "b", "c" = "d")` will match `.nest_data$a` to `y$b` and 
+#'   `.nest_data$c` to `y$d` for each object in `.nest_data`.
+#'   
+#'   To perform a cross-join, generating all combinations of each object in 
+#'   `.nest_data` and `y`, use `by = character()`.
 #' @param copy If `.nest_data` and `y` are not from the same data source and 
 #'   `copy = TRUE` then `y` will be copied into the same src as `.nest_data`. 
 #'   *(Need to review this parameter in more detail for applicability with nplyr)* 
@@ -217,6 +259,16 @@ nest_full_join <- function(.data,
 #' * `nest_semi_join()` returns all rows from `.nest_data` with a match in `y`.
 #' * `nest_anti_join()` returns all rows from `.nest_data` with*out* a match in `y`.
 #' 
+#' @return 
+#' An object of the same type as `.data`. Each object in the column `.nest_data` 
+#' will also be of the same type as the input. Each object in `.nest_data` has
+#' the following properties:
+#' 
+#' * Rows are a subset of the input, but appear in the same order.
+#' * Columns are not modified.
+#' * Data frame attributes are preserved.
+#' * Groups are taken from `.nest_data`. The number of groups may be reduced.
+#' 
 #' @details 
 #' `nest_semi_join()` and `nest_anti_join()` are largely wrappers for 
 #' [dplyr::semi_join()] and [dplyr::anti_join()] and maintain the functionality 
@@ -302,6 +354,10 @@ nest_anti_join <- function(.data,
 #' `nest_nest_join()` returns all rows and columns in `.nest_data` with a new 
 #' nested-df column that contains all matches from `y`. When there is no match, 
 #' the list contains a 0-row tibble.
+#' 
+#' @return 
+#' An object of the same type as `.data`. Each object in the column `.nest_data` 
+#' will also be of the same type as the input. 
 #' 
 #' @details 
 #' `nest_nest_join()` is largely a wrapper around [dplyr::nest_join()] and 

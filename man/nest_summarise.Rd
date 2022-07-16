@@ -28,6 +28,20 @@ The value can be:
 \item{.groups}{\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}} Grouping structure of the
 result. Refer to \code{\link[dplyr:summarise]{dplyr::summarise()}} for more up-to-date information.}
 }
+\value{
+An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
+will \emph{usually} be of the same type as the input. Each object in \code{.nest_data} has
+the following properties:
+\itemize{
+\item The rows come from the underlying \href{https://dplyr.tidyverse.org/reference/group_data.html}{\code{group_keys()}}
+\item The columns are a combination of the grouping keys and the summary
+expressions that you provide.
+\item The grouping structure is controlled by the \code{.groups} argument, the output
+may be another grouped_df, a tibble, or a rowwise data frame.
+\item Data frame attributes are \strong{not} preserved, because \code{nest_summarise()}
+fundamentally creates a new data frame for each object in \code{.nest_data}.
+}
+}
 \description{
 \code{nest_summarise()} creates a new set of nested data frames. Each will have
 one (or more) rows for each combination of grouping variables; if there are

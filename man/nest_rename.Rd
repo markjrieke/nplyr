@@ -24,6 +24,17 @@ character vector the same length as the input.}
 
 \item{.cols}{Columns to rename; defaults to all columns.}
 }
+\value{
+An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
+will also be of the same type as the input. Each object in \code{.nest_data} has
+the following properties:
+\itemize{
+\item Rows are not affected.
+\item Column names are changed; column order is preserved.
+\item Data frame attributes are preserved.
+\item Groups are updated to reflect new names.
+}
+}
 \description{
 \code{nest_rename()} changes the names of individual variables using
 \code{new_name = old_name} syntax; \code{nest_rename_with()} renames columns using a

@@ -21,6 +21,17 @@ evaluate to \code{TRUE} are kept.}
 \code{.preserve = FALSE} (the default), the grouping structure is recalculated
 based on the resulting data, otherwise the grouping is kept as is.}
 }
+\value{
+An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
+will also be of the same type as the input. Each object in \code{.nest_data} has
+the following properties:
+\itemize{
+\item Rows are a subset of the input, but appear in the same order.
+\item Columns are not modified.
+\item The number of groups may be reduced (if \code{.preserve} is not \code{TRUE}).
+\item Data frame attributes are preserved.
+}
+}
 \description{
 \code{nest_filter()} is used to subset nested data frames, retaining all rows that
 satisfy your conditions. To be retained, the row must produce a value of

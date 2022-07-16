@@ -68,6 +68,17 @@ standardised to sum to 1.}
 \item{replace}{Should sampling be performed with (\code{TRUE}) or without (\code{FALSE},
 the default) replacement?}
 }
+\value{
+An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
+will also be of the same type as the input. Each object in \code{.nest_data} has
+the following properties:
+\itemize{
+\item Each row may appear 0, 1, or many times in the output.
+\item Columns are not modified.
+\item Groups are not modified.
+\item Data frame attributes are preserved.
+}
+}
 \description{
 \code{nest_slice()} lets you index rows in nested data frames by their (integer)
 locations. It allows you to select, remove, and duplicate rows. It is

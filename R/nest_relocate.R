@@ -1,8 +1,19 @@
 #' Change column order within a nested data frame
 #' 
+#' @description 
 #' `nest_relocate()` changes column positions within a nested data frame, using 
 #' the same syntax as [nest_select()] or [dplyr::select()] to make it easy to 
 #' move blocks of columns at once.
+#' 
+#' @return 
+#' An object of the same type as `.data`. Each object in the column `.nest_data` 
+#' will also be of the same type as the input. Each object in `.nest_data` has
+#' the following properties:
+#' 
+#' * Rows are not affected.
+#' * The same columns appear in the output, but (usually) in a different place.
+#' * Data frame attributes are preserved.
+#' * Groups are not affected.
 #' 
 #' @details 
 #' `nest_relocate()` is largely a wrapper for [dplyr::relocate()] and maintains 

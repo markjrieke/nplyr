@@ -16,6 +16,18 @@ data frame (e.g., from dbplyr or dtplyr).}
 names can be used if they were positions in the data frame, so expressions
 like \code{x:y} can be used to select a range of variables.}
 }
+\value{
+An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
+will also be of the same type as the input. Each object in \code{.nest_data} has
+the following properties:
+\itemize{
+\item Rows are not affect.
+\item Output columns are a subset of input columns, potentially with a different
+order. Columns will be renamed if \code{new_name = old_name} form is used.
+\item Data frame attributes are preserved.
+\item Groups are maintained; you can't select off grouping variables.
+}
+}
 \description{
 \code{nest_select()} selects (and optionally renames) variables in nested data
 frames, using a concise mini-language that makes it easy to refer to

@@ -18,6 +18,17 @@ data frame (e.g., from dbplyr or dtplyr).}
 neither will move columns to the left-hand side; specifying both is an
 error.}
 }
+\value{
+An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
+will also be of the same type as the input. Each object in \code{.nest_data} has
+the following properties:
+\itemize{
+\item Rows are not affected.
+\item The same columns appear in the output, but (usually) in a different place.
+\item Data frame attributes are preserved.
+\item Groups are not affected.
+}
+}
 \description{
 \code{nest_relocate()} changes column positions within a nested data frame, using
 the same syntax as \code{\link[=nest_select]{nest_select()}} or \code{\link[dplyr:select]{dplyr::select()}} to make it easy to

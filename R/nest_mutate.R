@@ -1,9 +1,31 @@
 #' Create, modify, and delete columns in nested data frames
 #' 
+#' @description 
 #' `nest_mutate()` adds new variables to and preserves existing ones within 
 #' the nested data frames in `.nest_data`.
 #' `nest_transmute()` adds new variables to and drops existing ones from the 
 #' nested data frames in `.nest_data`. 
+#' 
+#' @return 
+#' An object of the same type as `.data`. Each object in the column `.nest_data` 
+#' will also be of the same type as the input. Each object in `.nest_data` has
+#' the following properties:
+#' 
+#' * For `nest_mutate()`:
+#'   * Columns from each object in `.nest_data` will be preserved according to 
+#'     the `.keep` argument. 
+#'   * Existing columns that are modified by `...` will always be returned in 
+#'     their original location.
+#'   * New columns created through `...` will be placed according to the 
+#'     `.before` and `.after` arguments.
+#' * For `nest_transmute()`:
+#'   * Columns created or modified through `...` will be returned in the order 
+#'     specified by `...`.
+#'   * Unmodified grouping columns will be placed at the front.
+#' * The number of rows is not affected.
+#' * Columns given the value `NULL` will be removed.
+#' * Groups will be recomputed if a grouping variable is mutated.
+#' * Data frame attributes will be preserved.
 #' 
 #' @details 
 #' `nest_mutate()` and `nest_transmute()` are largely wrappers for 

@@ -7,6 +7,12 @@
 #' equivalent with the exception that it retains all rows and adds a new column
 #' with group-wise counts.
 #' 
+#' @return 
+#' An object of the same type as `.data`. Each object in the column `.nest_data` 
+#' will also be of the same type as the input. `nest_count()` and 
+#' `nest_add_count()` group each object in `.nest_data` transiently, so the 
+#' output returned in `.nest_data` will have the same groups as the input. 
+#' 
 #' @details 
 #' `nest_count()` and `nest_add_count()` are largely wrappers for 
 #' [dplyr::count()] and [dplyr::add_count()] and maintain the functionality of 

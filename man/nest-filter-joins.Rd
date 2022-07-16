@@ -20,7 +20,26 @@ data frame (e.g., from dbplyr or dtplyr).}
 frame (e.g., from dbplyr or dtplyr).}
 
 \item{by}{A character vector of variables to join by or a join specification
-created with \code{join_by()}.}
+created with \code{join_by()}.
+
+If \code{NULL}, the default, \verb{nest_*_join()} will performa a natural join, using
+all variables in common across each object in \code{.nest_data} and \code{y}. A
+message lists the variables so you can check they're correct; suppress the
+message by supplying \code{by} explicitly.
+
+To join on different variables between the objects in \code{.nest_data} and \code{y},
+use a named vector. For example, \code{by = c("a" = "b")} will match
+\code{.nest_data$a} to \code{y$b} for each object in \code{.nest_data}.
+
+To join by multiple variables, use a vector with length >1. For example,
+\code{by = c("a", "b")} will match \code{.nest_data$a} to \code{y$a} and \code{.nest_data$b} to
+\code{y$b} for each object in \code{.nest_data}. Use a named vector to match
+different variables in \code{.nest_data} and \code{y}. For example,
+\code{by = c("a" = "b", "c" = "d")} will match \code{.nest_data$a} to \code{y$b} and
+\code{.nest_data$c} to \code{y$d} for each object in \code{.nest_data}.
+
+To perform a cross-join, generating all combinations of each object in
+\code{.nest_data} and \code{y}, use \code{by = character()}.}
 
 \item{copy}{If \code{.nest_data} and \code{y} are not from the same data source and
 \code{copy = TRUE} then \code{y} will be copied into the same src as \code{.nest_data}.
@@ -29,6 +48,17 @@ created with \code{join_by()}.}
 \item{...}{One or more unquoted expressions separated by commas. Variable
 names can be used if they were positions in the data frame, so expressions
 like \code{x:y} can be used to select a range of variables.}
+}
+\value{
+An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
+will also be of the same type as the input. Each object in \code{.nest_data} has
+the following properties:
+\itemize{
+\item Rows are a subset of the input, but appear in the same order.
+\item Columns are not modified.
+\item Data frame attributes are preserved.
+\item Groups are taken from \code{.nest_data}. The number of groups may be reduced.
+}
 }
 \description{
 Nested filtering joins filter rows from \code{.nest_data} based on the presence or

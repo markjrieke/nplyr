@@ -10,6 +10,19 @@
 #' 
 #' `nest_summarise()` and `nest_summarize()` are synonyms.
 #' 
+#' @return 
+#' An object of the same type as `.data`. Each object in the column `.nest_data` 
+#' will *usually* be of the same type as the input. Each object in `.nest_data` has
+#' the following properties:
+#' 
+#' * The rows come from the underlying [`group_keys()`](https://dplyr.tidyverse.org/reference/group_data.html)
+#' * The columns are a combination of the grouping keys and the summary 
+#'   expressions that you provide.
+#' * The grouping structure is controlled by the `.groups` argument, the output
+#'   may be another grouped_df, a tibble, or a rowwise data frame.
+#' * Data frame attributes are **not** preserved, because `nest_summarise()` 
+#'   fundamentally creates a new data frame for each object in `.nest_data`.
+#' 
 #' @details 
 #' `nest_summarise()` is largely a wrapper for [dplyr::summarise()] and 
 #' maintains the functionality of `summarise()` within each nested data frame. 

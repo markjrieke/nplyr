@@ -3,6 +3,18 @@
 #' @description 
 #' `nest_distinct()` selects only unique/distinct rows in a nested data frame. 
 #' 
+#' @return 
+#' An object of the same type as `.data`. Each object in the column `.nest_data` 
+#' will also be of the same type as the input. Each object in `.nest_data` has
+#' the following properties:
+#' 
+#' * Rows are a subset of the input but appear in the same order.
+#' * Columns are not modified if `...` is empty or `.keep_all` is `TRUE`.
+#'   Otherwise, `nest_distinct()` first calls `dplyr::mutate()` to create new 
+#'   columns within each object in `.nest_data`.
+#' * Groups are not modified.
+#' * Data frame attributes are preserved.
+#' 
 #' @details 
 #' `nest_distinct()` is largely a wrapper for [dplyr::distinct()] and maintains 
 #' the functionality of `distinct()` within each nested data frame. For more 

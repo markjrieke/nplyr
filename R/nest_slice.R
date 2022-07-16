@@ -17,6 +17,16 @@
 #' each group, so that (e.g.) `nest_slice_head(df, nested_dfs, n = 5)` will 
 #' return the first five rows in each group for each nested data frame.
 #' 
+#' @return 
+#' An object of the same type as `.data`. Each object in the column `.nest_data` 
+#' will also be of the same type as the input. Each object in `.nest_data` has
+#' the following properties:
+#' 
+#' * Each row may appear 0, 1, or many times in the output.
+#' * Columns are not modified.
+#' * Groups are not modified.
+#' * Data frame attributes are preserved.
+#' 
 #' @details 
 #' `nest_slice()` and its helpers are largely wrappers for [dplyr::slice()] and 
 #' its helpers and maintains the functionality of `slice()` and its helpers 

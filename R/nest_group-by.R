@@ -5,6 +5,12 @@
 #' nested grouped tbls where operations are performed "by group". 
 #' `nest_ungroup()` removes grouping.
 #' 
+#' @return 
+#' An object of the same type as `.data`. Each object in the column `.nest_data` 
+#' will be returned as a grouped data frame with class `grouped_df`, unless the 
+#' combination of `...` and `.add` yields an empty set of grouping columns, in 
+#' which case a tibble will be returned. 
+#' 
 #' @details 
 #' `nest_group_by()` and `nest_ungroup()` are largely wrappers for 
 #' [dplyr::group_by()] and [dplyr::ungroup()] and maintain the functionality of 

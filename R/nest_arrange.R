@@ -4,6 +4,16 @@
 #' `nest_arrange()` orders the rows of nested data frames by the values of 
 #' selected columns. 
 #' 
+#' @return 
+#' An object of the same type as `.data`. Each object in the column `.nest_data` 
+#' will be also of the same type as the input. Each object in `.nest_data` has 
+#' the following properties:
+#' 
+#' * All rows appear in the output, but (usually) in a different place.
+#' * Columns are not modified.
+#' * Groups are not modified.
+#' * Data frame attributes are preserved. 
+#' 
 #' @details 
 #' `nest_arrange()` is largely a wrapper for [dplyr::arrange()] and maintains 
 #' the functionality of `arrange()` within each nested data frame. For more 

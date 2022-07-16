@@ -19,6 +19,19 @@ will be preserved. If omitted, will use all variables.}
 \item{.keep_all}{If \code{TRUE}, keep all variables in \code{.nest_data}. If a
 combination of \code{...} is not distinct, this keeps the first row of values.}
 }
+\value{
+An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
+will also be of the same type as the input. Each object in \code{.nest_data} has
+the following properties:
+\itemize{
+\item Rows are a subset of the input but appear in the same order.
+\item Columns are not modified if \code{...} is empty or \code{.keep_all} is \code{TRUE}.
+Otherwise, \code{nest_distinct()} first calls \code{dplyr::mutate()} to create new
+columns within each object in \code{.nest_data}.
+\item Groups are not modified.
+\item Data frame attributes are preserved.
+}
+}
 \description{
 \code{nest_distinct()} selects only unique/distinct rows in a nested data frame.
 }
