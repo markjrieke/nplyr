@@ -37,12 +37,10 @@ information on \code{rename()} or \code{rename_with()}, please refer to the
 documentation in \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.
 }
 \examples{
-\dontrun{
 gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 
 gm_nest \%>\% nest_rename(country_data, population = pop)
 gm_nest \%>\% nest_rename_with(country_data, stringr::str_to_lower)
-}
 }
 \seealso{
 Other single table verbs: 

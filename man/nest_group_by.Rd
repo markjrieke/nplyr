@@ -41,7 +41,6 @@ information on \code{group_by()} or \code{ungroup()}, please refer to the docume
 in \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.
 }
 \examples{
-\dontrun{
 gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 
 # grouping doesn't change .nest_data, just .nest_data class:
@@ -62,6 +61,5 @@ gm_nest_grouped \%>\%
 
 # ungrouping removes variable groups:
 gm_nest_grouped \%>\% nest_ungroup(country_data)
-}
 }
 \concept{grouping functions}

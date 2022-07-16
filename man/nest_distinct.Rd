@@ -28,10 +28,8 @@ information on \code{distinct()}, please refer to the documentation in
 \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.
 }
 \examples{
-\dontrun{
 gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 
 gm_nest \%>\% nest_distinct(country_data, country)
 gm_nest \%>\% nest_distinct(country_data, country, year)
-}
 }

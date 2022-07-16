@@ -39,7 +39,6 @@ information on \code{mutate()} or \code{transmute()}, please refer to the docume
 in \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.
 }
 \examples{
-\dontrun{
 gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 
 # add or modify columns:
@@ -66,7 +65,6 @@ gm_nest \%>\%
     year = year,
     pop = pop/1000000
   )
-}
 }
 \seealso{
 Other single table verbs: 

@@ -62,7 +62,6 @@
 #' @family single table verbs
 #' 
 #' @examples 
-#' \dontrun{
 #' gm_nest <- gapminder::gapminder %>% tidyr::nest(country_data = -continent)
 #' 
 #' # select the 1st, 3rd, and 5th rows in each data frame in country_data
@@ -82,7 +81,6 @@
 #' # randomly select rows with or without replacement:
 #' gm_nest %>% nest_slice_sample(country_data, n = 5)
 #' gm_nest %>% nest_slice_sample(country_data, n = 5, replace = TRUE)
-#' }
 nest_slice <- function(.data, 
                        .nest_data,
                        ...,

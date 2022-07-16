@@ -42,7 +42,6 @@ information on \code{count()} and \code{add_count()}, please refer to the docume
 in \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.
 }
 \examples{
-\dontrun{
 gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 
 # count the number of times each country appears in each nested tibble
@@ -52,5 +51,4 @@ gm_nest \%>\% nest_add_count(country_data, country)
 # count the sum of population for each country in each nested tibble
 gm_nest \%>\% nest_count(country_data, country, wt = pop)
 gm_nest \%>\% nest_add_count(country_data, country, wt = pop)
-}
 }

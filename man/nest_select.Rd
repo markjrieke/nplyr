@@ -29,12 +29,10 @@ information on \code{select()}, please refer to the documentation in
 \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.
 }
 \examples{
-\dontrun{
 gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 
 gm_nest \%>\% nest_select(country_data, country, year, pop)
 gm_nest \%>\% nest_select(country_data, where(is.numeric))
-}
 }
 \seealso{
 Other single table verbs: 

@@ -25,7 +25,6 @@
 #' @family single table verbs
 #' 
 #' @examples 
-#' \dontrun{
 #' gm_nest <- gapminder::gapminder %>% tidyr::nest(country_data = -continent)
 #' 
 #' gm_nest %>% 
@@ -33,7 +32,6 @@
 #' 
 #' gm_nest %>%
 #'   nest_arrange(country_data, desc(pop))
-#' }
 nest_arrange <- function(.data, 
                          .nest_data,
                          ...,

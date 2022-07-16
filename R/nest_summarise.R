@@ -39,7 +39,6 @@
 #' @family single table verbs
 #' 
 #' @examples 
-#' \dontrun{
 #' gm_nest <- gapminder::gapminder %>% tidyr::nest(country_data = -countinent)
 #' 
 #' # a summary applied to an ungrouped tbl returns a single row
@@ -58,7 +57,6 @@
 #'     n = n(),
 #'     median_pop = median(pop)
 #'   )
-#' }
 nest_summarise <- function(.data, 
                            .nest_data,
                            ...,

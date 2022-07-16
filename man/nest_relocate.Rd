@@ -30,10 +30,8 @@ information on \code{relocate()}, please refer to the documentation in
 \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.
 }
 \examples{
-\dontrun{
 gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 
 gm_nest \%>\% nest_relocate(country_data, year)
 gm_nest \%>\% nest_relocate(country_data, pop, .after = year)
-}
 }

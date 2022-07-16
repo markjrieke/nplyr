@@ -24,12 +24,10 @@
 #' @export
 #' 
 #' @examples 
-#' \dontrun{
 #' gm_nest <- gapminder::gapminder %>% tidyr::nest(country_data = -continent)
 #' 
 #' gm_nest %>% nest_relocate(country_data, year)
 #' gm_nest %>% nest_relocate(country_data, pop, .after = year)
-#' }
 nest_relocate <- function(.data, 
                           .nest_data,
                           ...,

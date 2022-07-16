@@ -34,7 +34,6 @@
 #' @family single table verbs
 #' 
 #' @examples 
-#' \dontrun{
 #' gm_nest <- gapminder::gapminder %>% tidyr::nest(country_data = -continent)
 #' 
 #' # apply a filter
@@ -49,7 +48,6 @@
 #' gm_nest %>%
 #'   nest_group_by(country_data, country) %>%
 #'   nest_filter(country_data, pop > mean(pop))
-#' }
 nest_filter <- function(.data,
                         .nest_data,
                         ...,

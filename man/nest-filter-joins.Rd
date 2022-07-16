@@ -45,13 +45,11 @@ information on \code{semi_join()} or \code{anti_join()}, please refer to the
 documentation in \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.
 }
 \examples{
-\dontrun{
 gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 gm_codes <- gapminder::country_codes \%>\% dplyr::slice_sample(n = 10)
 
 gm_nest \%>\% nest_semi_join(country_data, gm_codes, by = "country")
 gm_nest \%>\% nest_anti_join(country_data, gm_codes, by = "country")
-}
 
 }
 \seealso{

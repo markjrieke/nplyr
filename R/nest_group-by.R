@@ -34,7 +34,6 @@
 #' @family grouping functions
 #' 
 #' @examples 
-#' \dontrun{
 #' gm_nest <- gapminder::gapminder %>% tidyr::nest(country_data = -continent)
 #' 
 #' # grouping doesn't change .nest_data, just .nest_data class:
@@ -55,7 +54,6 @@
 #' 
 #' # ungrouping removes variable groups:
 #' gm_nest_grouped %>% nest_ungroup(country_data)
-#' }
 nest_group_by <- function(.data,
                           .nest_data,
                           ...,

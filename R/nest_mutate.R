@@ -31,7 +31,6 @@
 #' @family single table verbs
 #' 
 #' @examples 
-#' \dontrun{
 #' gm_nest <- gapminder::gapminder %>% tidyr::nest(country_data = -continent)
 #' 
 #' # add or modify columns:
@@ -58,7 +57,6 @@
 #'     year = year,
 #'     pop = pop/1000000
 #'   )
-#' }
 nest_mutate <- function(.data, 
                         .nest_data,
                         ...) {

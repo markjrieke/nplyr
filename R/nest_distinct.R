@@ -24,12 +24,10 @@
 #' @export
 #' 
 #' @examples 
-#' \dontrun{
 #' gm_nest <- gapminder::gapminder %>% tidyr::nest(country_data = -continent)
 #' 
 #' gm_nest %>% nest_distinct(country_data, country)
 #' gm_nest %>% nest_distinct(country_data, country, year)
-#' }
 nest_distinct <- function(.data,
                           .nest_data,
                           ...,

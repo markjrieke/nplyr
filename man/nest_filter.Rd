@@ -37,7 +37,6 @@ information on \code{filter()}, please refer to the documentation in
 \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.
 }
 \examples{
-\dontrun{
 gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 
 # apply a filter
@@ -52,7 +51,6 @@ gm_nest \%>\%
 gm_nest \%>\%
   nest_group_by(country_data, country) \%>\%
   nest_filter(country_data, pop > mean(pop))
-}
 }
 \seealso{
 Other single table verbs: 

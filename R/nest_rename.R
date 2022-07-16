@@ -27,12 +27,10 @@
 #' @family single table verbs
 #' 
 #' @examples 
-#' \dontrun{
 #' gm_nest <- gapminder::gapminder %>% tidyr::nest(country_data = -continent)
 #' 
 #' gm_nest %>% nest_rename(country_data, population = pop)
 #' gm_nest %>% nest_rename_with(country_data, stringr::str_to_lower)
-#' }
 nest_rename <- function(.data, 
                         .nest_data,
                         ...) {

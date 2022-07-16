@@ -30,12 +30,10 @@
 #' @family single table verbs
 #' 
 #' @examples 
-#' \dontrun{
 #' gm_nest <- gapminder::gapminder %>% tidyr::nest(country_data = -continent)
 #' 
 #' gm_nest %>% nest_select(country_data, country, year, pop)
 #' gm_nest %>% nest_select(country_data, where(is.numeric))
-#' }
 nest_select <- function(.data, 
                         .nest_data,
                         ...) {

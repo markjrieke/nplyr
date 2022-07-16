@@ -93,7 +93,6 @@ helpers, please refer to the documentation in
 \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.
 }
 \examples{
-\dontrun{
 gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 
 # select the 1st, 3rd, and 5th rows in each data frame in country_data
@@ -113,7 +112,6 @@ gm_nest \%>\% nest_slice_max(country_data, lifeExp, n = 5)
 # randomly select rows with or without replacement:
 gm_nest \%>\% nest_slice_sample(country_data, n = 5)
 gm_nest \%>\% nest_slice_sample(country_data, n = 5, replace = TRUE)
-}
 }
 \seealso{
 Other single table verbs: 
