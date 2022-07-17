@@ -12,3 +12,4 @@ This is a resubmission. In this version I have:
 * Removed the \dontrun{} tag from examples that run quickly.
 * Updated function documentation to include details of each object returned. 
 * Updated Description field of DESCRIPTION file to include additional detail about the package.
+* Updated Description to not start with "nplyr".
