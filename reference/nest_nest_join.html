@@ -14,7 +14,7 @@ the list contains a 0-row tibble."><!-- mathjax --><script src="https://cdnjs.cl
     
     <a class="navbar-brand me-2" href="../index.html">nplyr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,7 +93,22 @@ frame (e.g., from dbplyr or dtplyr).</p></dd>
 
 <dt>by</dt>
 <dd><p>A character vector of variables to join by or a join specification
-created with <code>join_by()</code>.</p></dd>
+created with <code>join_by()</code>.</p>
+<p>If <code>NULL</code>, the default, <code>nest_*_join()</code> will perform a natural join, using
+all variables in common across each object in <code>.nest_data</code> and <code>y</code>. A
+message lists the variables so you can check they're correct; suppress the
+message by supplying <code>by</code> explicitly.</p>
+<p>To join on different variables between the objects in <code>.nest_data</code> and <code>y</code>,
+use a named vector. For example, <code>by = c("a" = "b")</code> will match
+<code>.nest_data$a</code> to <code>y$b</code> for each object in <code>.nest_data</code>.</p>
+<p>To join by multiple variables, use a vector with length &gt;1. For example,
+<code>by = c("a", "b")</code> will match <code>.nest_data$a</code> to <code>y$a</code> and <code>.nest_data$b</code> to
+<code>y$b</code> for each object in <code>.nest_data</code>. Use a named vector to match
+different variables in <code>.nest_data</code> and <code>y</code>. For example,
+<code>by = c("a" = "b", "c" = "d")</code> will match <code>.nest_data$a</code> to <code>y$b</code> and
+<code>.nest_data$c</code> to <code>y$d</code> for each object in <code>.nest_data</code>.</p>
+<p>To perform a cross-join, generating all combinations of each object in
+<code>.nest_data</code> and <code>y</code>, use <code>by = character()</code>.</p></dd>
 
 
 <dt>copy</dt>
@@ -119,6 +134,15 @@ like <code>x:y</code> can be used to select a range of variables.</p></dd>
 
 </dl></div>
     <div class="section level2">
+    <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
+    
+
+<p>An object of the same type as <code>.data</code>. Each object in the column <code>.nest_data</code></p>
+
+
+<p>will also be of the same type as the input.</p>
+    </div>
+    <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p><code>nest_nest_join()</code> is largely a wrapper around <code><a href="https://dplyr.tidyverse.org/reference/nest_join.html" class="external-link">dplyr::nest_join()</a></code> and
 maintains the functionality of <code><a href="https://dplyr.tidyverse.org/reference/nest_join.html" class="external-link">nest_join()</a></code> within east nested data frame.
@@ -134,12 +158,18 @@ For more information on <code><a href="https://dplyr.tidyverse.org/reference/nes
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
-<span class="r-in"><span><span class="va">gm_nest</span> <span class="op">&lt;-</span> <span class="fu">gapminder</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/gapminder/man/gapminder.html" class="external-link">gapminder</a></span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html" class="external-link">nest</a></span><span class="op">(</span>country_data <span class="op">=</span> <span class="op">-</span><span class="va">continent</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">gm_nest</span> <span class="op">&lt;-</span> <span class="fu">gapminder</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/gapminder/man/gapminder.html" class="external-link">gapminder</a></span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html" class="external-link">nest</a></span><span class="op">(</span>country_data <span class="op">=</span> <span class="op">-</span><span class="va">continent</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">gm_codes</span> <span class="op">&lt;-</span> <span class="fu">gapminder</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/gapminder/man/country_codes.html" class="external-link">country_codes</a></span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">gm_nest</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">nest_nest_join</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">country_codes</span>, by <span class="op">=</span> <span class="st">"country"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span><span class="va">gm_nest</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">nest_nest_join</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">gm_codes</span>, by <span class="op">=</span> <span class="st">"country"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 2</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   continent country_data      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> Asia      <span style="color: #949494;">&lt;tibble [396 × 6]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> Europe    <span style="color: #949494;">&lt;tibble [360 × 6]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> Africa    <span style="color: #949494;">&lt;tibble [624 × 6]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> Americas  <span style="color: #949494;">&lt;tibble [300 × 6]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> Oceania   <span style="color: #949494;">&lt;tibble [24 × 6]&gt;</span> </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
