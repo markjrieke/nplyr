@@ -1,6 +1,6 @@
 Package: nplyr
 Title: A Grammar of Nested Data Manipulation
-Version: 0.1.0
+Version: 0.1.0.9000
 Authors@R: 
     person(given = "Mark",
            family = "Rieke",

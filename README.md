@@ -38,12 +38,15 @@ chapter](https://r4ds.had.co.nz/transform.html) in R for data science.
 
 ## Installation
 
-nplyr is not yet on CRAN, but you can install the development version
-from github with the
+You can install the released version of nplyr from CRAN or the
+development version from github with the
 [devtools](https://cran.r-project.org/package=devtools) or
 [remotes](https://cran.r-project.org/package=remotes) package:
 
 ``` r
+# install from CRAN
+install.packages("nplyr")
+
 # install from github
 devtools::install_github("markjrieke/nplyr")
 ```
