@@ -1,4 +1,4 @@
-# nplyr 0.0.0.9000
+# nplyr 0.1.0
 
 * Wrappers around `dplyr` functions that can be applied to nested tibbles:
   + `nest_arrange()`

@@ -16,25 +16,36 @@ data frame (e.g., from dbplyr or dtplyr).}
 names can be used if they were positions in the data frame, so expressions
 like \code{x:y} can be used to select a range of variables.}
 }
+\value{
+An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
+will also be of the same type as the input. Each object in \code{.nest_data} has
+the following properties:
+\itemize{
+\item Rows are not affect.
+\item Output columns are a subset of input columns, potentially with a different
+order. Columns will be renamed if \code{new_name = old_name} form is used.
+\item Data frame attributes are preserved.
+\item Groups are maintained; you can't select off grouping variables.
+}
+}
 \description{
 \code{nest_select()} selects (and optionally renames) variables in nested data
 frames, using a concise mini-language that makes it easy to refer to
 variables based on their name (e.g., \code{a:f} selects all columns from \code{a} on
 the left to \code{f} on the right). You can also use predicate functions like
 \link{is.numeric} to select variables based on their properties.
-
+}
+\details{
 \code{nest_select()} is largely a wrapper for \code{\link[dplyr:select]{dplyr::select()}} and maintains the
 functionality of \code{select()} within each nested data frame. For more
 information on \code{select()}, please refer to the documentation in
 \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.
 }
 \examples{
-\dontrun{
 gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 
 gm_nest \%>\% nest_select(country_data, country, year, pop)
 gm_nest \%>\% nest_select(country_data, where(is.numeric))
-}
 }
 \seealso{
 Other single table verbs: 

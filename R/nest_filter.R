@@ -10,6 +10,17 @@
 #' expressions in `...` to the column values to determine which rows should be 
 #' retained. It can be applied to both grouped and ungrouped data.
 #' 
+#' @return 
+#' An object of the same type as `.data`. Each object in the column `.nest_data` 
+#' will also be of the same type as the input. Each object in `.nest_data` has
+#' the following properties:
+#' 
+#' * Rows are a subset of the input, but appear in the same order.
+#' * Columns are not modified.
+#' * The number of groups may be reduced (if `.preserve` is not `TRUE`).
+#' * Data frame attributes are preserved.
+#' 
+#' @details 
 #' `nest_filter()` is largely a wrapper for [dplyr::filter()] and maintains the 
 #' functionality of `filter()` within each nested data frame. For more 
 #' information on `filter()`, please refer to the documentation in 
@@ -34,7 +45,6 @@
 #' @family single table verbs
 #' 
 #' @examples 
-#' \dontrun{
 #' gm_nest <- gapminder::gapminder %>% tidyr::nest(country_data = -continent)
 #' 
 #' # apply a filter
@@ -49,7 +59,6 @@
 #' gm_nest %>%
 #'   nest_group_by(country_data, country) %>%
 #'   nest_filter(country_data, pop > mean(pop))
-#' }
 nest_filter <- function(.data,
                         .nest_data,
                         ...,

@@ -1,9 +1,21 @@
 #' Change column order within a nested data frame
 #' 
+#' @description 
 #' `nest_relocate()` changes column positions within a nested data frame, using 
 #' the same syntax as [nest_select()] or [dplyr::select()] to make it easy to 
 #' move blocks of columns at once.
 #' 
+#' @return 
+#' An object of the same type as `.data`. Each object in the column `.nest_data` 
+#' will also be of the same type as the input. Each object in `.nest_data` has
+#' the following properties:
+#' 
+#' * Rows are not affected.
+#' * The same columns appear in the output, but (usually) in a different place.
+#' * Data frame attributes are preserved.
+#' * Groups are not affected.
+#' 
+#' @details 
 #' `nest_relocate()` is largely a wrapper for [dplyr::relocate()] and maintains 
 #' the functionality of `relocate()` within each nested data frame. For more
 #' information on `relocate()`, please refer to the documentation in
@@ -24,12 +36,10 @@
 #' @export
 #' 
 #' @examples 
-#' \dontrun{
 #' gm_nest <- gapminder::gapminder %>% tidyr::nest(country_data = -continent)
 #' 
 #' gm_nest %>% nest_relocate(country_data, year)
 #' gm_nest %>% nest_relocate(country_data, pop, .after = year)
-#' }
 nest_relocate <- function(.data, 
                           .nest_data,
                           ...,

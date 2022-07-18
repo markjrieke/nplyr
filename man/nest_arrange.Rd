@@ -18,17 +18,28 @@ a variable in descending order.}
 \item{.by_group}{If \code{TRUE}, will sort first by grouping variable. Applies to
 grouped data frames only.}
 }
+\value{
+An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
+will be also of the same type as the input. Each object in \code{.nest_data} has
+the following properties:
+\itemize{
+\item All rows appear in the output, but (usually) in a different place.
+\item Columns are not modified.
+\item Groups are not modified.
+\item Data frame attributes are preserved.
+}
+}
 \description{
 \code{nest_arrange()} orders the rows of nested data frames by the values of
 selected columns.
-
+}
+\details{
 \code{nest_arrange()} is largely a wrapper for \code{\link[dplyr:arrange]{dplyr::arrange()}} and maintains
 the functionality of \code{arrange()} within each nested data frame. For more
 information on \code{arrange()}, please refer to the documentation in
 \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.
 }
 \examples{
-\dontrun{
 gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 
 gm_nest \%>\% 
@@ -36,7 +47,6 @@ gm_nest \%>\%
 
 gm_nest \%>\%
   nest_arrange(country_data, desc(pop))
-}
 }
 \seealso{
 Other single table verbs: 

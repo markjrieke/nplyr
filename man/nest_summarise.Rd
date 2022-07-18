@@ -28,6 +28,20 @@ The value can be:
 \item{.groups}{\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}} Grouping structure of the
 result. Refer to \code{\link[dplyr:summarise]{dplyr::summarise()}} for more up-to-date information.}
 }
+\value{
+An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
+will \emph{usually} be of the same type as the input. Each object in \code{.nest_data} has
+the following properties:
+\itemize{
+\item The rows come from the underlying \href{https://dplyr.tidyverse.org/reference/group_data.html}{\code{group_keys()}}
+\item The columns are a combination of the grouping keys and the summary
+expressions that you provide.
+\item The grouping structure is controlled by the \code{.groups} argument, the output
+may be another grouped_df, a tibble, or a rowwise data frame.
+\item Data frame attributes are \strong{not} preserved, because \code{nest_summarise()}
+fundamentally creates a new data frame for each object in \code{.nest_data}.
+}
+}
 \description{
 \code{nest_summarise()} creates a new set of nested data frames. Each will have
 one (or more) rows for each combination of grouping variables; if there are
@@ -37,15 +51,15 @@ for each grouping variable and one column for each of the summary statistics
 that you have specified.
 
 \code{nest_summarise()} and \code{nest_summarize()} are synonyms.
-
+}
+\details{
 \code{nest_summarise()} is largely a wrapper for \code{\link[dplyr:summarise]{dplyr::summarise()}} and
 maintains the functionality of \code{summarise()} within each nested data frame.
 For more information on \code{summarise()}, please refer to the documentation in
 \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.
 }
 \examples{
-\dontrun{
-gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -countinent)
+gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 
 # a summary applied to an ungrouped tbl returns a single row
 gm_nest \%>\%
@@ -63,7 +77,6 @@ gm_nest \%>\%
     n = n(),
     median_pop = median(pop)
   )
-}
 }
 \seealso{
 Other single table verbs: 

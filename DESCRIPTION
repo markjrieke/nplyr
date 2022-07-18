@@ -1,13 +1,17 @@
 Package: nplyr
-Title: A Grammar of (Nested) Data Manipulation
-Version: 0.0.0.9000
+Title: A Grammar of Nested Data Manipulation
+Version: 0.1.0
 Authors@R: 
     person(given = "Mark",
            family = "Rieke",
            role = c("aut", "cre"),
            email = "markjrieke@gmail.com")
-Description: A wrapper around the 'dplyr' package. Provides functions
-    for manipulating nested data frames in a list-column.
+Description: Provides functions for manipulating nested data frames in a 
+    list-column using 'dplyr' <https://dplyr.tidyverse.org/> syntax. Rather than 
+    unnesting, then manipulating a data frame, 'nplyr' allows users to 
+    manipulate each nested data frame directly. 'nplyr' is a wrapper for 'dplyr'
+    functions that provide tools for common data manipulation steps: filtering 
+    rows, selecting columns, summarising grouped data, among others.
 License: MIT + file LICENSE
 URL: https://github.com/markjrieke/nplyr,
     https://markjrieke.github.io/nplyr/

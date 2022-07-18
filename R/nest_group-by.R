@@ -5,6 +5,13 @@
 #' nested grouped tbls where operations are performed "by group". 
 #' `nest_ungroup()` removes grouping.
 #' 
+#' @return 
+#' An object of the same type as `.data`. Each object in the column `.nest_data` 
+#' will be returned as a grouped data frame with class `grouped_df`, unless the 
+#' combination of `...` and `.add` yields an empty set of grouping columns, in 
+#' which case a tibble will be returned. 
+#' 
+#' @details 
 #' `nest_group_by()` and `nest_ungroup()` are largely wrappers for 
 #' [dplyr::group_by()] and [dplyr::ungroup()] and maintain the functionality of 
 #' `group_by()` and `ungroup()` within each nested data frame. For more 
@@ -34,7 +41,6 @@
 #' @family grouping functions
 #' 
 #' @examples 
-#' \dontrun{
 #' gm_nest <- gapminder::gapminder %>% tidyr::nest(country_data = -continent)
 #' 
 #' # grouping doesn't change .nest_data, just .nest_data class:
@@ -55,7 +61,6 @@
 #' 
 #' # ungrouping removes variable groups:
 #' gm_nest_grouped %>% nest_ungroup(country_data)
-#' }
 nest_group_by <- function(.data,
                           .nest_data,
                           ...,

@@ -17,6 +17,17 @@
 #' each group, so that (e.g.) `nest_slice_head(df, nested_dfs, n = 5)` will 
 #' return the first five rows in each group for each nested data frame.
 #' 
+#' @return 
+#' An object of the same type as `.data`. Each object in the column `.nest_data` 
+#' will also be of the same type as the input. Each object in `.nest_data` has
+#' the following properties:
+#' 
+#' * Each row may appear 0, 1, or many times in the output.
+#' * Columns are not modified.
+#' * Groups are not modified.
+#' * Data frame attributes are preserved.
+#' 
+#' @details 
 #' `nest_slice()` and its helpers are largely wrappers for [dplyr::slice()] and 
 #' its helpers and maintains the functionality of `slice()` and its helpers 
 #' within each nested data frame. For more information on `slice()` or its 
@@ -48,7 +59,7 @@
 #' 
 #' @param .preserve Relevant when `.nest_data` is grouped. 
 #'   If `.preserve = FALSE` (the default), the grouping structure is 
-#'   recalcualted based on the resulting data, otherwise the grouping data is 
+#'   recalculated based on the resulting data, otherwise the grouping data is 
 #'   kept as is.
 #' 
 #' @importFrom dplyr enquos
@@ -62,7 +73,6 @@
 #' @family single table verbs
 #' 
 #' @examples 
-#' \dontrun{
 #' gm_nest <- gapminder::gapminder %>% tidyr::nest(country_data = -continent)
 #' 
 #' # select the 1st, 3rd, and 5th rows in each data frame in country_data
@@ -82,7 +92,6 @@
 #' # randomly select rows with or without replacement:
 #' gm_nest %>% nest_slice_sample(country_data, n = 5)
 #' gm_nest %>% nest_slice_sample(country_data, n = 5, replace = TRUE)
-#' }
 nest_slice <- function(.data, 
                        .nest_data,
                        ...,

@@ -21,6 +21,17 @@ evaluate to \code{TRUE} are kept.}
 \code{.preserve = FALSE} (the default), the grouping structure is recalculated
 based on the resulting data, otherwise the grouping is kept as is.}
 }
+\value{
+An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
+will also be of the same type as the input. Each object in \code{.nest_data} has
+the following properties:
+\itemize{
+\item Rows are a subset of the input, but appear in the same order.
+\item Columns are not modified.
+\item The number of groups may be reduced (if \code{.preserve} is not \code{TRUE}).
+\item Data frame attributes are preserved.
+}
+}
 \description{
 \code{nest_filter()} is used to subset nested data frames, retaining all rows that
 satisfy your conditions. To be retained, the row must produce a value of
@@ -30,14 +41,14 @@ row will be dropped, unlike base subsetting with \code{[}.
 \code{nest_filter()} subsets the rows within \code{.nest_data}, applying the
 expressions in \code{...} to the column values to determine which rows should be
 retained. It can be applied to both grouped and ungrouped data.
-
+}
+\details{
 \code{nest_filter()} is largely a wrapper for \code{\link[dplyr:filter]{dplyr::filter()}} and maintains the
 functionality of \code{filter()} within each nested data frame. For more
 information on \code{filter()}, please refer to the documentation in
 \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.
 }
 \examples{
-\dontrun{
 gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 
 # apply a filter
@@ -52,7 +63,6 @@ gm_nest \%>\%
 gm_nest \%>\%
   nest_group_by(country_data, country) \%>\%
   nest_filter(country_data, pop > mean(pop))
-}
 }
 \seealso{
 Other single table verbs: 

@@ -4,6 +4,17 @@
 #' `nest_arrange()` orders the rows of nested data frames by the values of 
 #' selected columns. 
 #' 
+#' @return 
+#' An object of the same type as `.data`. Each object in the column `.nest_data` 
+#' will be also of the same type as the input. Each object in `.nest_data` has 
+#' the following properties:
+#' 
+#' * All rows appear in the output, but (usually) in a different place.
+#' * Columns are not modified.
+#' * Groups are not modified.
+#' * Data frame attributes are preserved. 
+#' 
+#' @details 
 #' `nest_arrange()` is largely a wrapper for [dplyr::arrange()] and maintains 
 #' the functionality of `arrange()` within each nested data frame. For more 
 #' information on `arrange()`, please refer to the documentation in 
@@ -25,7 +36,6 @@
 #' @family single table verbs
 #' 
 #' @examples 
-#' \dontrun{
 #' gm_nest <- gapminder::gapminder %>% tidyr::nest(country_data = -continent)
 #' 
 #' gm_nest %>% 
@@ -33,7 +43,6 @@
 #' 
 #' gm_nest %>%
 #'   nest_arrange(country_data, desc(pop))
-#' }
 nest_arrange <- function(.data, 
                          .nest_data,
                          ...,

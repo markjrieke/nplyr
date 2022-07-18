@@ -62,7 +62,26 @@ data frame (e.g., from dbplyr or dtplyr).}
 frame (e.g., from dbplyr or dtplyr).}
 
 \item{by}{A character vector of variables to join by or a join specification
-created with \code{join_by()}.}
+created with \code{join_by()}.
+
+If \code{NULL}, the default, \verb{nest_*_join()} will perform a natural join, using
+all variables in common across each object in \code{.nest_data} and \code{y}. A
+message lists the variables so you can check they're correct; suppress the
+message by supplying \code{by} explicitly.
+
+To join on different variables between the objects in \code{.nest_data} and \code{y},
+use a named vector. For example, \code{by = c("a" = "b")} will match
+\code{.nest_data$a} to \code{y$b} for each object in \code{.nest_data}.
+
+To join by multiple variables, use a vector with length >1. For example,
+\code{by = c("a", "b")} will match \code{.nest_data$a} to \code{y$a} and \code{.nest_data$b} to
+\code{y$b} for each object in \code{.nest_data}. Use a named vector to match
+different variables in \code{.nest_data} and \code{y}. For example,
+\code{by = c("a" = "b", "c" = "d")} will match \code{.nest_data$a} to \code{y$b} and
+\code{.nest_data$c} to \code{y$d} for each object in \code{.nest_data}.
+
+To perform a cross-join, generating all combinations of each object in
+\code{.nest_data} and \code{y}, use \code{by = character()}.}
 
 \item{copy}{If \code{.nest_data} and \code{y} are not from the same data source and
 \code{copy = TRUE} then \code{y} will be copied into the same src as \code{.nest_data}.
@@ -80,7 +99,7 @@ Should be a character vector of length 2.}
 \item \code{"never"} treats two \code{NA} or two \code{NaN} values as different, and will
 never match them together or to any other values.
 }
-\item \code{multiple} : Handlind of rows in \code{.nest_data} with multiple matches in \code{y}.
+\item \code{multiple} : Handling of rows in \code{.nest_data} with multiple matches in \code{y}.
 \itemize{
 \item \code{"all"} returns every match detected in \code{y}.
 \item \code{"any"} returns one match detected in \code{y}, with no guarantees on which
@@ -102,6 +121,30 @@ be handled?
 
 \item{keep}{Should the join keys from both \code{.nest_data} and \code{y} be preserved
 in the output?}
+}
+\value{
+An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
+will also be of the same type as the input. The order of the rows and columns
+of each object in \code{.nest_data} is preserved as much as possible. Each object
+in \code{.nest_data} has the following properties:
+\itemize{
+\item For \code{nest_inner_join()}, a subset of rows in each object in \code{.nest_data}.
+For \code{nest_left_join()}, all rows in each object in \code{.nest_data}.
+For \code{nest_right_join()}, a subset of rows in each object in \code{.nest_data},
+followed by unmatched \code{y} rows.
+For \code{nest_full_join()}, all rows in each object in \code{.nest_data}, followed
+by unmatched \code{y} rows.
+\item Output columns include all columns from each \code{.nest_data} and all non-key
+columns from \code{y}. If \code{keep = TRUE}, the key columns from \code{y} are included
+as well.
+\item If non-key columns in any object in \code{.nest_data} and \code{y} have the same name,
+\code{suffix}es are added to disambiguate. If \code{keep = TRUE} and key columns in
+\code{.nest_data} and \code{y} have the same name, \code{suffix}es are added to
+disambiguate these as well.
+\item If \code{keep = FALSE}, output columns included in \code{by} are coerced to their
+common type between the objects in \code{.nest_data} and \code{y}.
+\item Groups are taken from \code{.nest_data}.
+}
 }
 \description{
 Nested mutating joins add columns from \code{y} to each of the nested data frames
@@ -125,7 +168,9 @@ one of the data frames:
 \item \code{nest_right_join()} keeps all observations in \code{y}.
 \item \code{nest_full_join()} keeps all observations in \code{.nest_data} and \code{y}.
 }
-
+}
+}
+\details{
 \code{nest_inner_join()}, \code{nest_left_join()}, \code{nest_right_join()}, and
 \code{nest_full_join()} are largely wrappers for \code{\link[dplyr:mutate-joins]{dplyr::inner_join()}},
 \code{\link[dplyr:mutate-joins]{dplyr::left_join()}}, \code{\link[dplyr:mutate-joins]{dplyr::right_join()}}, and \code{\link[dplyr:mutate-joins]{dplyr::full_join()}} and
@@ -134,18 +179,15 @@ more information on \code{inner_join()}, \code{left_join()}, \code{right_join()}
 \code{full_join()}, please refer to the documentation in
 \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.
 }
-}
 \examples{
-\dontrun{
 gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 gm_codes <- gapminder::country_codes
 
 gm_nest \%>\% nest_inner_join(country_data, gm_codes, by = "country")
 gm_nest \%>\% nest_left_join(country_data, gm_codes, by = "country")
 gm_nest \%>\% nest_right_join(country_data, gm_codes, by = "country")
-gm_nest \%>\% nest_full_join(country_data, gm_coces, by = "country")
+gm_nest \%>\% nest_full_join(country_data, gm_codes, by = "country")
 
-}
 }
 \seealso{
 Other joins: 

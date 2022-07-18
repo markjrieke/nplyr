@@ -29,11 +29,18 @@ data? The default is \code{TRUE} except when \code{.nest_data} has been previous
 grouped with \code{.drop = FALSE}. See \code{\link[dplyr:group_by_drop_default]{dplyr::group_by_drop_default()}} for
 details.}
 }
+\value{
+An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
+will be returned as a grouped data frame with class \code{grouped_df}, unless the
+combination of \code{...} and \code{.add} yields an empty set of grouping columns, in
+which case a tibble will be returned.
+}
 \description{
 \code{nest_group_by()} takes a set of nested tbls and converts it to a set of
 nested grouped tbls where operations are performed "by group".
 \code{nest_ungroup()} removes grouping.
-
+}
+\details{
 \code{nest_group_by()} and \code{nest_ungroup()} are largely wrappers for
 \code{\link[dplyr:group_by]{dplyr::group_by()}} and \code{\link[dplyr:group_by]{dplyr::ungroup()}} and maintain the functionality of
 \code{group_by()} and \code{ungroup()} within each nested data frame. For more
@@ -41,7 +48,6 @@ information on \code{group_by()} or \code{ungroup()}, please refer to the docume
 in \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.
 }
 \examples{
-\dontrun{
 gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 
 # grouping doesn't change .nest_data, just .nest_data class:
@@ -62,6 +68,5 @@ gm_nest_grouped \%>\%
 
 # ungrouping removes variable groups:
 gm_nest_grouped \%>\% nest_ungroup(country_data)
-}
 }
 \concept{grouping functions}

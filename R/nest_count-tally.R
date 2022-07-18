@@ -5,8 +5,15 @@
 #' variables within each nested data frame. `nest_count()` results in a summary 
 #' with one row per each set of variables to count by. `nest_add_count()` is 
 #' equivalent with the exception that it retains all rows and adds a new column
-#' ith group-wise counts.
+#' with group-wise counts.
 #' 
+#' @return 
+#' An object of the same type as `.data`. Each object in the column `.nest_data` 
+#' will also be of the same type as the input. `nest_count()` and 
+#' `nest_add_count()` group each object in `.nest_data` transiently, so the 
+#' output returned in `.nest_data` will have the same groups as the input. 
+#' 
+#' @details 
 #' `nest_count()` and `nest_add_count()` are largely wrappers for 
 #' [dplyr::count()] and [dplyr::add_count()] and maintain the functionality of 
 #' `count()` and `add_count()` within each nested data frame. For more 
@@ -32,7 +39,6 @@
 #' @export
 #' 
 #' @examples 
-#' \dontrun{
 #' gm_nest <- gapminder::gapminder %>% tidyr::nest(country_data = -continent)
 #' 
 #' # count the number of times each country appears in each nested tibble
@@ -42,7 +48,6 @@
 #' # count the sum of population for each country in each nested tibble
 #' gm_nest %>% nest_count(country_data, country, wt = pop)
 #' gm_nest %>% nest_add_count(country_data, country, wt = pop)
-#' }
 nest_count <- function(.data,
                        .nest_data,
                        ...,

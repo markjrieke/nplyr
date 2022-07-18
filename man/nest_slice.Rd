@@ -52,7 +52,7 @@ group size does not yield an integer number of rows, the absolute value of
 
 \item{.preserve}{Relevant when \code{.nest_data} is grouped.
 If \code{.preserve = FALSE} (the default), the grouping structure is
-recalcualted based on the resulting data, otherwise the grouping data is
+recalculated based on the resulting data, otherwise the grouping data is
 kept as is.}
 
 \item{order_by}{Variable or function of variables to order by.}
@@ -67,6 +67,17 @@ standardised to sum to 1.}
 
 \item{replace}{Should sampling be performed with (\code{TRUE}) or without (\code{FALSE},
 the default) replacement?}
+}
+\value{
+An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
+will also be of the same type as the input. Each object in \code{.nest_data} has
+the following properties:
+\itemize{
+\item Each row may appear 0, 1, or many times in the output.
+\item Columns are not modified.
+\item Groups are not modified.
+\item Data frame attributes are preserved.
+}
 }
 \description{
 \code{nest_slice()} lets you index rows in nested data frames by their (integer)
@@ -85,7 +96,8 @@ or lowest values of a variable within each nested data frame in
 If \code{.nest_data} is a grouped data frame, the operation will be performed on
 each group, so that (e.g.) \code{nest_slice_head(df, nested_dfs, n = 5)} will
 return the first five rows in each group for each nested data frame.
-
+}
+\details{
 \code{nest_slice()} and its helpers are largely wrappers for \code{\link[dplyr:slice]{dplyr::slice()}} and
 its helpers and maintains the functionality of \code{slice()} and its helpers
 within each nested data frame. For more information on \code{slice()} or its
@@ -93,7 +105,6 @@ helpers, please refer to the documentation in
 \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.
 }
 \examples{
-\dontrun{
 gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 
 # select the 1st, 3rd, and 5th rows in each data frame in country_data
@@ -113,7 +124,6 @@ gm_nest \%>\% nest_slice_max(country_data, lifeExp, n = 5)
 # randomly select rows with or without replacement:
 gm_nest \%>\% nest_slice_sample(country_data, n = 5)
 gm_nest \%>\% nest_slice_sample(country_data, n = 5, replace = TRUE)
-}
 }
 \seealso{
 Other single table verbs: 

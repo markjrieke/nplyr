@@ -28,13 +28,20 @@ Can be \code{NULL} or a variable:
 
 \item{name}{The name of the new column in the output.}
 }
+\value{
+An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
+will also be of the same type as the input. \code{nest_count()} and
+\code{nest_add_count()} group each object in \code{.nest_data} transiently, so the
+output returned in \code{.nest_data} will have the same groups as the input.
+}
 \description{
 \code{nest_count()} lets you quickly count the unique values of one or more
 variables within each nested data frame. \code{nest_count()} results in a summary
 with one row per each set of variables to count by. \code{nest_add_count()} is
 equivalent with the exception that it retains all rows and adds a new column
-ith group-wise counts.
-
+with group-wise counts.
+}
+\details{
 \code{nest_count()} and \code{nest_add_count()} are largely wrappers for
 \code{\link[dplyr:count]{dplyr::count()}} and \code{\link[dplyr:count]{dplyr::add_count()}} and maintain the functionality of
 \code{count()} and \code{add_count()} within each nested data frame. For more
@@ -42,7 +49,6 @@ information on \code{count()} and \code{add_count()}, please refer to the docume
 in \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.
 }
 \examples{
-\dontrun{
 gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 
 # count the number of times each country appears in each nested tibble
@@ -52,5 +58,4 @@ gm_nest \%>\% nest_add_count(country_data, country)
 # count the sum of population for each country in each nested tibble
 gm_nest \%>\% nest_count(country_data, country, wt = pop)
 gm_nest \%>\% nest_add_count(country_data, country, wt = pop)
-}
 }
