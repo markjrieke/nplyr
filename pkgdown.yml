@@ -3,7 +3,7 @@ pkgdown: 2.0.5
 pkgdown_sha: ~
 articles:
   Use-case-for-nplyr: Use-case-for-nplyr.html
-last_built: 2022-07-18T13:47Z
+last_built: 2022-07-18T15:55Z
 urls:
   reference: https://markjrieke.github.io/nplyr/reference
   article: https://markjrieke.github.io/nplyr/articles
