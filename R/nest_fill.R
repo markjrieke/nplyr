@@ -22,7 +22,7 @@
 #' @importFrom dplyr enquos
 #' @importFrom dplyr mutate
 #' @importFrom rlang :=
-#' @importfrom purrr map
+#' @importFrom purrr map
 #' @importFrom tidyr fill
 #' 
 #' @export
