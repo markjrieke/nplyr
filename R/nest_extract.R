@@ -33,7 +33,8 @@
 #' gm <- gm %>% mutate(comb = sample(c(NA, "a-b", "a-d", "b-c", "d-e"),size = nrow(gm),replace = TRUE))
 #' gm_nest <- gm %>% tidyr::nest(country_data = -continent)
 #' 
-#' gm_nest %>% nest_extract(.nest_data = country_data,col = comb,into = c("var1","var2"),regex = "([[:alnum:]]+)-([[:alnum:]]+)")
+#' gm_nest %>% nest_extract(.nest_data = country_data,col = comb,
+#'                          into = c("var1","var2"),regex = "([[:alnum:]]+)-([[:alnum:]]+)")
 nest_extract <- function(.data,
                           .nest_data,
                           col,
