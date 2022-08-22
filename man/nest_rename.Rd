@@ -56,10 +56,16 @@ gm_nest \%>\% nest_rename_with(country_data, stringr::str_to_lower)
 \seealso{
 Other single table verbs: 
 \code{\link{nest_arrange}()},
+\code{\link{nest_drop_na}()},
+\code{\link{nest_extract}()},
+\code{\link{nest_fill}()},
 \code{\link{nest_filter}()},
 \code{\link{nest_mutate}()},
+\code{\link{nest_replace_na}()},
 \code{\link{nest_select}()},
+\code{\link{nest_separate}()},
 \code{\link{nest_slice}()},
-\code{\link{nest_summarise}()}
+\code{\link{nest_summarise}()},
+\code{\link{nest_unite}()}
 }
 \concept{single table verbs}
