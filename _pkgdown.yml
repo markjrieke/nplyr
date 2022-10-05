@@ -30,6 +30,15 @@ reference:
 - title: Grouping
   contents:
   - nest_group_by
+  
+- title: tidyr verbs
+  contents:
+  - nest_drop_na
+  - nest_extract
+  - nest_fill
+  - nest_replace_na
+  - nest_separate
+  - nest_unite
 
 - title: Data
   contents:

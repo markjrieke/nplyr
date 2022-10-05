@@ -9,7 +9,7 @@ nest_extract(
   .nest_data,
   col,
   into,
-  regex = "[^[:alnum:]]+",
+  regex = "([[:alnum:]]+)",
   remove = TRUE,
   convert = FALSE,
   ...
@@ -21,12 +21,11 @@ data frame (e.g., from dbplyr or dtplyr).}
 
 \item{.nest_data}{A list-column containing data frames}
 
-\item{col}{Column name or position. This is passed to
-\code{\link[tidyselect:vars_pull]{tidyselect::vars_pull()}}.
+\item{col}{Column name or position within \code{.nest_data} (must be present within
+all nested data frames in \code{.nest_data}). This is passed to \code{tidyselect::vars_pull()}.
 
-This argument is passed by expression and supports
-\link[rlang:nse-force]{quasiquotation} (you can unquote column
-names or column positions).}
+This argument is passed by expression and supports quasiquotation (you can
+unquote column names or column positions).}
 
 \item{into}{Names of new variables to create as character vector.
 Use \code{NA} to omit the variable in the output.}
@@ -43,9 +42,7 @@ columns are integer, numeric or logical.
 
 NB: this will cause string \code{"NA"}s to be converted to \code{NA}s.}
 
-\item{...}{One or more unquoted expressions separated by commas. Variable
-names can be used if they were positions in the data frame, so expressions
-like \code{x:y} can be used to select a range of variables.}
+\item{...}{Additional arguments passed on to \code{\link[tidyr:extract]{tidyr::extract()}} methods.}
 }
 \value{
 An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
@@ -53,9 +50,9 @@ will have new columns created according to the capture groups specified in
 the regular expression.
 }
 \description{
-\code{nest_extract()} is used to extract capturing groups from a column using
-regular expressions into a new column. If the groups don't match, or the
-input is NA, the output will be NA.
+\code{nest_extract()} is used to extract capturing groups from a column in a nested
+data frame using regular expressions into a new column. If the groups don't
+match, or the input is NA, the output will be NA.
 }
 \details{
 \code{nest_extract()} is a wrapper for \code{\link[tidyr:extract]{tidyr::extract()}} and maintains the functionality
@@ -68,22 +65,18 @@ gm <- gapminder::gapminder
 gm <- gm \%>\% mutate(comb = sample(c(NA, "a-b", "a-d", "b-c", "d-e"),size = nrow(gm),replace = TRUE))
 gm_nest <- gm \%>\% tidyr::nest(country_data = -continent)
 
-gm_nest \%>\% nest_extract(.nest_data = country_data,col = comb,
-                         into = c("var1","var2"),regex = "([[:alnum:]]+)-([[:alnum:]]+)")
+gm_nest \%>\% 
+  nest_extract(.nest_data = country_data,
+               col = comb,
+               into = c("var1","var2"),
+               regex = "([[:alnum:]]+)-([[:alnum:]]+)")
 }
 \seealso{
-Other single table verbs: 
-\code{\link{nest_arrange}()},
+Other tidyr verbs: 
 \code{\link{nest_drop_na}()},
 \code{\link{nest_fill}()},
-\code{\link{nest_filter}()},
-\code{\link{nest_mutate}()},
-\code{\link{nest_rename}()},
 \code{\link{nest_replace_na}()},
-\code{\link{nest_select}()},
 \code{\link{nest_separate}()},
-\code{\link{nest_slice}()},
-\code{\link{nest_summarise}()},
 \code{\link{nest_unite}()}
 }
-\concept{single table verbs}
+\concept{tidyr verbs}

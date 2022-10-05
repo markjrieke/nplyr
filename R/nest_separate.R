@@ -17,6 +17,13 @@
 #'  
 #' @inheritParams nest_select
 #' @inheritParams tidyr::separate
+#' @param col Column name or position within. Must be present in all data frames 
+#'   in `.nest_data`. This is passed to [tidyselect::vars_pull()].
+#'   
+#'   This argument is passed by expression and supports quasiquotation (you can 
+#'   unquote column names or column positions).
+#'   
+#' @param ... Additional arguments passed on to [tidyr::separate()] methods.
 #' 
 #' @importFrom dplyr enquos
 #' @importFrom dplyr mutate
@@ -25,14 +32,18 @@
 #' @importFrom tidyr separate
 #' 
 #' @export
-#' @family single table verbs
+#' @family tidyr verbs
 #' 
 #' @examples
 #' set.seed(123)
 #' gm <- gapminder::gapminder %>% mutate(comb = paste(continent,year,sep = "-"))
 #' gm_nest <- gm %>% tidyr::nest(country_data = -continent)
 #' 
-#' gm_nest %>% nest_separate(.nest_data = country_data,col = comb,into = c("var1","var2"),sep = "-")
+#' gm_nest %>% 
+#'   nest_separate(.nest_data = country_data,
+#'                 col = comb,
+#'                 into = c("var1","var2"),
+#'                 sep = "-")
 nest_separate <- function(.data,
                           .nest_data,
                           col,
@@ -54,8 +65,8 @@ nest_separate <- function(.data,
   dplyr::mutate(
     .data,
     "{{.nest_data}}" := purrr::map({{ .nest_data }}, 
-                                   ~tidyr::separate(.x, col = {{ col }},into = into,sep = sep,
-                                                    remove = remove,convert = convert,
-                                                    extra = extra,fill = fill, !!!dots))
+                                   ~tidyr::separate(.x, col = {{ col }}, into = into, sep = sep,
+                                                    remove = remove, convert = convert,
+                                                    extra = extra, fill = fill, !!!dots))
   )
 }

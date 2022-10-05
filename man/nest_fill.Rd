@@ -28,8 +28,8 @@ An object of the same type as \code{.data}. Each object in the column \code{.nes
 will have the chosen columns filled in the direction specified by \code{.direction}.
 }
 \description{
-\code{nest_fill()} is used to fill missing values in selected columns using the next
-or previous entries in a column of nested data frames.
+\code{nest_fill()} is used to fill missing values in selected columns of nested data
+frames using the next or previous entries in a column of nested data frames.
 }
 \details{
 \code{nest_fill()} is a wrapper for \code{\link[tidyr:fill]{tidyr::fill()}} and maintains the functionality
@@ -44,18 +44,11 @@ gm_nest <- gm \%>\% tidyr::nest(country_data = -continent)
 gm_nest \%>\% nest_fill(.nest_data = country_data,pop,.direction = "down")
 }
 \seealso{
-Other single table verbs: 
-\code{\link{nest_arrange}()},
+Other tidyr verbs: 
 \code{\link{nest_drop_na}()},
 \code{\link{nest_extract}()},
-\code{\link{nest_filter}()},
-\code{\link{nest_mutate}()},
-\code{\link{nest_rename}()},
 \code{\link{nest_replace_na}()},
-\code{\link{nest_select}()},
 \code{\link{nest_separate}()},
-\code{\link{nest_slice}()},
-\code{\link{nest_summarise}()},
 \code{\link{nest_unite}()}
 }
-\concept{single table verbs}
+\concept{tidyr verbs}

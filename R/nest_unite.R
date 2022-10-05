@@ -15,6 +15,7 @@
 #'  
 #' @inheritParams nest_select
 #' @inheritParams tidyr::unite
+#' @param ... Columns to unite.
 #' 
 #' @importFrom dplyr enquos
 #' @importFrom dplyr mutate
@@ -23,14 +24,18 @@
 #' @importFrom tidyr unite
 #' 
 #' @export
-#' @family single table verbs
+#' @family tidyr verbs
 #' 
 #' @examples
 #' set.seed(123)
 #' gm <- gapminder::gapminder 
 #' gm_nest <- gm %>% tidyr::nest(country_data = -continent)
 #' 
-#' gm_nest %>% nest_unite(.nest_data = country_data,col = comb,year,pop)
+#' gm_nest %>% 
+#'   nest_unite(.nest_data = country_data, 
+#'              col = comb, 
+#'              year, 
+#'              pop)
 nest_unite <- function(.data,
                          .nest_data,
                          col,
@@ -49,7 +54,7 @@ nest_unite <- function(.data,
   dplyr::mutate(
     .data,
     "{{.nest_data}}" := purrr::map({{ .nest_data }}, 
-                                   ~tidyr::unite(.x, col = {{ col }},!!!dots,sep = sep,
-                                                 remove = remove,na.rm = na.rm))
+                                   ~tidyr::unite(.x, col = {{ col }}, !!!dots, sep = sep,
+                                                 remove = remove, na.rm = na.rm))
   )
 }

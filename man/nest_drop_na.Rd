@@ -12,9 +12,8 @@ data frame (e.g., from dbplyr or dtplyr).}
 
 \item{.nest_data}{A list-column containing data frames}
 
-\item{...}{One or more unquoted expressions separated by commas. Variable
-names can be used if they were positions in the data frame, so expressions
-like \code{x:y} can be used to select a range of variables.}
+\item{...}{Columns within \code{.nest_data} to inspect for missing values. If empty,
+all columns within each dataframe in \code{.nest_data} are used.}
 }
 \value{
 An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
@@ -30,26 +29,22 @@ of \code{drop_na()} within each nested data frame. For more information on \code
 please refer to the documentation in \href{https::/tidyr.tidyverse.org}{'tidyr'}.
 }
 \examples{
-set.seed(123)
 gm <- gapminder::gapminder 
-gm <- gm \%>\% mutate(pop = if_else(runif(nrow(gm)) >= 0.9,NA_integer_,pop))
+
+# randomly insert NAs into the dataframe & nest
+set.seed(123) 
+gm <- gm \%>\% mutate(pop = if_else(runif(nrow(gm)) >= 0.9, NA_integer_, pop))
 gm_nest <- gm \%>\% tidyr::nest(country_data = -continent)
 
+# drop rows where an NA exists in column `pop`
 gm_nest \%>\% nest_drop_na(.nest_data = country_data,pop)
 }
 \seealso{
-Other single table verbs: 
-\code{\link{nest_arrange}()},
+Other tidyr verbs: 
 \code{\link{nest_extract}()},
 \code{\link{nest_fill}()},
-\code{\link{nest_filter}()},
-\code{\link{nest_mutate}()},
-\code{\link{nest_rename}()},
 \code{\link{nest_replace_na}()},
-\code{\link{nest_select}()},
 \code{\link{nest_separate}()},
-\code{\link{nest_slice}()},
-\code{\link{nest_summarise}()},
 \code{\link{nest_unite}()}
 }
-\concept{single table verbs}
+\concept{tidyr verbs}

@@ -1,8 +1,8 @@
 #' Replace NAs with specified values in a column of nested data frames
 #' 
 #' @description
-#' `nest_replace_na()` is used to replace missing values in selected columns using 
-#' values specified by column.
+#' `nest_replace_na()` is used to replace missing values in selected columns of 
+#' nested data frames using values specified by column.
 #' 
 #' @return
 #'  An object of the same type as `.data`. Each object in the column `.nest_data` 
@@ -14,9 +14,9 @@
 #'  please refer to the documentation in ['tidyr'](https::/tidyr.tidyverse.org).
 #'  
 #' @inheritParams nest_select
-#' @param replace A list of values, with one value for each column that has NA values
+#' @param replace A list of values, with one value for each column in that has `NA` values
 #' to be replaced.
-#' @param ... Currently unused.
+#' @param ... Additional arguments for [tidyr::replace_na()] methods. Currently unused.
 #' 
 #' @importFrom dplyr enquos
 #' @importFrom dplyr mutate
@@ -25,14 +25,16 @@
 #' @importFrom tidyr replace_na
 #' 
 #' @export
-#' @family single table verbs
+#' @family tidyr verbs
 #' 
 #' @examples
 #' set.seed(123)
 #' gm <- gapminder::gapminder %>% mutate(pop = if_else(runif(n()) >= 0.9,NA_integer_,pop))
 #' gm_nest <- gm %>% tidyr::nest(country_data = -continent)
 #' 
-#' gm_nest %>% nest_replace_na(.nest_data = country_data,replace = list(pop = -500))
+#' gm_nest %>% 
+#'   nest_replace_na(.nest_data = country_data,
+#'                   replace = list(pop = -500))
 nest_replace_na <- function(.data,
                             .nest_data,
                             replace,

@@ -23,12 +23,11 @@ data frame (e.g., from dbplyr or dtplyr).}
 
 \item{.nest_data}{A list-column containing data frames}
 
-\item{col}{Column name or position. This is passed to
-\code{\link[tidyselect:vars_pull]{tidyselect::vars_pull()}}.
+\item{col}{Column name or position within. Must be present in all data frames
+in \code{.nest_data}. This is passed to \code{\link[tidyselect:vars_pull]{tidyselect::vars_pull()}}.
 
-This argument is passed by expression and supports
-\link[rlang:nse-force]{quasiquotation} (you can unquote column
-names or column positions).}
+This argument is passed by expression and supports quasiquotation (you can
+unquote column names or column positions).}
 
 \item{into}{Names of new variables to create as character vector.
 Use \code{NA} to omit the variable in the output.}
@@ -68,9 +67,7 @@ happens when there are not enough pieces. There are three valid options:
 \item "left": fill with missing values on the left
 }}
 
-\item{...}{One or more unquoted expressions separated by commas. Variable
-names can be used if they were positions in the data frame, so expressions
-like \code{x:y} can be used to select a range of variables.}
+\item{...}{Additional arguments passed on to \code{\link[tidyr:separate]{tidyr::separate()}} methods.}
 }
 \value{
 An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
@@ -92,21 +89,18 @@ set.seed(123)
 gm <- gapminder::gapminder \%>\% mutate(comb = paste(continent,year,sep = "-"))
 gm_nest <- gm \%>\% tidyr::nest(country_data = -continent)
 
-gm_nest \%>\% nest_separate(.nest_data = country_data,col = comb,into = c("var1","var2"),sep = "-")
+gm_nest \%>\% 
+  nest_separate(.nest_data = country_data,
+                col = comb,
+                into = c("var1","var2"),
+                sep = "-")
 }
 \seealso{
-Other single table verbs: 
-\code{\link{nest_arrange}()},
+Other tidyr verbs: 
 \code{\link{nest_drop_na}()},
 \code{\link{nest_extract}()},
 \code{\link{nest_fill}()},
-\code{\link{nest_filter}()},
-\code{\link{nest_mutate}()},
-\code{\link{nest_rename}()},
 \code{\link{nest_replace_na}()},
-\code{\link{nest_select}()},
-\code{\link{nest_slice}()},
-\code{\link{nest_summarise}()},
 \code{\link{nest_unite}()}
 }
-\concept{single table verbs}
+\concept{tidyr verbs}

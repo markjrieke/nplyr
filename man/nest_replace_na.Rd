@@ -12,18 +12,18 @@ data frame (e.g., from dbplyr or dtplyr).}
 
 \item{.nest_data}{A list-column containing data frames}
 
-\item{replace}{A list of values, with one value for each column that has NA values
+\item{replace}{A list of values, with one value for each column in that has \code{NA} values
 to be replaced.}
 
-\item{...}{Currently unused.}
+\item{...}{Additional arguments for \code{\link[tidyr:replace_na]{tidyr::replace_na()}} methods. Currently unused.}
 }
 \value{
 An object of the same type as \code{.data}. Each object in the column \code{.nest_data}
 will have NAs replaced in the specified columns.
 }
 \description{
-\code{nest_replace_na()} is used to replace missing values in selected columns using
-values specified by column.
+\code{nest_replace_na()} is used to replace missing values in selected columns of
+nested data frames using values specified by column.
 }
 \details{
 \code{nest_replace_na()} is a wrapper for \code{\link[tidyr:replace_na]{tidyr::replace_na()}} and maintains the functionality
@@ -35,21 +35,16 @@ set.seed(123)
 gm <- gapminder::gapminder \%>\% mutate(pop = if_else(runif(n()) >= 0.9,NA_integer_,pop))
 gm_nest <- gm \%>\% tidyr::nest(country_data = -continent)
 
-gm_nest \%>\% nest_replace_na(.nest_data = country_data,replace = list(pop = -500))
+gm_nest \%>\% 
+  nest_replace_na(.nest_data = country_data,
+                  replace = list(pop = -500))
 }
 \seealso{
-Other single table verbs: 
-\code{\link{nest_arrange}()},
+Other tidyr verbs: 
 \code{\link{nest_drop_na}()},
 \code{\link{nest_extract}()},
 \code{\link{nest_fill}()},
-\code{\link{nest_filter}()},
-\code{\link{nest_mutate}()},
-\code{\link{nest_rename}()},
-\code{\link{nest_select}()},
 \code{\link{nest_separate}()},
-\code{\link{nest_slice}()},
-\code{\link{nest_summarise}()},
 \code{\link{nest_unite}()}
 }
-\concept{single table verbs}
+\concept{tidyr verbs}

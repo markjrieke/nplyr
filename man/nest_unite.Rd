@@ -29,9 +29,7 @@ and symbols). The name is captured from the expression with
 symbols do not represent actual objects is now discouraged in the
 tidyverse; we support it here for backward compatibility).}
 
-\item{...}{One or more unquoted expressions separated by commas. Variable
-names can be used if they were positions in the data frame, so expressions
-like \code{x:y} can be used to select a range of variables.}
+\item{...}{Columns to unite.}
 
 \item{sep}{Separator to use between values.}
 
@@ -58,21 +56,18 @@ set.seed(123)
 gm <- gapminder::gapminder 
 gm_nest <- gm \%>\% tidyr::nest(country_data = -continent)
 
-gm_nest \%>\% nest_unite(.nest_data = country_data,col = comb,year,pop)
+gm_nest \%>\% 
+  nest_unite(.nest_data = country_data, 
+             col = comb, 
+             year, 
+             pop)
 }
 \seealso{
-Other single table verbs: 
-\code{\link{nest_arrange}()},
+Other tidyr verbs: 
 \code{\link{nest_drop_na}()},
 \code{\link{nest_extract}()},
 \code{\link{nest_fill}()},
-\code{\link{nest_filter}()},
-\code{\link{nest_mutate}()},
-\code{\link{nest_rename}()},
 \code{\link{nest_replace_na}()},
-\code{\link{nest_select}()},
-\code{\link{nest_separate}()},
-\code{\link{nest_slice}()},
-\code{\link{nest_summarise}()}
+\code{\link{nest_separate}()}
 }
-\concept{single table verbs}
+\concept{tidyr verbs}

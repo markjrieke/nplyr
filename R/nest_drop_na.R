@@ -14,7 +14,8 @@
 #'  please refer to the documentation in ['tidyr'](https::/tidyr.tidyverse.org).
 #'  
 #' @inheritParams nest_select
-#' @inheritParams tidyr::drop_na
+#' @param ... Columns within `.nest_data` to inspect for missing values. If empty,
+#'   all columns within each dataframe in `.nest_data` are used.
 #' 
 #' @importFrom dplyr enquos
 #' @importFrom dplyr mutate
@@ -23,14 +24,17 @@
 #' @importFrom tidyr drop_na
 #' 
 #' @export
-#' @family single table verbs
+#' @family tidyr verbs
 #' 
 #' @examples
-#' set.seed(123)
 #' gm <- gapminder::gapminder 
-#' gm <- gm %>% mutate(pop = if_else(runif(nrow(gm)) >= 0.9,NA_integer_,pop))
+#' 
+#' # randomly insert NAs into the dataframe & nest
+#' set.seed(123) 
+#' gm <- gm %>% mutate(pop = if_else(runif(nrow(gm)) >= 0.9, NA_integer_, pop))
 #' gm_nest <- gm %>% tidyr::nest(country_data = -continent)
 #' 
+#' # drop rows where an NA exists in column `pop`
 #' gm_nest %>% nest_drop_na(.nest_data = country_data,pop)
 nest_drop_na <- function(.data,
                          .nest_data,

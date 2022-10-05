@@ -1,8 +1,8 @@
 #' Fill missing values in a column of nested data frames
 #' 
 #' @description
-#' `nest_fill()` is used to fill missing values in selected columns using the next 
-#' or previous entries in a column of nested data frames.
+#' `nest_fill()` is used to fill missing values in selected columns of nested data
+#' frames using the next or previous entries in a column of nested data frames.
 #' 
 #' @return
 #'  An object of the same type as `.data`. Each object in the column `.nest_data` 
@@ -26,7 +26,7 @@
 #' @importFrom tidyr fill
 #' 
 #' @export
-#' @family single table verbs
+#' @family tidyr verbs
 #' 
 #' @examples
 #' set.seed(123)
