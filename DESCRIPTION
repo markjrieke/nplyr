@@ -2,10 +2,13 @@ Package: nplyr
 Title: A Grammar of Nested Data Manipulation
 Version: 0.1.0.9000
 Authors@R: 
-    person(given = "Mark",
-           family = "Rieke",
-           role = c("aut", "cre"),
-           email = "markjrieke@gmail.com")
+    c(person(given = "Mark",
+             family = "Rieke",
+             role = c("aut", "cre"),
+             email = "markjrieke@gmail.com"),
+      person(given = "Joran",
+             family = "Elias",
+             role = "ctb"))
 Description: Provides functions for manipulating nested data frames in a 
     list-column using 'dplyr' <https://dplyr.tidyverse.org/> syntax. Rather than 
     unnesting, then manipulating a data frame, 'nplyr' allows users to 

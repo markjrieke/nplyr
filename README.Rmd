@@ -37,6 +37,15 @@ knitr::opts_chunk$set(
 * `nest_summarise()` is the nested equivalent of `summarise()`
 * `nest_group_by()` is the nested equivalent of `group_by()`
 
+In the development version, nplyr also supports nested versions of some [tidyr](https://tidyr.tidyverse.org/) functions:
+
+* `nest_drop_na()` is the nested equivalent of `drop_na()`
+* `nest_extract()` is the nested equivalent of `extract()`
+* `nest_fill()` is the nested equivalent of `fill()`
+* `nest_replace_na()` is the nested equivalent of `replace_na()`
+* `nest_separate()` is the nested equivalent of `separate()`
+* `nest_unite()` is the nested equivalent of `unite()`
+
 nplyr is largely a wrapper for dplyr. For the most up-to-date information on dplyr please visit [dplyr's website](https://dplyr.tidyverse.org). If you are new to dplyr, the best place to start is the [data transformation chapter](https://r4ds.had.co.nz/transform.html) in R for data science.
 
 ## Installation
