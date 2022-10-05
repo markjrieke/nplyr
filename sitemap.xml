@@ -46,6 +46,15 @@
     <loc>https://markjrieke.github.io/nplyr/reference/nest_distinct.html</loc>
   </url>
   <url>
+    <loc>https://markjrieke.github.io/nplyr/reference/nest_drop_na.html</loc>
+  </url>
+  <url>
+    <loc>https://markjrieke.github.io/nplyr/reference/nest_extract.html</loc>
+  </url>
+  <url>
+    <loc>https://markjrieke.github.io/nplyr/reference/nest_fill.html</loc>
+  </url>
+  <url>
     <loc>https://markjrieke.github.io/nplyr/reference/nest_filter.html</loc>
   </url>
   <url>
@@ -64,13 +73,22 @@
     <loc>https://markjrieke.github.io/nplyr/reference/nest_rename.html</loc>
   </url>
   <url>
+    <loc>https://markjrieke.github.io/nplyr/reference/nest_replace_na.html</loc>
+  </url>
+  <url>
     <loc>https://markjrieke.github.io/nplyr/reference/nest_select.html</loc>
+  </url>
+  <url>
+    <loc>https://markjrieke.github.io/nplyr/reference/nest_separate.html</loc>
   </url>
   <url>
     <loc>https://markjrieke.github.io/nplyr/reference/nest_slice.html</loc>
   </url>
   <url>
     <loc>https://markjrieke.github.io/nplyr/reference/nest_summarise.html</loc>
+  </url>
+  <url>
+    <loc>https://markjrieke.github.io/nplyr/reference/nest_unite.html</loc>
   </url>
   <url>
     <loc>https://markjrieke.github.io/nplyr/reference/personal_survey.html</loc>

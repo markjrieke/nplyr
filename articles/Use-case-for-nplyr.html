@@ -8,8 +8,8 @@
 <meta name="description" content="nplyr">
 <title>Use case for nplyr • nplyr</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link href="../deps/bootstrap-5.1.3/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Use case for nplyr">
 <meta property="og:description" content="nplyr">
@@ -235,39 +235,39 @@
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html" class="external-link">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html" class="external-link">unnest</a></span><span class="op">(</span><span class="va">survey_data</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 500 × 10</span></span></span>
-<span><span class="co">#&gt;    survey_file survey_name    Q1 Q2          Q3            Q4       Q5 age_group</span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> job_survey  job           100 Austin      Consulting    Some…   163 Retireme…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> job_survey  job            81 San Antonio Consulting    Neit…    48 Retireme…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> job_survey  job            51 Austin      Consulting    Extr…   190 Adult    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> job_survey  job            81 Austin      Technology    Extr…    25 Retireme…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> job_survey  job            80 Dallas      Consulting    Extr…   143 Retireme…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> job_survey  job            32 Fort Worth  Energy        Some…   233 Adult    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> job_survey  job            65 Dallas      Consulting    Some…    43 Retireme…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> job_survey  job            57 Houston     Healthcare    Some…   243 Adult    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> job_survey  job            43 Dallas      Government S… Neit…   158 Adult    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> job_survey  job            94 Fort Worth  Healthcare    Extr…   235 Retireme…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 490 more rows, and 2 more variables: n_respondents_in_industry &lt;int&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   median_industry_age &lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt;    survey_file survey_name    Q1 Q2    Q3    Q4       Q5 age_g…¹ n_res…² media…³</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> job_survey  job           100 Aust… Cons… Some…   163 Retire…     107    57  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> job_survey  job            81 San … Cons… Neit…    48 Retire…     107    57  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> job_survey  job            51 Aust… Cons… Extr…   190 Adult       107    57  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> job_survey  job            81 Aust… Tech… Extr…    25 Retire…     108    61.5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> job_survey  job            80 Dall… Cons… Extr…   143 Retire…     107    57  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> job_survey  job            32 Fort… Ener… Some…   233 Adult        99    59  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> job_survey  job            65 Dall… Cons… Some…    43 Retire…     107    57  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> job_survey  job            57 Hous… Heal… Some…   243 Adult        75    65  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> job_survey  job            43 Dall… Gove… Neit…   158 Adult       111    57  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> job_survey  job            94 Fort… Heal… Extr…   235 Retire…      75    65  </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 490 more rows, and abbreviated variable names ¹​age_group,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   ²​n_respondents_in_industry, ³​median_industry_age</span></span></span>
 <span></span>
 <span><span class="va">surveys</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html" class="external-link">slice</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html" class="external-link">unnest</a></span><span class="op">(</span><span class="va">survey_data</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 750 × 10</span></span></span>
-<span><span class="co">#&gt;    survey_file     survey_name    Q1 Q2          Q3        Q4    Q5    age_group</span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> personal_survey personal       91 Austin      Energy    Neit… Blan… Retireme…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> personal_survey personal       32 San Antonio Healthca… Extr… Elem… Adult    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> personal_survey personal       40 San Antonio Consulti… Some… Eget… Adult    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> personal_survey personal       23 Austin      Consulti… Extr… Scel… Adult    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> personal_survey personal       88 Dallas      Technolo… Neit… Aene… Retireme…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> personal_survey personal       69 Fort Worth  Technolo… Neit… Inte… Retireme…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> personal_survey personal       96 Houston     Healthca… Extr… Blan… Retireme…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> personal_survey personal       40 Houston     Consulti… Extr… Scel… Adult    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> personal_survey personal       57 Fort Worth  Energy    Extr… Pede… Adult    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> personal_survey personal       40 Fort Worth  Healthca… Extr… Phar… Adult    </span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 740 more rows, and 2 more variables: n_respondents_in_industry &lt;int&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   median_industry_age &lt;dbl&gt;</span></span></span></code></pre></div>
+<span><span class="co">#&gt;    survey_file     surve…¹    Q1 Q2    Q3    Q4    Q5    age_g…² n_res…³ media…⁴</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> personal_survey person…    91 Aust… Ener… Neit… Blan… Retire…     145      61</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> personal_survey person…    32 San … Heal… Extr… Elem… Adult       131      62</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> personal_survey person…    40 San … Cons… Some… Eget… Adult       149      61</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> personal_survey person…    23 Aust… Cons… Extr… Scel… Adult       149      61</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> personal_survey person…    88 Dall… Tech… Neit… Aene… Retire…     150      61</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> personal_survey person…    69 Fort… Tech… Neit… Inte… Retire…     150      61</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> personal_survey person…    96 Hous… Heal… Extr… Blan… Retire…     131      62</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> personal_survey person…    40 Hous… Cons… Extr… Scel… Adult       149      61</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> personal_survey person…    57 Fort… Ener… Extr… Pede… Adult       145      61</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> personal_survey person…    40 Fort… Heal… Extr… Phar… Adult       131      62</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 740 more rows, and abbreviated variable names ¹​survey_name,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   ²​age_group, ³​n_respondents_in_industry, ⁴​median_industry_age</span></span></span></code></pre></div>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -283,7 +283,7 @@
 
 <div class="pkgdown-footer-right">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
     </footer>
