@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# nplyr
+# nplyr <img src="man/figures/logo.png" align="right" width="120" />
 
 **Author:** [Mark Rieke](https://www.thedatadiary.net/about/)<br/>
 **License:**
