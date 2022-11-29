@@ -11,7 +11,7 @@
 #' @details
 #'  `nest_unite()` is a wrapper for [tidyr::unite()] and maintains the functionality 
 #'  of `unite()` within each nested data frame. For more information on `unite()` 
-#'  please refer to the documentation in ['tidyr'](https::/tidyr.tidyverse.org).
+#'  please refer to the documentation in ['tidyr'](https://tidyr.tidyverse.org/).
 #'  
 #' @inheritParams nest_select
 #' @inheritParams tidyr::unite

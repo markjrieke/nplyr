@@ -13,7 +13,7 @@
 #' @details
 #'  `nest_separate()` is a wrapper for [tidyr::separate()] and maintains the functionality 
 #'  of `separate()` within each nested data frame. For more information on `separate()` 
-#'  please refer to the documentation in ['tidyr'](https::/tidyr.tidyverse.org).
+#'  please refer to the documentation in ['tidyr'](https://tidyr.tidyverse.org/).
 #'  
 #' @inheritParams nest_select
 #' @inheritParams tidyr::separate

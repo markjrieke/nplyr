@@ -57,7 +57,7 @@ match, or the input is NA, the output will be NA.
 \details{
 \code{nest_extract()} is a wrapper for \code{\link[tidyr:extract]{tidyr::extract()}} and maintains the functionality
 of \code{extract()} within each nested data frame. For more information on \code{extract()}
-please refer to the documentation in \href{https::/tidyr.tidyverse.org}{'tidyr'}.
+please refer to the documentation in \href{https://tidyr.tidyverse.org/}{'tidyr'}.
 }
 \examples{
 set.seed(123)

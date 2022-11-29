@@ -11,7 +11,7 @@
 #' @details
 #'  `nest_fill()` is a wrapper for [tidyr::fill()] and maintains the functionality 
 #'  of `fill()` within each nested data frame. For more information on `fill()` 
-#'  please refer to the documentation in ['tidyr'](https::/tidyr.tidyverse.org).
+#'  please refer to the documentation in ['tidyr'](https://tidyr.tidyverse.org/).
 #'  
 #' @inheritParams nest_select
 #' @param ... <[`tidy-select`][tidyr_tidy_select]> Columns to fill.

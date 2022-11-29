@@ -13,7 +13,7 @@
 #' @details
 #'  `nest_extract()` is a wrapper for [tidyr::extract()] and maintains the functionality 
 #'  of `extract()` within each nested data frame. For more information on `extract()` 
-#'  please refer to the documentation in ['tidyr'](https::/tidyr.tidyverse.org).
+#'  please refer to the documentation in ['tidyr'](https://tidyr.tidyverse.org/).
 #'  
 #' @inheritParams nest_select
 #' @inheritParams tidyr::extract

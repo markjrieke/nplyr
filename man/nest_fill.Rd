@@ -34,7 +34,7 @@ frames using the next or previous entries in a column of nested data frames.
 \details{
 \code{nest_fill()} is a wrapper for \code{\link[tidyr:fill]{tidyr::fill()}} and maintains the functionality
 of \code{fill()} within each nested data frame. For more information on \code{fill()}
-please refer to the documentation in \href{https::/tidyr.tidyverse.org}{'tidyr'}.
+please refer to the documentation in \href{https://tidyr.tidyverse.org/}{'tidyr'}.
 }
 \examples{
 set.seed(123)

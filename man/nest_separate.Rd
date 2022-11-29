@@ -82,7 +82,7 @@ list of nested data frames.
 \details{
 \code{nest_separate()} is a wrapper for \code{\link[tidyr:separate]{tidyr::separate()}} and maintains the functionality
 of \code{separate()} within each nested data frame. For more information on \code{separate()}
-please refer to the documentation in \href{https::/tidyr.tidyverse.org}{'tidyr'}.
+please refer to the documentation in \href{https://tidyr.tidyverse.org/}{'tidyr'}.
 }
 \examples{
 set.seed(123)
