@@ -1,6 +1,4 @@
-# nplyr (development version)
-
-## New functions
+# nplyr 0.2.0
 
 * Wrappers around `tidyr` functions that can be applied to nested tibbles (@joranE, #14):
   + `nest_drop_na()`

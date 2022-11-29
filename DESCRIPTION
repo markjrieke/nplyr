@@ -1,6 +1,6 @@
 Package: nplyr
 Title: A Grammar of Nested Data Manipulation
-Version: 0.1.0.9000
+Version: 0.2.0
 Authors@R: 
     c(person(given = "Mark",
              family = "Rieke",
@@ -29,7 +29,7 @@ Imports:
     rlang
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.2
 Suggests: 
     gapminder,
     knitr,

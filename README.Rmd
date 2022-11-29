@@ -37,7 +37,7 @@ knitr::opts_chunk$set(
 * `nest_summarise()` is the nested equivalent of `summarise()`
 * `nest_group_by()` is the nested equivalent of `group_by()`
 
-In the development version, nplyr also supports nested versions of some [tidyr](https://tidyr.tidyverse.org/) functions:
+As of version 0.2.0, nplyr also supports nested versions of some [tidyr](https://tidyr.tidyverse.org/) functions:
 
 * `nest_drop_na()` is the nested equivalent of `drop_na()`
 * `nest_extract()` is the nested equivalent of `extract()`

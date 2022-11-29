@@ -30,7 +30,7 @@ have nested equivalents in nplyr. A (non-exhaustive) list of examples:
 -   `nest_summarise()` is the nested equivalent of `summarise()`
 -   `nest_group_by()` is the nested equivalent of `group_by()`
 
-In the development version, nplyr also supports nested versions of some
+As of version 0.2.0, nplyr also supports nested versions of some
 [tidyr](https://tidyr.tidyverse.org/) functions:
 
 -   `nest_drop_na()` is the nested equivalent of `drop_na()`
@@ -125,7 +125,6 @@ gm_nest_example %>%
 #>  9 Asia      Hong Kong, China  2007    82.2    6980412    39725.        6.98 
 #> 10 Asia      India             2007    64.7 1110396331     2452.     1110.   
 #> # … with 33 more rows
-#> # ℹ Use `print(n = ...)` to see more rows
 ```
 
 nplyr also supports grouped operations with `nest_group_by()`:
@@ -171,7 +170,6 @@ gm_nest_example %>%
 #>  9 Europe     1958    18    69.6 8308052.     8833.
 #> 10 Europe     1959    18    69.6 8379664.     9088.
 #> # … with 48 more rows
-#> # ℹ Use `print(n = ...)` to see more rows
 ```
 
 More examples can be found in the package vignettes and function
