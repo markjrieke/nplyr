@@ -3,8 +3,8 @@
 
 # nplyr <img src="man/figures/logo.png" align="right" width="120" />
 
-**Author:** [Mark Rieke](https://www.thedatadiary.net/about/)<br/>
-**License:**
+**Author:** [Mark
+Rieke](https://www.thedatadiary.net/about/about.html)<br/> **License:**
 [MIT](https://github.com/markjrieke/nplyr/blob/main/LICENSE)
 
 <!-- badges: start -->
@@ -24,21 +24,21 @@ perform [dplyr](https://dplyr.tidyverse.org/)-like manipulations on data
 frames nested within a list-col of another data frame. Most dplyr verbs
 have nested equivalents in nplyr. A (non-exhaustive) list of examples:
 
--   `nest_mutate()` is the nested equivalent of `mutate()`
--   `nest_select()` is the nested equivalent of `select()`
--   `nest_filter()` is the nested equivalent of `filter()`
--   `nest_summarise()` is the nested equivalent of `summarise()`
--   `nest_group_by()` is the nested equivalent of `group_by()`
+- `nest_mutate()` is the nested equivalent of `mutate()`
+- `nest_select()` is the nested equivalent of `select()`
+- `nest_filter()` is the nested equivalent of `filter()`
+- `nest_summarise()` is the nested equivalent of `summarise()`
+- `nest_group_by()` is the nested equivalent of `group_by()`
 
 As of version 0.2.0, nplyr also supports nested versions of some
 [tidyr](https://tidyr.tidyverse.org/) functions:
 
--   `nest_drop_na()` is the nested equivalent of `drop_na()`
--   `nest_extract()` is the nested equivalent of `extract()`
--   `nest_fill()` is the nested equivalent of `fill()`
--   `nest_replace_na()` is the nested equivalent of `replace_na()`
--   `nest_separate()` is the nested equivalent of `separate()`
--   `nest_unite()` is the nested equivalent of `unite()`
+- `nest_drop_na()` is the nested equivalent of `drop_na()`
+- `nest_extract()` is the nested equivalent of `extract()`
+- `nest_fill()` is the nested equivalent of `fill()`
+- `nest_replace_na()` is the nested equivalent of `replace_na()`
+- `nest_separate()` is the nested equivalent of `separate()`
+- `nest_unite()` is the nested equivalent of `unite()`
 
 nplyr is largely a wrapper for dplyr. For the most up-to-date
 information on dplyr please visit [dplyr’s
