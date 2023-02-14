@@ -59,7 +59,7 @@ nested data frames in \code{.nest_data}.
 }
 \details{
 \code{nest_mutate()} and \code{nest_transmute()} are largely wrappers for
-\code{\link[dplyr:mutate]{dplyr::mutate()}} and \code{\link[dplyr:mutate]{dplyr::transmute()}} and maintain the functionality of
+\code{\link[dplyr:mutate]{dplyr::mutate()}} and \code{\link[dplyr:transmute]{dplyr::transmute()}} and maintain the functionality of
 \code{mutate()} and \code{transmute()} within each nested data frame. For more
 information on \code{mutate()} or \code{transmute()}, please refer to the documentation
 in \href{https://dplyr.tidyverse.org/}{\code{dplyr}}.

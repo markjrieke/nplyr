@@ -11,7 +11,7 @@
 #' @details
 #'  `nest_drop_na()` is a wrapper for [tidyr::drop_na()] and maintains the functionality 
 #'  of `drop_na()` within each nested data frame. For more information on `drop_na()` 
-#'  please refer to the documentation in ['tidyr'](https::/tidyr.tidyverse.org).
+#'  please refer to the documentation in ['tidyr'](https://tidyr.tidyverse.org/).
 #'  
 #' @inheritParams nest_select
 #' @param ... Columns within `.nest_data` to inspect for missing values. If empty,

@@ -28,7 +28,7 @@ nested data frames using values specified by column.
 \details{
 \code{nest_replace_na()} is a wrapper for \code{\link[tidyr:replace_na]{tidyr::replace_na()}} and maintains the functionality
 of \code{replace_na()} within each nested data frame. For more information on \code{replace_na()}
-please refer to the documentation in \href{https::/tidyr.tidyverse.org}{'tidyr'}.
+please refer to the documentation in \href{https://tidyr.tidyverse.org/}{'tidyr'}.
 }
 \examples{
 set.seed(123)

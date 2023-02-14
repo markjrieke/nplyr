@@ -11,7 +11,7 @@
 #' @details
 #'  `nest_replace_na()` is a wrapper for [tidyr::replace_na()] and maintains the functionality 
 #'  of `replace_na()` within each nested data frame. For more information on `replace_na()` 
-#'  please refer to the documentation in ['tidyr'](https::/tidyr.tidyverse.org).
+#'  please refer to the documentation in ['tidyr'](https://tidyr.tidyverse.org/).
 #'  
 #' @inheritParams nest_select
 #' @param replace A list of values, with one value for each column in that has `NA` values

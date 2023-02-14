@@ -26,7 +26,7 @@ nested data frames.
 \details{
 \code{nest_drop_na()} is a wrapper for \code{\link[tidyr:drop_na]{tidyr::drop_na()}} and maintains the functionality
 of \code{drop_na()} within each nested data frame. For more information on \code{drop_na()}
-please refer to the documentation in \href{https::/tidyr.tidyverse.org}{'tidyr'}.
+please refer to the documentation in \href{https://tidyr.tidyverse.org/}{'tidyr'}.
 }
 \examples{
 gm <- gapminder::gapminder 
