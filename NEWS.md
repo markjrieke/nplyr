@@ -1,3 +1,7 @@
+# nplyr development version
+
+* Add more informative error when trying to use nplyr functions wit ha rowwise df (#18).
+
 # nplyr 0.2.0
 
 * Wrappers around `tidyr` functions that can be applied to nested tibbles (@joranE, #14):

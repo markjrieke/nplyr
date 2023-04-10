@@ -1,4 +1,4 @@
-# ---------------------------general-test-functions-----------------------------
+# general test functions -------------------------------------------------------
 gm_nest <- readRDS("data/gm_nest.rds")
 
 test_format <- function(f, ..., grouped = FALSE) {

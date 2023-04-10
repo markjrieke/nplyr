@@ -1,5 +1,12 @@
-# -----------------------------common-assertions--------------------------------
+# common assertions ------------------------------------------------------------
 check_nest_data <- function(.data, .nest_data) {
+  
+  # check that .data is not rowwise
+  assertthat::assert_that(
+    !"rowwise_df" %in% class(.data),
+    msg = paste0("argument `.data` must not be a rowwise dataframe.\n",
+                 "try calling `dplyr::ungroup()`")
+  )
   
   x <- dplyr::pull(.data, {{ .nest_data }})
   
@@ -14,7 +21,6 @@ check_nest_data <- function(.data, .nest_data) {
   }
   
 }
-
 
 assert_nest_df <- function(x) {
   
