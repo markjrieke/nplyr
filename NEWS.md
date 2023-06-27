@@ -1,6 +1,6 @@
-# nplyr development version
+# nplyr 0.2.0.9000
 
-* Add more informative error when trying to use nplyr functions wit ha rowwise df (#18).
+* Add more informative error when trying to use nplyr functions with a rowwise df (#18).
 
 # nplyr 0.2.0
 

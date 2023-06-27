@@ -20,6 +20,7 @@ The package README uses the [gapminder dataset](https://CRAN.R-project.org/packa
 
 ```{r}
 library(nplyr)
+library(dplyr)
 
 gm_nest <- 
   gapminder::gapminder_unfiltered %>%
