@@ -154,7 +154,7 @@
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/markjrieke/nplyr" class="external-link">nplyr</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">gm_nest</span> <span class="op">&lt;-</span> </span>
-<span>  <span class="fu">gapminder</span><span class="fu">::</span><span class="va"><a href="https://jennybc.github.io/gapminder/reference/gapminder_unfiltered.html" class="external-link">gapminder_unfiltered</a></span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">gapminder</span><span class="fu">::</span><span class="va"><a href="https://jennybc.github.io/gapminder/reference/gapminder_unfiltered.html" class="external-link">gapminder_unfiltered</a></span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html" class="external-link">nest</a></span><span class="op">(</span>country_data <span class="op">=</span> <span class="op">-</span><span class="va">continent</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">gm_nest</span></span>
@@ -170,8 +170,8 @@
 <p>dplyr can perform operations on the top-level data frame, but with nplyr, we can perform operations on the nested data frames:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">gm_nest_example</span> <span class="op">&lt;-</span> </span>
-<span>  <span class="va">gm_nest</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu"><a href="reference/nest_filter.html">nest_filter</a></span><span class="op">(</span><span class="va">country_data</span>, <span class="va">year</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="va">gm_nest</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="reference/nest_filter.html">nest_filter</a></span><span class="op">(</span><span class="va">country_data</span>, <span class="va">year</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="reference/nest_mutate.html">nest_mutate</a></span><span class="op">(</span><span class="va">country_data</span>, pop_millions <span class="op">=</span> <span class="va">pop</span><span class="op">/</span><span class="fl">1000000</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># each nested tibble is now filtered to the most recent year</span></span>
@@ -187,8 +187,8 @@
 <span><span class="co">#&gt; 6 Oceania   &lt;tibble [11 × 6]&gt;</span></span>
 <span></span>
 <span><span class="co"># if we unnest, we can see that a new column for pop_millions has been added</span></span>
-<span><span class="va">gm_nest_example</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">slice_head</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span><span class="va">gm_nest_example</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">slice_head</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/unnest.html" class="external-link">unnest</a></span><span class="op">(</span><span class="va">country_data</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 43 × 7</span></span>
 <span><span class="co">#&gt;    continent country           year lifeExp        pop gdpPercap pop_millions</span></span>
@@ -207,8 +207,8 @@
 <p>nplyr also supports grouped operations with <code><a href="reference/nest_group_by.html">nest_group_by()</a></code>:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">gm_nest_example</span> <span class="op">&lt;-</span> </span>
-<span>  <span class="va">gm_nest</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu"><a href="reference/nest_group_by.html">nest_group_by</a></span><span class="op">(</span><span class="va">country_data</span>, <span class="va">year</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="va">gm_nest</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="reference/nest_group_by.html">nest_group_by</a></span><span class="op">(</span><span class="va">country_data</span>, <span class="va">year</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="reference/nest_summarise.html">nest_summarise</a></span><span class="op">(</span></span>
 <span>    <span class="va">country_data</span>, </span>
 <span>    n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>,</span>
@@ -229,8 +229,8 @@
 <span><span class="co">#&gt; 6 Oceania   &lt;tibble [56 × 5]&gt;</span></span>
 <span></span>
 <span><span class="co"># unnesting shows summarised tibbles for each continent</span></span>
-<span><span class="va">gm_nest_example</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">slice</span><span class="op">(</span><span class="fl">2</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span><span class="va">gm_nest_example</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">slice</span><span class="op">(</span><span class="fl">2</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/unnest.html" class="external-link">unnest</a></span><span class="op">(</span><span class="va">country_data</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 58 × 6</span></span>
 <span><span class="co">#&gt;    continent  year     n lifeExp      pop gdpPercap</span></span>
