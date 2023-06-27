@@ -20,13 +20,13 @@ URL: https://github.com/markjrieke/nplyr,
     https://markjrieke.github.io/nplyr/
 BugReports: https://github.com/markjrieke/nplyr/issues
 Depends:
-    dplyr,
-    tidyr,
-    R (>= 2.10)
+    R (>= 3.5.0)
 Imports:
     assertthat,
+    dplyr,
     purrr,
-    rlang
+    rlang,
+    tidyr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
