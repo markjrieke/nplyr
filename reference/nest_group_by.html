@@ -82,8 +82,8 @@ data frame (e.g., from dbplyr or dtplyr).</p></dd>
 <dt>...</dt>
 <dd><p>In <code>nest_group_by()</code>, variables or computations to group by.
 Computations are always done on the ungrouped data frames. To perform
-computations on the grouped data, you need to use a separate <code><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate()</a></code>
-step after the <code><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by()</a></code>.
+computations on the grouped data, you need to use a separate <code>mutate()</code>
+step after the <code>group_by()</code>.
 In <code>nest_ungroup()</code>, variables to remove from the grouping.</p></dd>
 
 
@@ -114,57 +114,38 @@ which case a tibble will be returned.</p>
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p><code>nest_group_by()</code> and <code>nest_ungroup()</code> are largely wrappers for
 <code><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">dplyr::group_by()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">dplyr::ungroup()</a></code> and maintain the functionality of
-<code><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">ungroup()</a></code> within each nested data frame. For more
-information on <code><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by()</a></code> or <code><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">ungroup()</a></code>, please refer to the documentation
+<code>group_by()</code> and <code>ungroup()</code> within each nested data frame. For more
+information on <code>group_by()</code> or <code>ungroup()</code>, please refer to the documentation
 in <a href="https://dplyr.tidyverse.org/" class="external-link"><code>dplyr</code></a>.</p>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">gm_nest</span> <span class="op">&lt;-</span> <span class="fu">gapminder</span><span class="fu">::</span><span class="va"><a href="https://jennybc.github.io/gapminder/reference/gapminder.html" class="external-link">gapminder</a></span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html" class="external-link">nest</a></span><span class="op">(</span>country_data <span class="op">=</span> <span class="op">-</span><span class="va">continent</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">gm_nest</span> <span class="op">&lt;-</span> <span class="fu">gapminder</span><span class="fu">::</span><span class="va"><a href="https://jennybc.github.io/gapminder/reference/gapminder.html" class="external-link">gapminder</a></span> <span class="op">%&gt;%</span> <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html" class="external-link">nest</a></span><span class="op">(</span>country_data <span class="op">=</span> <span class="op">-</span><span class="va">continent</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gapminder::gapminder %&gt;% tidyr::nest(country_data = -continent):</span> could not find function "%&gt;%"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># grouping doesn't change .nest_data, just .nest_data class:</span></span></span>
 <span class="r-in"><span><span class="va">gm_nest_grouped</span> <span class="op">&lt;-</span></span></span>
-<span class="r-in"><span>  <span class="va">gm_nest</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="va">gm_nest</span> <span class="op">%&gt;%</span></span></span>
 <span class="r-in"><span>  <span class="fu">nest_group_by</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">year</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gm_nest %&gt;% nest_group_by(country_data, year):</span> could not find function "%&gt;%"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">gm_nest_grouped</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   continent country_data        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> Asia      <span style="color: #949494;">&lt;gropd_df [396 × 5]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> Europe    <span style="color: #949494;">&lt;gropd_df [360 × 5]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> Africa    <span style="color: #949494;">&lt;gropd_df [624 × 5]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> Americas  <span style="color: #949494;">&lt;gropd_df [300 × 5]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> Oceania   <span style="color: #949494;">&lt;gropd_df [24 × 5]&gt;</span> </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'gm_nest_grouped' not found</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># It changes how it acts with other nplyr verbs:</span></span></span>
-<span class="r-in"><span><span class="va">gm_nest_grouped</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span><span class="va">gm_nest_grouped</span> <span class="op">%&gt;%</span></span></span>
 <span class="r-in"><span>  <span class="fu"><a href="nest_summarise.html">nest_summarise</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>    <span class="va">country_data</span>,</span></span>
 <span class="r-in"><span>    lifeExp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">lifeExp</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>    pop <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>    gdpPercap <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">gdpPercap</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   continent country_data     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> Asia      <span style="color: #949494;">&lt;tibble [12 × 4]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> Europe    <span style="color: #949494;">&lt;tibble [12 × 4]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> Africa    <span style="color: #949494;">&lt;tibble [12 × 4]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> Americas  <span style="color: #949494;">&lt;tibble [12 × 4]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> Oceania   <span style="color: #949494;">&lt;tibble [12 × 4]&gt;</span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gm_nest_grouped %&gt;% nest_summarise(country_data, lifeExp = mean(lifeExp),     pop = mean(pop), gdpPercap = mean(gdpPercap)):</span> could not find function "%&gt;%"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># ungrouping removes variable groups:</span></span></span>
-<span class="r-in"><span><span class="va">gm_nest_grouped</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">nest_ungroup</span><span class="op">(</span><span class="va">country_data</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   continent country_data      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> Asia      <span style="color: #949494;">&lt;tibble [396 × 5]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> Europe    <span style="color: #949494;">&lt;tibble [360 × 5]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> Africa    <span style="color: #949494;">&lt;tibble [624 × 5]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> Americas  <span style="color: #949494;">&lt;tibble [300 × 5]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> Oceania   <span style="color: #949494;">&lt;tibble [24 × 5]&gt;</span> </span>
+<span class="r-in"><span><span class="va">gm_nest_grouped</span> <span class="op">%&gt;%</span> <span class="fu">nest_ungroup</span><span class="op">(</span><span class="va">country_data</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gm_nest_grouped %&gt;% nest_ungroup(country_data):</span> could not find function "%&gt;%"</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

@@ -189,7 +189,7 @@ frame (e.g., from dbplyr or dtplyr).</p></dd>
 
 <dt>by</dt>
 <dd><p>A character vector of variables to join by or a join specification
-created with <code><a href="https://dplyr.tidyverse.org/reference/join_by.html" class="external-link">join_by()</a></code>.</p>
+created with <code>join_by()</code>.</p>
 <p>If <code>NULL</code>, the default, <code>nest_*_join()</code> will perform a natural join, using
 all variables in common across each object in <code>.nest_data</code> and <code>y</code>. A
 message lists the variables so you can check they're correct; suppress the
@@ -278,8 +278,8 @@ common type between the objects in <code>.nest_data</code> and <code>y</code>.</
 <code>nest_full_join()</code> are largely wrappers for <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">dplyr::inner_join()</a></code>,
 <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">dplyr::left_join()</a></code>, <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">dplyr::right_join()</a></code>, and <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">dplyr::full_join()</a></code> and
 maintain the functionality of these verbs within each nested data frame. For
-more information on <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">inner_join()</a></code>, <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join()</a></code>, <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">right_join()</a></code>, or
-<code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">full_join()</a></code>, please refer to the documentation in
+more information on <code>inner_join()</code>, <code>left_join()</code>, <code>right_join()</code>, or
+<code>full_join()</code>, please refer to the documentation in
 <a href="https://dplyr.tidyverse.org/" class="external-link"><code>dplyr</code></a>.</p>
     </div>
     <div class="section level2">
@@ -291,45 +291,18 @@ more information on <code><a href="https://dplyr.tidyverse.org/reference/mutate-
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">gm_nest</span> <span class="op">&lt;-</span> <span class="fu">gapminder</span><span class="fu">::</span><span class="va"><a href="https://jennybc.github.io/gapminder/reference/gapminder.html" class="external-link">gapminder</a></span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html" class="external-link">nest</a></span><span class="op">(</span>country_data <span class="op">=</span> <span class="op">-</span><span class="va">continent</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">gm_nest</span> <span class="op">&lt;-</span> <span class="fu">gapminder</span><span class="fu">::</span><span class="va"><a href="https://jennybc.github.io/gapminder/reference/gapminder.html" class="external-link">gapminder</a></span> <span class="op">%&gt;%</span> <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html" class="external-link">nest</a></span><span class="op">(</span>country_data <span class="op">=</span> <span class="op">-</span><span class="va">continent</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gapminder::gapminder %&gt;% tidyr::nest(country_data = -continent):</span> could not find function "%&gt;%"</span>
 <span class="r-in"><span><span class="va">gm_codes</span> <span class="op">&lt;-</span> <span class="fu">gapminder</span><span class="fu">::</span><span class="va"><a href="https://jennybc.github.io/gapminder/reference/country_codes.html" class="external-link">country_codes</a></span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">gm_nest</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">nest_inner_join</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">gm_codes</span>, by <span class="op">=</span> <span class="st">"country"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   continent country_data      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> Asia      <span style="color: #949494;">&lt;tibble [396 × 7]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> Europe    <span style="color: #949494;">&lt;tibble [360 × 7]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> Africa    <span style="color: #949494;">&lt;tibble [624 × 7]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> Americas  <span style="color: #949494;">&lt;tibble [300 × 7]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> Oceania   <span style="color: #949494;">&lt;tibble [24 × 7]&gt;</span> </span>
-<span class="r-in"><span><span class="va">gm_nest</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">nest_left_join</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">gm_codes</span>, by <span class="op">=</span> <span class="st">"country"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   continent country_data      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> Asia      <span style="color: #949494;">&lt;tibble [396 × 7]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> Europe    <span style="color: #949494;">&lt;tibble [360 × 7]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> Africa    <span style="color: #949494;">&lt;tibble [624 × 7]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> Americas  <span style="color: #949494;">&lt;tibble [300 × 7]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> Oceania   <span style="color: #949494;">&lt;tibble [24 × 7]&gt;</span> </span>
-<span class="r-in"><span><span class="va">gm_nest</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">nest_right_join</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">gm_codes</span>, by <span class="op">=</span> <span class="st">"country"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   continent country_data      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> Asia      <span style="color: #949494;">&lt;tibble [550 × 7]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> Europe    <span style="color: #949494;">&lt;tibble [517 × 7]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> Africa    <span style="color: #949494;">&lt;tibble [759 × 7]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> Americas  <span style="color: #949494;">&lt;tibble [462 × 7]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> Oceania   <span style="color: #949494;">&lt;tibble [209 × 7]&gt;</span></span>
-<span class="r-in"><span><span class="va">gm_nest</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">nest_full_join</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">gm_codes</span>, by <span class="op">=</span> <span class="st">"country"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   continent country_data      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> Asia      <span style="color: #949494;">&lt;tibble [550 × 7]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> Europe    <span style="color: #949494;">&lt;tibble [517 × 7]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> Africa    <span style="color: #949494;">&lt;tibble [759 × 7]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> Americas  <span style="color: #949494;">&lt;tibble [462 × 7]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> Oceania   <span style="color: #949494;">&lt;tibble [209 × 7]&gt;</span></span>
+<span class="r-in"><span><span class="va">gm_nest</span> <span class="op">%&gt;%</span> <span class="fu">nest_inner_join</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">gm_codes</span>, by <span class="op">=</span> <span class="st">"country"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gm_nest %&gt;% nest_inner_join(country_data, gm_codes, by = "country"):</span> could not find function "%&gt;%"</span>
+<span class="r-in"><span><span class="va">gm_nest</span> <span class="op">%&gt;%</span> <span class="fu">nest_left_join</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">gm_codes</span>, by <span class="op">=</span> <span class="st">"country"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gm_nest %&gt;% nest_left_join(country_data, gm_codes, by = "country"):</span> could not find function "%&gt;%"</span>
+<span class="r-in"><span><span class="va">gm_nest</span> <span class="op">%&gt;%</span> <span class="fu">nest_right_join</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">gm_codes</span>, by <span class="op">=</span> <span class="st">"country"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gm_nest %&gt;% nest_right_join(country_data, gm_codes, by = "country"):</span> could not find function "%&gt;%"</span>
+<span class="r-in"><span><span class="va">gm_nest</span> <span class="op">%&gt;%</span> <span class="fu">nest_full_join</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">gm_codes</span>, by <span class="op">=</span> <span class="st">"country"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gm_nest %&gt;% nest_full_join(country_data, gm_codes, by = "country"):</span> could not find function "%&gt;%"</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

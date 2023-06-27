@@ -94,7 +94,7 @@ data frame (e.g., from dbplyr or dtplyr).</p></dd>
 <dt>...</dt>
 <dd><p>Name-value pairs of functions. The name will be the name of the
 variable in the result.</p>
-<p>The value can be:</p><ul><li><p>A vector of length 1, e.g. <code>min(x)</code>, <code><a href="https://dplyr.tidyverse.org/reference/context.html" class="external-link">n()</a></code>, or <code>sum(is.na(y))</code>.</p></li>
+<p>The value can be:</p><ul><li><p>A vector of length 1, e.g. <code>min(x)</code>, <code>n()</code>, or <code>sum(is.na(y))</code>.</p></li>
 <li><p>A vector of length <code>n</code>, e.g., <code><a href="https://rdrr.io/r/stats/quantile.html" class="external-link">quantile()</a></code>.</p></li>
 <li><p>A data frame, to add multiple columns from a single expression.</p></li>
 </ul></dd>
@@ -113,7 +113,7 @@ result. Refer to <code><a href="https://dplyr.tidyverse.org/reference/summarise.
 
 
 <p>will <em>usually</em> be of the same type as the input. Each object in <code>.nest_data</code> has
-the following properties:</p><ul><li><p>The rows come from the underlying <a href="https://dplyr.tidyverse.org/reference/group_data.html" class="external-link"><code><a href="https://dplyr.tidyverse.org/reference/group_data.html" class="external-link">group_keys()</a></code></a></p></li>
+the following properties:</p><ul><li><p>The rows come from the underlying <a href="https://dplyr.tidyverse.org/reference/group_data.html" class="external-link"><code>group_keys()</code></a></p></li>
 <li><p>The columns are a combination of the grouping keys and the summary
 expressions that you provide.</p></li>
 <li><p>The grouping structure is controlled by the <code>.groups</code> argument, the output
@@ -124,8 +124,8 @@ fundamentally creates a new data frame for each object in <code>.nest_data</code
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p><code>nest_summarise()</code> is largely a wrapper for <code><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">dplyr::summarise()</a></code> and
-maintains the functionality of <code><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise()</a></code> within each nested data frame.
-For more information on <code><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise()</a></code>, please refer to the documentation in
+maintains the functionality of <code>summarise()</code> within each nested data frame.
+For more information on <code>summarise()</code>, please refer to the documentation in
 <a href="https://dplyr.tidyverse.org/" class="external-link"><code>dplyr</code></a>.</p>
     </div>
     <div class="section level2">
@@ -141,40 +141,27 @@ For more information on <code><a href="https://dplyr.tidyverse.org/reference/sum
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">gm_nest</span> <span class="op">&lt;-</span> <span class="fu">gapminder</span><span class="fu">::</span><span class="va"><a href="https://jennybc.github.io/gapminder/reference/gapminder.html" class="external-link">gapminder</a></span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html" class="external-link">nest</a></span><span class="op">(</span>country_data <span class="op">=</span> <span class="op">-</span><span class="va">continent</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">gm_nest</span> <span class="op">&lt;-</span> <span class="fu">gapminder</span><span class="fu">::</span><span class="va"><a href="https://jennybc.github.io/gapminder/reference/gapminder.html" class="external-link">gapminder</a></span> <span class="op">%&gt;%</span> <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html" class="external-link">nest</a></span><span class="op">(</span>country_data <span class="op">=</span> <span class="op">-</span><span class="va">continent</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gapminder::gapminder %&gt;% tidyr::nest(country_data = -continent):</span> could not find function "%&gt;%"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># a summary applied to an ungrouped tbl returns a single row</span></span></span>
-<span class="r-in"><span><span class="va">gm_nest</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span><span class="va">gm_nest</span> <span class="op">%&gt;%</span></span></span>
 <span class="r-in"><span>  <span class="fu">nest_summarise</span><span class="op">(</span></span></span>
 <span class="r-in"><span>    <span class="va">country_data</span>,</span></span>
-<span class="r-in"><span>    n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html" class="external-link">n</a></span><span class="op">(</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>    median_pop <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html" class="external-link">median</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   continent country_data    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> Asia      <span style="color: #949494;">&lt;tibble [1 × 2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> Europe    <span style="color: #949494;">&lt;tibble [1 × 2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> Africa    <span style="color: #949494;">&lt;tibble [1 × 2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> Americas  <span style="color: #949494;">&lt;tibble [1 × 2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> Oceania   <span style="color: #949494;">&lt;tibble [1 × 2]&gt;</span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gm_nest %&gt;% nest_summarise(country_data, n = n(), median_pop = median(pop)):</span> could not find function "%&gt;%"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># usually, you'll want to group first</span></span></span>
-<span class="r-in"><span><span class="va">gm_nest</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="nest_group_by.html">nest_group_by</a></span><span class="op">(</span><span class="va">country_data</span>, <span class="va">country</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span><span class="va">gm_nest</span> <span class="op">%&gt;%</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="nest_group_by.html">nest_group_by</a></span><span class="op">(</span><span class="va">country_data</span>, <span class="va">country</span><span class="op">)</span> <span class="op">%&gt;%</span></span></span>
 <span class="r-in"><span>  <span class="fu">nest_summarise</span><span class="op">(</span></span></span>
 <span class="r-in"><span>    <span class="va">country_data</span>,</span></span>
-<span class="r-in"><span>    n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html" class="external-link">n</a></span><span class="op">(</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>    median_pop <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html" class="external-link">median</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   continent country_data     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> Asia      <span style="color: #949494;">&lt;tibble [33 × 3]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> Europe    <span style="color: #949494;">&lt;tibble [30 × 3]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> Africa    <span style="color: #949494;">&lt;tibble [52 × 3]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> Americas  <span style="color: #949494;">&lt;tibble [25 × 3]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> Oceania   <span style="color: #949494;">&lt;tibble [2 × 3]&gt;</span> </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gm_nest %&gt;% nest_group_by(country_data, country) %&gt;% nest_summarise(country_data,     n = n(), median_pop = median(pop)):</span> could not find function "%&gt;%"</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

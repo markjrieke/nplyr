@@ -97,40 +97,40 @@
 <p><a href="https://github.com/markjrieke/nplyr" class="external-link">nplyr</a> is a grammar of nested data manipulation that allows users to perform <a href="https://dplyr.tidyverse.org/" class="external-link">dplyr</a>-like manipulations on data frames nested within a list-col of another data frame. Most dplyr verbs have nested equivalents in nplyr. A (non-exhaustive) list of examples:</p>
 <ul>
 <li>
-<code><a href="reference/nest_mutate.html">nest_mutate()</a></code> is the nested equivalent of <code><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate()</a></code>
+<code><a href="reference/nest_mutate.html">nest_mutate()</a></code> is the nested equivalent of <code>mutate()</code>
 </li>
 <li>
-<code><a href="reference/nest_select.html">nest_select()</a></code> is the nested equivalent of <code><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select()</a></code>
+<code><a href="reference/nest_select.html">nest_select()</a></code> is the nested equivalent of <code>select()</code>
 </li>
 <li>
-<code><a href="reference/nest_filter.html">nest_filter()</a></code> is the nested equivalent of <code><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter()</a></code>
+<code><a href="reference/nest_filter.html">nest_filter()</a></code> is the nested equivalent of <code><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter()</a></code>
 </li>
 <li>
-<code><a href="reference/nest_summarise.html">nest_summarise()</a></code> is the nested equivalent of <code><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise()</a></code>
+<code><a href="reference/nest_summarise.html">nest_summarise()</a></code> is the nested equivalent of <code>summarise()</code>
 </li>
 <li>
-<code><a href="reference/nest_group_by.html">nest_group_by()</a></code> is the nested equivalent of <code><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by()</a></code>
+<code><a href="reference/nest_group_by.html">nest_group_by()</a></code> is the nested equivalent of <code>group_by()</code>
 </li>
 </ul>
 <p>As of version 0.2.0, nplyr also supports nested versions of some <a href="https://tidyr.tidyverse.org/" class="external-link">tidyr</a> functions:</p>
 <ul>
 <li>
-<code><a href="reference/nest_drop_na.html">nest_drop_na()</a></code> is the nested equivalent of <code><a href="https://tidyr.tidyverse.org/reference/drop_na.html" class="external-link">drop_na()</a></code>
+<code><a href="reference/nest_drop_na.html">nest_drop_na()</a></code> is the nested equivalent of <code>drop_na()</code>
 </li>
 <li>
-<code><a href="reference/nest_extract.html">nest_extract()</a></code> is the nested equivalent of <code><a href="https://tidyr.tidyverse.org/reference/extract.html" class="external-link">extract()</a></code>
+<code><a href="reference/nest_extract.html">nest_extract()</a></code> is the nested equivalent of <code>extract()</code>
 </li>
 <li>
-<code><a href="reference/nest_fill.html">nest_fill()</a></code> is the nested equivalent of <code><a href="https://tidyr.tidyverse.org/reference/fill.html" class="external-link">fill()</a></code>
+<code><a href="reference/nest_fill.html">nest_fill()</a></code> is the nested equivalent of <code>fill()</code>
 </li>
 <li>
-<code><a href="reference/nest_replace_na.html">nest_replace_na()</a></code> is the nested equivalent of <code><a href="https://tidyr.tidyverse.org/reference/replace_na.html" class="external-link">replace_na()</a></code>
+<code><a href="reference/nest_replace_na.html">nest_replace_na()</a></code> is the nested equivalent of <code>replace_na()</code>
 </li>
 <li>
-<code><a href="reference/nest_separate.html">nest_separate()</a></code> is the nested equivalent of <code><a href="https://tidyr.tidyverse.org/reference/separate.html" class="external-link">separate()</a></code>
+<code><a href="reference/nest_separate.html">nest_separate()</a></code> is the nested equivalent of <code>separate()</code>
 </li>
 <li>
-<code><a href="reference/nest_unite.html">nest_unite()</a></code> is the nested equivalent of <code><a href="https://tidyr.tidyverse.org/reference/unite.html" class="external-link">unite()</a></code>
+<code><a href="reference/nest_unite.html">nest_unite()</a></code> is the nested equivalent of <code>unite()</code>
 </li>
 </ul>
 <p>nplyr is largely a wrapper for dplyr. For the most up-to-date information on dplyr please visit <a href="https://dplyr.tidyverse.org" class="external-link">dplyr’s website</a>. If you are new to dplyr, the best place to start is the <a href="https://r4ds.had.co.nz/transform.html" class="external-link">data transformation chapter</a> in R for data science.</p>
@@ -154,7 +154,7 @@
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/markjrieke/nplyr" class="external-link">nplyr</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">gm_nest</span> <span class="op">&lt;-</span> </span>
-<span>  <span class="fu">gapminder</span><span class="fu">::</span><span class="va"><a href="https://jennybc.github.io/gapminder/reference/gapminder_unfiltered.html" class="external-link">gapminder_unfiltered</a></span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>  <span class="fu">gapminder</span><span class="fu">::</span><span class="va"><a href="https://jennybc.github.io/gapminder/reference/gapminder_unfiltered.html" class="external-link">gapminder_unfiltered</a></span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html" class="external-link">nest</a></span><span class="op">(</span>country_data <span class="op">=</span> <span class="op">-</span><span class="va">continent</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">gm_nest</span></span>
@@ -170,8 +170,8 @@
 <p>dplyr can perform operations on the top-level data frame, but with nplyr, we can perform operations on the nested data frames:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">gm_nest_example</span> <span class="op">&lt;-</span> </span>
-<span>  <span class="va">gm_nest</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="reference/nest_filter.html">nest_filter</a></span><span class="op">(</span><span class="va">country_data</span>, <span class="va">year</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>  <span class="va">gm_nest</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu"><a href="reference/nest_filter.html">nest_filter</a></span><span class="op">(</span><span class="va">country_data</span>, <span class="va">year</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu"><a href="reference/nest_mutate.html">nest_mutate</a></span><span class="op">(</span><span class="va">country_data</span>, pop_millions <span class="op">=</span> <span class="va">pop</span><span class="op">/</span><span class="fl">1000000</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># each nested tibble is now filtered to the most recent year</span></span>
@@ -187,8 +187,8 @@
 <span><span class="co">#&gt; 6 Oceania   &lt;tibble [11 × 6]&gt;</span></span>
 <span></span>
 <span><span class="co"># if we unnest, we can see that a new column for pop_millions has been added</span></span>
-<span><span class="va">gm_nest_example</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html" class="external-link">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span><span class="va">gm_nest_example</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">slice_head</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/unnest.html" class="external-link">unnest</a></span><span class="op">(</span><span class="va">country_data</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 43 × 7</span></span>
 <span><span class="co">#&gt;    continent country           year lifeExp        pop gdpPercap pop_millions</span></span>
@@ -207,11 +207,11 @@
 <p>nplyr also supports grouped operations with <code><a href="reference/nest_group_by.html">nest_group_by()</a></code>:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">gm_nest_example</span> <span class="op">&lt;-</span> </span>
-<span>  <span class="va">gm_nest</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="reference/nest_group_by.html">nest_group_by</a></span><span class="op">(</span><span class="va">country_data</span>, <span class="va">year</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>  <span class="va">gm_nest</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu"><a href="reference/nest_group_by.html">nest_group_by</a></span><span class="op">(</span><span class="va">country_data</span>, <span class="va">year</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu"><a href="reference/nest_summarise.html">nest_summarise</a></span><span class="op">(</span></span>
 <span>    <span class="va">country_data</span>, </span>
-<span>    n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html" class="external-link">n</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>    n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>    lifeExp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html" class="external-link">median</a></span><span class="op">(</span><span class="va">lifeExp</span><span class="op">)</span>,</span>
 <span>    pop <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html" class="external-link">median</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span>,</span>
 <span>    gdpPercap <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html" class="external-link">median</a></span><span class="op">(</span><span class="va">gdpPercap</span><span class="op">)</span></span>
@@ -229,8 +229,8 @@
 <span><span class="co">#&gt; 6 Oceania   &lt;tibble [56 × 5]&gt;</span></span>
 <span></span>
 <span><span class="co"># unnesting shows summarised tibbles for each continent</span></span>
-<span><span class="va">gm_nest_example</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html" class="external-link">slice</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span><span class="va">gm_nest_example</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">slice</span><span class="op">(</span><span class="fl">2</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/unnest.html" class="external-link">unnest</a></span><span class="op">(</span><span class="va">country_data</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 58 × 6</span></span>
 <span><span class="co">#&gt;    continent  year     n lifeExp      pop gdpPercap</span></span>

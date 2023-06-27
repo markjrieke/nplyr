@@ -118,8 +118,8 @@ the following properties:</p><ul><li><p>Rows are a subset of the input, but appe
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p><code>nest_filter()</code> is largely a wrapper for <code><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">dplyr::filter()</a></code> and maintains the
-functionality of <code><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter()</a></code> within each nested data frame. For more
-information on <code><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter()</a></code>, please refer to the documentation in
+functionality of <code><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter()</a></code> within each nested data frame. For more
+information on <code><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter()</a></code>, please refer to the documentation in
 <a href="https://dplyr.tidyverse.org/" class="external-link"><code>dplyr</code></a>.</p>
     </div>
     <div class="section level2">
@@ -135,44 +135,24 @@ information on <code><a href="https://dplyr.tidyverse.org/reference/filter.html"
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">gm_nest</span> <span class="op">&lt;-</span> <span class="fu">gapminder</span><span class="fu">::</span><span class="va"><a href="https://jennybc.github.io/gapminder/reference/gapminder.html" class="external-link">gapminder</a></span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html" class="external-link">nest</a></span><span class="op">(</span>country_data <span class="op">=</span> <span class="op">-</span><span class="va">continent</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">gm_nest</span> <span class="op">&lt;-</span> <span class="fu">gapminder</span><span class="fu">::</span><span class="va"><a href="https://jennybc.github.io/gapminder/reference/gapminder.html" class="external-link">gapminder</a></span> <span class="op">%&gt;%</span> <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html" class="external-link">nest</a></span><span class="op">(</span>country_data <span class="op">=</span> <span class="op">-</span><span class="va">continent</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gapminder::gapminder %&gt;% tidyr::nest(country_data = -continent):</span> could not find function "%&gt;%"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># apply a filter</span></span></span>
-<span class="r-in"><span><span class="va">gm_nest</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span><span class="va">gm_nest</span> <span class="op">%&gt;%</span></span></span>
 <span class="r-in"><span>  <span class="fu">nest_filter</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">year</span> <span class="op">&gt;</span> <span class="fl">1972</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   continent country_data      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> Asia      <span style="color: #949494;">&lt;tibble [231 × 5]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> Europe    <span style="color: #949494;">&lt;tibble [210 × 5]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> Africa    <span style="color: #949494;">&lt;tibble [364 × 5]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> Americas  <span style="color: #949494;">&lt;tibble [175 × 5]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> Oceania   <span style="color: #949494;">&lt;tibble [14 × 5]&gt;</span> </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gm_nest %&gt;% nest_filter(country_data, year &gt; 1972):</span> could not find function "%&gt;%"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># apply multiple filters</span></span></span>
-<span class="r-in"><span><span class="va">gm_nest</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span><span class="va">gm_nest</span> <span class="op">%&gt;%</span></span></span>
 <span class="r-in"><span>  <span class="fu">nest_filter</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">year</span> <span class="op">&gt;</span> <span class="fl">1972</span>, <span class="va">pop</span> <span class="op">&lt;</span> <span class="fl">10000000</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   continent country_data      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> Asia      <span style="color: #949494;">&lt;tibble [78 × 5]&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> Europe    <span style="color: #949494;">&lt;tibble [120 × 5]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> Africa    <span style="color: #949494;">&lt;tibble [235 × 5]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> Americas  <span style="color: #949494;">&lt;tibble [101 × 5]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> Oceania   <span style="color: #949494;">&lt;tibble [7 × 5]&gt;</span>  </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gm_nest %&gt;% nest_filter(country_data, year &gt; 1972, pop &lt; 1e+07):</span> could not find function "%&gt;%"</span>
 <span class="r-in"><span>  </span></span>
 <span class="r-in"><span><span class="co"># apply a filter on grouped data</span></span></span>
-<span class="r-in"><span><span class="va">gm_nest</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="nest_group_by.html">nest_group_by</a></span><span class="op">(</span><span class="va">country_data</span>, <span class="va">country</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span><span class="va">gm_nest</span> <span class="op">%&gt;%</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="nest_group_by.html">nest_group_by</a></span><span class="op">(</span><span class="va">country_data</span>, <span class="va">country</span><span class="op">)</span> <span class="op">%&gt;%</span></span></span>
 <span class="r-in"><span>  <span class="fu">nest_filter</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">pop</span> <span class="op">&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   continent country_data        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> Asia      <span style="color: #949494;">&lt;gropd_df [184 × 5]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> Europe    <span style="color: #949494;">&lt;gropd_df [197 × 5]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> Africa    <span style="color: #949494;">&lt;gropd_df [271 × 5]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> Americas  <span style="color: #949494;">&lt;gropd_df [148 × 5]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> Oceania   <span style="color: #949494;">&lt;gropd_df [13 × 5]&gt;</span> </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gm_nest %&gt;% nest_group_by(country_data, country) %&gt;% nest_filter(country_data,     pop &gt; mean(pop)):</span> could not find function "%&gt;%"</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

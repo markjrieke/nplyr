@@ -119,54 +119,27 @@ output returned in <code>.nest_data</code> will have the same groups as the inpu
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p><code>nest_count()</code> and <code>nest_add_count()</code> are largely wrappers for
 <code><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">dplyr::count()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">dplyr::add_count()</a></code> and maintain the functionality of
-<code><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">add_count()</a></code> within each nested data frame. For more
-information on <code><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">add_count()</a></code>, please refer to the documentation
+<code>count()</code> and <code>add_count()</code> within each nested data frame. For more
+information on <code>count()</code> and <code>add_count()</code>, please refer to the documentation
 in <a href="https://dplyr.tidyverse.org/" class="external-link"><code>dplyr</code></a>.</p>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">gm_nest</span> <span class="op">&lt;-</span> <span class="fu">gapminder</span><span class="fu">::</span><span class="va"><a href="https://jennybc.github.io/gapminder/reference/gapminder.html" class="external-link">gapminder</a></span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html" class="external-link">nest</a></span><span class="op">(</span>country_data <span class="op">=</span> <span class="op">-</span><span class="va">continent</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">gm_nest</span> <span class="op">&lt;-</span> <span class="fu">gapminder</span><span class="fu">::</span><span class="va"><a href="https://jennybc.github.io/gapminder/reference/gapminder.html" class="external-link">gapminder</a></span> <span class="op">%&gt;%</span> <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html" class="external-link">nest</a></span><span class="op">(</span>country_data <span class="op">=</span> <span class="op">-</span><span class="va">continent</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gapminder::gapminder %&gt;% tidyr::nest(country_data = -continent):</span> could not find function "%&gt;%"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># count the number of times each country appears in each nested tibble</span></span></span>
-<span class="r-in"><span><span class="va">gm_nest</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">nest_count</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">country</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   continent country_data     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> Asia      <span style="color: #949494;">&lt;tibble [33 × 2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> Europe    <span style="color: #949494;">&lt;tibble [30 × 2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> Africa    <span style="color: #949494;">&lt;tibble [52 × 2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> Americas  <span style="color: #949494;">&lt;tibble [25 × 2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> Oceania   <span style="color: #949494;">&lt;tibble [2 × 2]&gt;</span> </span>
-<span class="r-in"><span><span class="va">gm_nest</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">nest_add_count</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">country</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   continent country_data      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> Asia      <span style="color: #949494;">&lt;tibble [396 × 6]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> Europe    <span style="color: #949494;">&lt;tibble [360 × 6]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> Africa    <span style="color: #949494;">&lt;tibble [624 × 6]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> Americas  <span style="color: #949494;">&lt;tibble [300 × 6]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> Oceania   <span style="color: #949494;">&lt;tibble [24 × 6]&gt;</span> </span>
+<span class="r-in"><span><span class="va">gm_nest</span> <span class="op">%&gt;%</span> <span class="fu">nest_count</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">country</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gm_nest %&gt;% nest_count(country_data, country):</span> could not find function "%&gt;%"</span>
+<span class="r-in"><span><span class="va">gm_nest</span> <span class="op">%&gt;%</span> <span class="fu">nest_add_count</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">country</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gm_nest %&gt;% nest_add_count(country_data, country):</span> could not find function "%&gt;%"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># count the sum of population for each country in each nested tibble</span></span></span>
-<span class="r-in"><span><span class="va">gm_nest</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">nest_count</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">country</span>, wt <span class="op">=</span> <span class="va">pop</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   continent country_data     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> Asia      <span style="color: #949494;">&lt;tibble [33 × 2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> Europe    <span style="color: #949494;">&lt;tibble [30 × 2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> Africa    <span style="color: #949494;">&lt;tibble [52 × 2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> Americas  <span style="color: #949494;">&lt;tibble [25 × 2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> Oceania   <span style="color: #949494;">&lt;tibble [2 × 2]&gt;</span> </span>
-<span class="r-in"><span><span class="va">gm_nest</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">nest_add_count</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">country</span>, wt <span class="op">=</span> <span class="va">pop</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   continent country_data      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> Asia      <span style="color: #949494;">&lt;tibble [396 × 6]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> Europe    <span style="color: #949494;">&lt;tibble [360 × 6]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> Africa    <span style="color: #949494;">&lt;tibble [624 × 6]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> Americas  <span style="color: #949494;">&lt;tibble [300 × 6]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> Oceania   <span style="color: #949494;">&lt;tibble [24 × 6]&gt;</span> </span>
+<span class="r-in"><span><span class="va">gm_nest</span> <span class="op">%&gt;%</span> <span class="fu">nest_count</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">country</span>, wt <span class="op">=</span> <span class="va">pop</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gm_nest %&gt;% nest_count(country_data, country, wt = pop):</span> could not find function "%&gt;%"</span>
+<span class="r-in"><span><span class="va">gm_nest</span> <span class="op">%&gt;%</span> <span class="fu">nest_add_count</span><span class="op">(</span><span class="va">country_data</span>, <span class="va">country</span>, wt <span class="op">=</span> <span class="va">pop</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gm_nest %&gt;% nest_add_count(country_data, country, wt = pop):</span> could not find function "%&gt;%"</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
