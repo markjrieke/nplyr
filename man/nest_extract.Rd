@@ -62,11 +62,17 @@ please refer to the documentation in \href{https://tidyr.tidyverse.org/}{'tidyr'
 \examples{
 set.seed(123)
 gm <- gapminder::gapminder 
-gm <- gm \%>\% mutate(comb = sample(c(NA, "a-b", "a-d", "b-c", "d-e"),size = nrow(gm),replace = TRUE))
+
+gm <- 
+  gm \%>\% 
+  dplyr::mutate(comb = sample(c(NA, "a-b", "a-d", "b-c", "d-e"),
+                              size = nrow(gm),
+                              replace = TRUE))
+                              
 gm_nest <- gm \%>\% tidyr::nest(country_data = -continent)
 
 gm_nest \%>\% 
-  nest_extract(.nest_data = country_data,
+  nest_extract(country_data,
                col = comb,
                into = c("var1","var2"),
                regex = "([[:alnum:]]+)-([[:alnum:]]+)")

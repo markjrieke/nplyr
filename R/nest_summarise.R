@@ -59,7 +59,7 @@
 #' gm_nest %>%
 #'   nest_summarise(
 #'     country_data,
-#'     n = n(),
+#'     n = dplyr::n(),
 #'     median_pop = median(pop)
 #'   )
 #'
@@ -68,7 +68,7 @@
 #'   nest_group_by(country_data, country) %>%
 #'   nest_summarise(
 #'     country_data,
-#'     n = n(),
+#'     n = dplyr::n(),
 #'     median_pop = median(pop)
 #'   )
 nest_summarise <- function(.data, 

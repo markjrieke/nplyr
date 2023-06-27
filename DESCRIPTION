@@ -24,6 +24,7 @@ Depends:
 Imports:
     assertthat,
     dplyr,
+    magrittr,
     purrr,
     rlang,
     tidyr

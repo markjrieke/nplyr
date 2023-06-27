@@ -32,7 +32,12 @@ please refer to the documentation in \href{https://tidyr.tidyverse.org/}{'tidyr'
 }
 \examples{
 set.seed(123)
-gm <- gapminder::gapminder \%>\% mutate(pop = if_else(runif(n()) >= 0.9,NA_integer_,pop))
+gm <- 
+  gapminder::gapminder \%>\% 
+  dplyr::mutate(pop = dplyr::if_else(runif(dplyr::n()) >= 0.9,
+                                     NA_integer_,
+                                     pop))
+                                     
 gm_nest <- gm \%>\% tidyr::nest(country_data = -continent)
 
 gm_nest \%>\% 

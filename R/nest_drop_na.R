@@ -31,11 +31,17 @@
 #' 
 #' # randomly insert NAs into the dataframe & nest
 #' set.seed(123) 
-#' gm <- gm %>% mutate(pop = if_else(runif(nrow(gm)) >= 0.9, NA_integer_, pop))
+#' gm <- 
+#'   gm %>% 
+#'   dplyr::mutate(pop = dplyr::if_else(runif(nrow(gm)) >= 0.9, 
+#'                                      NA_integer_, 
+#'                                      pop))
+#'   
 #' gm_nest <- gm %>% tidyr::nest(country_data = -continent)
 #' 
 #' # drop rows where an NA exists in column `pop`
-#' gm_nest %>% nest_drop_na(.nest_data = country_data,pop)
+#' gm_nest %>% 
+#'   nest_drop_na(country_data, pop)
 nest_drop_na <- function(.data,
                          .nest_data,
                          ...){

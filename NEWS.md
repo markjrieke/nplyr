@@ -1,6 +1,8 @@
 # nplyr 0.2.0.9000
 
 * Add more informative error when trying to use nplyr functions with a rowwise df (#18).
+* Moved [dplyr](https://dplyr.tidyverse.org/) and [tidyr](https://dplyr.tidyverse.org/) from `Depends` to `Imports` (these packages are installed with nplyr, but no longer attached upon loading).
+* Added the pipe ([`%>%`](https://magrittr.tidyverse.org/reference/pipe.html)) as an export.
 
 # nplyr 0.2.0
 

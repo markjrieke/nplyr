@@ -32,7 +32,7 @@
 #' gm_nest <- gm %>% tidyr::nest(country_data = -continent)
 #' 
 #' gm_nest %>% 
-#'   nest_unite(.nest_data = country_data, 
+#'   nest_unite(country_data, 
 #'              col = comb, 
 #'              year, 
 #'              pop)

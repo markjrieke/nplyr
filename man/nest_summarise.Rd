@@ -65,7 +65,7 @@ gm_nest <- gapminder::gapminder \%>\% tidyr::nest(country_data = -continent)
 gm_nest \%>\%
   nest_summarise(
     country_data,
-    n = n(),
+    n = dplyr::n(),
     median_pop = median(pop)
   )
 
@@ -74,7 +74,7 @@ gm_nest \%>\%
   nest_group_by(country_data, country) \%>\%
   nest_summarise(
     country_data,
-    n = n(),
+    n = dplyr::n(),
     median_pop = median(pop)
   )
 }

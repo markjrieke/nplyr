@@ -36,11 +36,14 @@
 #' 
 #' @examples
 #' set.seed(123)
-#' gm <- gapminder::gapminder %>% mutate(comb = paste(continent,year,sep = "-"))
+#' gm <- 
+#'   gapminder::gapminder %>% 
+#'   dplyr::mutate(comb = paste(continent, year, sep = "-"))
+#'   
 #' gm_nest <- gm %>% tidyr::nest(country_data = -continent)
 #' 
 #' gm_nest %>% 
-#'   nest_separate(.nest_data = country_data,
+#'   nest_separate(country_data,
 #'                 col = comb,
 #'                 into = c("var1","var2"),
 #'                 sep = "-")
